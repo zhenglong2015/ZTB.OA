@@ -14,7 +14,12 @@ namespace ZTB.OA.EFDAL
     /// </summary>
     public class BaseDal<T> where T : class, new()
     {
-        DataModelContainer db = new DataModelContainer();
+        //DataModelContainer db = new DataModelContainer();
+
+       public DbContext Db
+        {
+            get { return DbContextFactory.GetCurrentDbContext(); }
+        } 
         #region 查询
         public IQueryable<T> GetEntities(Expression<Func<T, bool>> whereLamba)
         {

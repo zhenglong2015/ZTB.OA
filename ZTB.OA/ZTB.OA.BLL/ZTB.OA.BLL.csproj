@@ -41,6 +41,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZTB.OA.DALFactory\ZTB.OA.DALFactory.csproj">
+      <Project>{71f570da-155b-4f0a-a95f-f82a117f53ca}</Project>
+      <Name>ZTB.OA.DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTB.OA.EFDAL\ZTB.OA.EFDAL.csproj">
+      <Project>{34de48bf-b3ee-46a0-afdf-75deabb4ac18}</Project>
+      <Name>ZTB.OA.EFDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTB.OA.IDAL\ZTB.OA.IDAL.csproj">
+      <Project>{81d577c5-34c6-4ddc-9bc4-31c999a909bb}</Project>
+      <Name>ZTB.OA.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTB.OA.Model\ZTB.OA.Model.csproj">
+      <Project>{d2ecdb25-b287-45af-90a0-f4a81cdd7a86}</Project>
+      <Name>ZTB.OA.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
