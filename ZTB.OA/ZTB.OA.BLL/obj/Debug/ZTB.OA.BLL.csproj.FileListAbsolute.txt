@@ -18,3 +18,5 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\zh-Hans\EntityFramework
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.pdb
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.DALFactory.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.DALFactory.pdb

@@ -11,7 +11,7 @@ namespace ZTB.OA.DALFactory
 {
     public class StaticFactory
     {
-        public static IUserInfoDal GetDal()
+        public static IUserInfoDal GetUserInfoDal()
         {
             // return new UserInfoDal();
             string assemblyName = System.Configuration.ConfigurationManager.AppSettings["DalAssemblyName"];

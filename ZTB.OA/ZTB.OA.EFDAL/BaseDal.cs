@@ -16,25 +16,25 @@ namespace ZTB.OA.EFDAL
     {
         //DataModelContainer db = new DataModelContainer();
 
-       public DbContext Db
+        public DbContext Db
         {
             get { return DbContextFactory.GetCurrentDbContext(); }
-        } 
+        }
         #region 查询
         public IQueryable<T> GetEntities(Expression<Func<T, bool>> whereLamba)
         {
-            return db.Set<T>().Where(whereLamba).AsQueryable();
+            return Db.Set<T>().Where(whereLamba).AsQueryable();
         }
 
         public IQueryable<T> GetPageEntities<S>(int pageSize, int pageIndex, out int total, Expression<Func<T, bool>> whereLambda,
             Expression<Func<T, S>> orderLambda, bool isAsc)
         {
-            total = db.Set<T>().Where(whereLambda).Count();
+            total = Db.Set<T>().Where(whereLambda).Count();
             if (isAsc)
-                return db.Set<T>().Where(whereLambda).OrderBy(orderLambda)
+                return Db.Set<T>().Where(whereLambda).OrderBy(orderLambda)
                     .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
             else
-                return db.Set<T>().Where(whereLambda).OrderByDescending(orderLambda)
+                return Db.Set<T>().Where(whereLambda).OrderByDescending(orderLambda)
                 .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
 
         }
@@ -42,21 +42,23 @@ namespace ZTB.OA.EFDAL
 
         public T Add(T entity)
         {
-            db.Set<T>().Add(entity);
-            db.SaveChanges();
+            Db.Set<T>().Add(entity);
+            //Db.SaveChanges();
             return entity;
         }
 
         public bool Update(T entity)
         {
-            db.Entry(entity).State = EntityState.Modified;
-            return db.SaveChanges() > 0;
+            Db.Entry(entity).State = EntityState.Modified;
+            //return Db.SaveChanges() > 0;
+            return true;
         }
 
         public bool Delete(T entity)
         {
-            db.Entry(entity).State = EntityState.Deleted;
-            return db.SaveChanges() > 0;
+            Db.Entry(entity).State = EntityState.Deleted;
+            // return Db.SaveChanges() > 0;
+            return true;
         }
     }
 }
