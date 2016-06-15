@@ -21,36 +21,36 @@ namespace ZTB.OA.EFDAL
             return db.Set<T>().Where(whereLamba).AsQueryable();
         }
 
-        public IQueryable<T> GetPageUsers<S>(int pageSize, int pageIndex, out int total, Expression<Func<T, bool>> whereLambda,
+        public IQueryable<T> GetPageEntities<S>(int pageSize, int pageIndex, out int total, Expression<Func<T, bool>> whereLambda,
             Expression<Func<T, S>> orderLambda, bool isAsc)
         {
             total = db.Set<T>().Where(whereLambda).Count();
             if (isAsc)
-                return db.Set<T>().Where(whereLambda).OrderBy<T, S>(orderLambda)
+                return db.Set<T>().Where(whereLambda).OrderBy(orderLambda)
                     .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
             else
-                return db.Set<T>().Where(whereLambda).OrderByDescending<T, S>(orderLambda)
+                return db.Set<T>().Where(whereLambda).OrderByDescending(orderLambda)
                 .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
 
         }
         #endregion
 
-        public T Add(T t)
+        public T Add(T entity)
         {
-            db.Set<T>().Add(t);
+            db.Set<T>().Add(entity);
             db.SaveChanges();
-            return t;
+            return entity;
         }
 
-        public bool Update(T t)
+        public bool Update(T entity)
         {
-            db.Entry(t).State = EntityState.Modified;
+            db.Entry(entity).State = EntityState.Modified;
             return db.SaveChanges() > 0;
         }
 
-        public bool Delete(T t)
+        public bool Delete(T entity)
         {
-            db.Entry(t).State = EntityState.Deleted;
+            db.Entry(entity).State = EntityState.Deleted;
             return db.SaveChanges() > 0;
         }
     }

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
+    <EntitySet Name="OrderInfo" EntityType="DataModel.OrderInfo" />
+    <AssociationSet Name="OrderInfoUserInfo" Association="DataModel.OrderInfoUserInfo">
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" Nullable="true" MaxLength="50" />
+    <NavigationProperty Name="OrderInfo" Relationship="DataModel.OrderInfoUserInfo" FromRole="UserInfo" ToRole="OrderInfo" />
+    <Property Name="OrderInfoId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" Nullable="true" MaxLength="64" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.OrderInfoUserInfo" FromRole="OrderInfo" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="OrderInfoUserInfo">
+    <End Type="DataModel.OrderInfo" Role="OrderInfo" Multiplicity="1" />
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="OrderInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

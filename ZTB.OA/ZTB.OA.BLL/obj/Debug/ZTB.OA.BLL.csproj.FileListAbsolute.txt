@@ -1,0 +1,5 @@
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.BLL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.BLL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.csprojResolveAssemblyReference.cache
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.pdb
