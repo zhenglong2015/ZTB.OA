@@ -10,3 +10,6 @@ E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\EntityFramework.SqlServer.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\obj\Debug\ZTB.OA.EFDAL.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\obj\Debug\ZTB.OA.EFDAL.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\obj\Debug\ZTB.OA.EFDAL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\App.config
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

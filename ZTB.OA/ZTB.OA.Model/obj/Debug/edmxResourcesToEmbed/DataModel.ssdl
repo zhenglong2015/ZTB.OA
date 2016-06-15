@@ -3,9 +3,9 @@
   <EntityContainer Name="DataModelStoreContainer">
     <EntitySet Name="UserInfo" EntityType="DataModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderInfo" EntityType="DataModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="OrderInfoUserInfo" Association="DataModel.Store.OrderInfoUserInfo">
-      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    <AssociationSet Name="UserInfoOrderInfo" Association="DataModel.Store.UserInfoOrderInfo">
       <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="UserInfo">
@@ -13,8 +13,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="OrderInfoId" Type="int" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" Nullable="true" MaxLength="64" />
   </EntityType>
   <EntityType Name="OrderInfo">
     <Key>
@@ -22,16 +21,17 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Content" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="UserInfoId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="OrderInfoUserInfo">
-    <End Role="OrderInfo" Type="DataModel.Store.OrderInfo" Multiplicity="1" />
-    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="*" />
+  <Association Name="UserInfoOrderInfo">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="DataModel.Store.OrderInfo" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="OrderInfo">
+      <Principal Role="UserInfo">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="UserInfo">
-        <PropertyRef Name="OrderInfoId" />
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="UserInfoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

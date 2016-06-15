@@ -6,7 +6,6 @@
         <MappingFragment StoreEntitySet="UserInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UName" ColumnName="UName" />
-          <ScalarProperty Name="OrderInfoId" ColumnName="OrderInfoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -15,6 +14,7 @@
         <MappingFragment StoreEntitySet="OrderInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

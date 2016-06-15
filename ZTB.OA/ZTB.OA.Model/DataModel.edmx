@@ -8,9 +8,9 @@
   <EntityContainer Name="DataModelStoreContainer">
     <EntitySet Name="UserInfo" EntityType="DataModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderInfo" EntityType="DataModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="OrderInfoUserInfo" Association="DataModel.Store.OrderInfoUserInfo">
-      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    <AssociationSet Name="UserInfoOrderInfo" Association="DataModel.Store.UserInfoOrderInfo">
       <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="UserInfo">
@@ -18,8 +18,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="OrderInfoId" Type="int" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" Nullable="true" MaxLength="64" />
   </EntityType>
   <EntityType Name="OrderInfo">
     <Key>
@@ -27,16 +26,17 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Content" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="UserInfoId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="OrderInfoUserInfo">
-    <End Role="OrderInfo" Type="DataModel.Store.OrderInfo" Multiplicity="1" />
-    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="*" />
+  <Association Name="UserInfoOrderInfo">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="DataModel.Store.OrderInfo" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="OrderInfo">
+      <Principal Role="UserInfo">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="UserInfo">
-        <PropertyRef Name="OrderInfoId" />
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="UserInfoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -47,9 +47,9 @@
         <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
           <EntitySet Name="OrderInfo" EntityType="DataModel.OrderInfo" />
-          <AssociationSet Name="OrderInfoUserInfo" Association="DataModel.OrderInfoUserInfo">
-            <End Role="OrderInfo" EntitySet="OrderInfo" />
+          <AssociationSet Name="UserInfoOrderInfo" Association="DataModel.UserInfoOrderInfo">
             <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="OrderInfo" EntitySet="OrderInfo" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="UserInfo">
@@ -57,9 +57,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UName" Type="String" Nullable="true" MaxLength="50" />
-          <NavigationProperty Name="OrderInfo" Relationship="DataModel.OrderInfoUserInfo" FromRole="UserInfo" ToRole="OrderInfo" />
-          <Property Name="OrderInfoId" Type="Int32" Nullable="false" />
+          <Property Name="UName" Type="String" Nullable="true" MaxLength="64" />
+          <NavigationProperty Name="OrderInfo" Relationship="DataModel.UserInfoOrderInfo" FromRole="UserInfo" ToRole="OrderInfo" />
         </EntityType>
         <EntityType Name="OrderInfo">
           <Key>
@@ -67,17 +66,18 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Content" Type="String" Nullable="true" MaxLength="64" />
-          <NavigationProperty Name="UserInfo" Relationship="DataModel.OrderInfoUserInfo" FromRole="OrderInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoOrderInfo" FromRole="OrderInfo" ToRole="UserInfo" />
+          <Property Name="UserInfoId" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="OrderInfoUserInfo">
-          <End Type="DataModel.OrderInfo" Role="OrderInfo" Multiplicity="1" />
-          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+        <Association Name="UserInfoOrderInfo">
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="DataModel.OrderInfo" Role="OrderInfo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="OrderInfo">
+            <Principal Role="UserInfo">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="UserInfo">
-              <PropertyRef Name="OrderInfoId" />
+            <Dependent Role="OrderInfo">
+              <PropertyRef Name="UserInfoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -92,7 +92,6 @@
         <MappingFragment StoreEntitySet="UserInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UName" ColumnName="UName" />
-          <ScalarProperty Name="OrderInfoId" ColumnName="OrderInfoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -101,6 +100,7 @@
         <MappingFragment StoreEntitySet="OrderInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

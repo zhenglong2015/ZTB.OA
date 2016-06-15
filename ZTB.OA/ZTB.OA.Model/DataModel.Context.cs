@@ -20,10 +20,10 @@ namespace ZTB.OA.Model
         {
         }
     
-        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        //{
-        //    throw new UnintentionalCodeFirstException();
-        //}
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            throw new UnintentionalCodeFirstException();
+        }
     
         public virtual DbSet<UserInfo> UserInfo { get; set; }
         public virtual DbSet<OrderInfo> OrderInfo { get; set; }

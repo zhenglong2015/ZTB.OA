@@ -1,4 +1,3 @@
-E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\ZTB.OA.Portal.Tests.dll.config
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\ZTB.OA.Portal.Tests.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\ZTB.OA.Portal.Tests.pdb
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
@@ -13,3 +12,9 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\zh-Hans\Microsoft.VisualStudio
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\obj\Debug\ZTB.OA.Portal.Tests.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\obj\Debug\ZTB.OA.Portal.Tests.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\obj\Debug\ZTB.OA.Portal.Tests.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\ZTB.OA.Portal.Tests.dll.config
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\App.config
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\EntityFramework.SqlServer.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\EntityFramework.SqlServer.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

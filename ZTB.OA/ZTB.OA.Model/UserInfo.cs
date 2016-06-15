@@ -14,10 +14,16 @@ namespace ZTB.OA.Model
     
     public partial class UserInfo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UserInfo()
+        {
+            this.OrderInfo = new HashSet<OrderInfo>();
+        }
+    
         public int Id { get; set; }
         public string UName { get; set; }
-        public int OrderInfoId { get; set; }
     
-        public virtual OrderInfo OrderInfo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderInfo> OrderInfo { get; set; }
     }
 }
