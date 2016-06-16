@@ -8,7 +8,7 @@ using ZTB.OA.IDAL;
 
 namespace ZTB.OA.DALFactory
 {
-   public class DbSession
+   public class DbSession: IDbSession
     {
         public IUserInfoDal userInfoDal
         {

@@ -40,3 +40,5 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\zh-Hans\Micros
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal.Tests\obj\Debug\ZTB.OA.Portal.Tests.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal.Tests\obj\Debug\ZTB.OA.Portal.Tests.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal.Tests\obj\Debug\ZTB.OA.Portal.Tests.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\ZTB.OA.IDAL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal.Tests\bin\Debug\ZTB.OA.IDAL.pdb

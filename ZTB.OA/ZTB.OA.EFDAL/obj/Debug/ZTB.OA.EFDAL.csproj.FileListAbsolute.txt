@@ -30,3 +30,5 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\zh-Hans\EntityFramewo
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.EFDAL\obj\Debug\ZTB.OA.EFDAL.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.EFDAL\obj\Debug\ZTB.OA.EFDAL.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.EFDAL\obj\Debug\ZTB.OA.EFDAL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\ZTB.OA.IDAL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Debug\ZTB.OA.IDAL.pdb

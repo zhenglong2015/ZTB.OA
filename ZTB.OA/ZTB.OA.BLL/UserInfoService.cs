@@ -17,14 +17,21 @@ namespace ZTB.OA.BLL
         //IUserInfoDal userInfoDal =  new UserInfoDal();//依赖接口编程
 
         //稍微高级点的开发人员
-       // IUserInfoDal userInfoDal = StaticFactory.GetUserInfoDal();
+        // IUserInfoDal userInfoDal = StaticFactory.GetUserInfoDal();
 
         //更高级 Ioc DI 依赖注入
-
+        IDbSession dbSession = DbSessionFactory.GetCurrentDbSession();
 
         public UserInfo Add(UserInfo userInfo)
         {
-            return new DbSession().userInfoDal.Add(userInfo);
+
+            dbSession.userInfoDal.Add(userInfo);
+            if (dbSession.SaveChanges() > 0)
+            {
+                return userInfo;
+            }
+            return null;
+
         }
     }
 }

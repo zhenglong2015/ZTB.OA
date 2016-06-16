@@ -34,7 +34,6 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Webpages.Deployment.res
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Mvc.resources.dll
-E:\测试\OA\ZTB.OA\ZTB.OA.Portal\obj\Debug\ZTB.OA.Portal.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\obj\Debug\ZTB.OA.Portal.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\obj\Debug\ZTB.OA.Portal.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\roslyn\csc.exe
