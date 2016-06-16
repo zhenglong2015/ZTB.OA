@@ -10,7 +10,7 @@ namespace ZTB.OA.DALFactory
 {
    public class DbSession: IDbSession
     {
-        public IUserInfoDal userInfoDal
+        public IUserInfoDal UserInfoDal
         {
             get { return StaticFactory.GetUserInfoDal(); }
         }

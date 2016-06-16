@@ -15,7 +15,7 @@ namespace ZTB.OA.IDAL
 {
     public interface IDbSession
     {
-        IUserInfoDal userInfoDal { get; }
+        IUserInfoDal UserInfoDal { get; }
 
         int SaveChanges();
     }

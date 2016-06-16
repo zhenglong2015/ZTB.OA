@@ -10,7 +10,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {
-    public class UserInfoService
+    public class UserInfoService: BaseService<UserInfo>
     {
         //菜鸟级别
         //UserInfoDal userInfoDal = new UserInfoDal();
@@ -20,18 +20,11 @@ namespace ZTB.OA.BLL
         // IUserInfoDal userInfoDal = StaticFactory.GetUserInfoDal();
 
         //更高级 Ioc DI 依赖注入
-        IDbSession dbSession = DbSessionFactory.GetCurrentDbSession();
+        //IDbSession dbSession = DbSessionFactory.GetCurrentDbSession();
 
-        public UserInfo Add(UserInfo userInfo)
+        public override void SetCurrentDal()
         {
-
-            dbSession.userInfoDal.Add(userInfo);
-            if (dbSession.SaveChanges() > 0)
-            {
-                return userInfo;
-            }
-            return null;
-
+            CurrentDal = DbSession.UserInfoDal;
         }
     }
 }
