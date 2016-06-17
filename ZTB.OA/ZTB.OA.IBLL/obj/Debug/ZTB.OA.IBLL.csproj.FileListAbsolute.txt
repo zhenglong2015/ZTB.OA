@@ -1,0 +1,11 @@
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\App.config
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\ZTB.OA.IBLL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\ZTB.OA.IBLL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\ZTB.OA.Model.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\EntityFramework.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\ZTB.OA.Model.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\EntityFramework.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\obj\Debug\ZTB.OA.IBLL.csprojResolveAssemblyReference.cache
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\obj\Debug\ZTB.OA.IBLL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IBLL\obj\Debug\ZTB.OA.IBLL.pdb

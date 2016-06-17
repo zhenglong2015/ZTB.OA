@@ -92,3 +92,4 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\App.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\EntityFramework.SqlServer.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\EntityFramework.SqlServer.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal\obj\Debug\ZTB.OA.Portal.csprojResolveAssemblyReference.cache
