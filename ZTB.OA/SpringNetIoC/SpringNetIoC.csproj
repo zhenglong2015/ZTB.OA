@@ -55,12 +55,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUserInfoDal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoDal.cs" />
+    <Compile Include="UserInfoServie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +73,12 @@
     <Content Include="Lib\Spring.Aop.xml" />
     <Content Include="Lib\Spring.Core.dll" />
     <Content Include="Lib\Spring.Core.xml" />
+    <Content Include="Lib\Spring.Web.Mvc.dll" />
+    <Content Include="Lib\Spring.Web.Mvc.xml" />
+    <EmbeddedResource Include="objects.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

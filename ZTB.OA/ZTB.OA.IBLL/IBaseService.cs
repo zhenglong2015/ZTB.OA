@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZTB.OA.IBLL
 {
-    interface IBaseService<TEntity> where TEntity : class ,new ()
+   public interface IBaseService<TEntity> where TEntity : class ,new ()
     {
         #region 查询
         IQueryable<TEntity> GetEntities(Expression<Func<TEntity, bool>> whereLamba);

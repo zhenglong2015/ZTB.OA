@@ -10,6 +10,7 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Model\obj\Debug\ZTB.OA.Model.pdb
 E:\测试\OA\ZTB.OA\ZTB.OA.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Model\bin\Debug\App.config
 E:\测试\OA\ZTB.OA\ZTB.OA.Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Model\obj\Debug\ZTB.OA.Model.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\bin\Debug\App.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\bin\Debug\ZTB.OA.Model.dll.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\bin\Debug\ZTB.OA.Model.dll
@@ -22,5 +23,3 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\bin\Debug\zh-Hans\EntityFramewo
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\obj\Debug\ZTB.OA.Model.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\obj\Debug\ZTB.OA.Model.pdb
-E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\obj\Debug\ZTB.OA.Model.csprojResolveAssemblyReference.cache
-E:\测试\OA\ZTB.OA\ZTB.OA.Model\obj\Debug\ZTB.OA.Model.csprojResolveAssemblyReference.cache

@@ -11,6 +11,7 @@
     <AssemblyName>ZTB.OA.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -36,7 +39,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +54,10 @@
     <ProjectReference Include="..\ZTB.OA.EFDAL\ZTB.OA.EFDAL.csproj">
       <Project>{34de48bf-b3ee-46a0-afdf-75deabb4ac18}</Project>
       <Name>ZTB.OA.EFDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTB.OA.IBLL\ZTB.OA.IBLL.csproj">
+      <Project>{1089796f-7466-4d6b-86e4-a0bed42c1201}</Project>
+      <Name>ZTB.OA.IBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZTB.OA.IDAL\ZTB.OA.IDAL.csproj">
       <Project>{81d577c5-34c6-4ddc-9bc4-31c999a909bb}</Project>

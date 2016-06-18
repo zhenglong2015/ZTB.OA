@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTB.OA.DALFactory;
 using ZTB.OA.EFDAL;
+using ZTB.OA.IBLL;
 using ZTB.OA.IDAL;
 using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {
-    public class UserInfoService: BaseService<UserInfo>
+    public class UserInfoService: BaseService<UserInfo>, IUserInfoService
     {
         //菜鸟级别
         //UserInfoDal userInfoDal = new UserInfoDal();

@@ -7,7 +7,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.IBLL
 {
-    interface IUserInfoService: IBaseService<UserInfo>
+    public interface IUserInfoService : IBaseService<UserInfo>
     {
     }
 }
