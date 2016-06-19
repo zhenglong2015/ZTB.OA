@@ -57,8 +57,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
-    <Compile Include="IDbSession.cs" />
+    <Compile Include="IDbSession1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IDbSession.tt</DependentUpon>
+    </Compile>
     <Compile Include="IOrderInfoDal.cs">
+      <DependentUpon>IDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRoleInfoDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
     <Compile Include="IUserInfoDal.cs">
@@ -80,6 +87,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IDbSession.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IDbSession1.cs</LastGenOutput>
+    </Content>
     <Content Include="IDal.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IDal.cs</LastGenOutput>

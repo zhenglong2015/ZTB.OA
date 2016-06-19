@@ -27,5 +27,6 @@ namespace ZTB.OA.Model
     
         public virtual DbSet<UserInfo> UserInfo { get; set; }
         public virtual DbSet<OrderInfo> OrderInfo { get; set; }
+        public virtual DbSet<RoleInfo> RoleInfo { get; set; }
     }
 }

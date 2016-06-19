@@ -9,7 +9,9 @@
   </object>
   
   <object name="UserInfoDal" type="ZTB.OA.EFDAL.UserInfoDal,ZTB.OA.EFDAL" singleton="false" >
+  </object>
 
+  <object name="OrderInfoDal" type="ZTB.OA.EFDAL.OrderInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
   
 

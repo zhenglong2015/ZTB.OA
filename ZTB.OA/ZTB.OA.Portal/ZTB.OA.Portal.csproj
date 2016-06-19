@@ -149,11 +149,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyExceptionFilterAttrbut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,12 +171,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZTB.OA.BLL\ZTB.OA.BLL.csproj">
       <Project>{b770efc7-06a4-4b52-b416-49fdb7dc5bf7}</Project>
       <Name>ZTB.OA.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZTB.OA.Common\ZTB.OA.Common.csproj">
+      <Project>{3b3b9951-a239-4779-be60-6022ae6fb10e}</Project>
+      <Name>ZTB.OA.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZTB.OA.IBLL\ZTB.OA.IBLL.csproj">
       <Project>{1089796f-7466-4d6b-86e4-a0bed42c1201}</Project>

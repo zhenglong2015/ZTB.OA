@@ -29,7 +29,7 @@ namespace ZTB.OA.DALFactory
 
             if (dbSession == null)
             {
-                dbSession = new DbSession();
+                dbSession = new DbSession() as IDbSession;
                 CallContext.SetData("DbSession", dbSession);
             }
             return dbSession;

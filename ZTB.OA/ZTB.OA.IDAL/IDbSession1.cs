@@ -14,8 +14,9 @@ namespace ZTB.OA.IDAL
     
      public partial interface IDbSession 
     {   
-    		IUserInfoDal UserInfoDal { get; }            
-    		IOrderInfoDal OrderInfoDal { get; }            
+    		IUserInfoDal UserInfoDal { get;}            
+    		IOrderInfoDal OrderInfoDal { get;}            
+    		IRoleInfoDal RoleInfoDal { get;}            
     		int SaveChanges();
     }
 }

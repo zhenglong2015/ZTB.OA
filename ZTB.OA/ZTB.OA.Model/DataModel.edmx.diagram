@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="DataModel.UserInfo" Width="1.5" PointX="3.125" PointY="2.25" />
         <EntityTypeShape EntityType="DataModel.OrderInfo" Width="1.5" PointX="7.75" PointY="2.5" />
         <AssociationConnector Association="DataModel.UserInfoOrderInfo" />
+        <EntityTypeShape EntityType="DataModel.RoleInfo" Width="1.5" PointX="5.75" PointY="1.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

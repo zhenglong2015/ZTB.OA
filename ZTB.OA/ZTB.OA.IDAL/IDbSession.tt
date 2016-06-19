@@ -58,7 +58,7 @@ using System.Linq;
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
     {
 #>
-		I<#=entitySet#>Dal <#=entitySet#>Dal { get; }            
+		I<#=entitySet#>Dal <#=entitySet#>Dal { get;}            
 <#
     }
 #>

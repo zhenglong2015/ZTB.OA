@@ -43,7 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
-    <Compile Include="IUserInfoService.cs" />
+    <Compile Include="IRoleInfoDal.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISevice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOrderInfoDal.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IUserInfoDal.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +64,15 @@
       <Project>{d2ecdb25-b287-45af-90a0-f4a81cdd7a86}</Project>
       <Name>ZTB.OA.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ISevice.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ISevice.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

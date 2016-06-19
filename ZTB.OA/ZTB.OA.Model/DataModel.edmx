@@ -51,6 +51,7 @@
             <End Role="UserInfo" EntitySet="UserInfo" />
             <End Role="OrderInfo" EntitySet="OrderInfo" />
           </AssociationSet>
+          <EntitySet Name="RoleInfo" EntityType="DataModel.RoleInfo" />
         </EntityContainer>
         <EntityType Name="UserInfo">
           <Key>
@@ -81,6 +82,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="RoleInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
