@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTB.OA.Model", "ZTB.OA.Model\ZTB.OA.Model.csproj", "{D2ECDB25-B287-45AF-90A0-F4A81CDD7A86}"
 EndProject
@@ -40,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacDemo", "AutoFacDemo\AutoFacDemo.csproj", "{19429DD4-38AD-40EF-8B3B-899D32A232F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapperDemo", "AutoMapperDemo\AutoMapperDemo.csproj", "{56F36655-4FEB-4105-89AD-483E82FE73F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Demo", "T4Demo\T4Demo.csproj", "{E01356FF-23B2-453C-90EA-95F92C3A514C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{56F36655-4FEB-4105-89AD-483E82FE73F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56F36655-4FEB-4105-89AD-483E82FE73F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56F36655-4FEB-4105-89AD-483E82FE73F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01356FF-23B2-453C-90EA-95F92C3A514C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01356FF-23B2-453C-90EA-95F92C3A514C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01356FF-23B2-453C-90EA-95F92C3A514C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01356FF-23B2-453C-90EA-95F92C3A514C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,5 +118,6 @@ Global
 		{4746786F-9E42-4513-8714-13D5A125A95A} = {67B3A07C-C067-4385-8C3A-F716EE1EE12F}
 		{19429DD4-38AD-40EF-8B3B-899D32A232F5} = {67B3A07C-C067-4385-8C3A-F716EE1EE12F}
 		{56F36655-4FEB-4105-89AD-483E82FE73F8} = {67B3A07C-C067-4385-8C3A-F716EE1EE12F}
+		{E01356FF-23B2-453C-90EA-95F92C3A514C} = {67B3A07C-C067-4385-8C3A-F716EE1EE12F}
 	EndGlobalSection
 EndGlobal

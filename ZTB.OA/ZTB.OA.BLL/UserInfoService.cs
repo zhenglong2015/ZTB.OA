@@ -13,6 +13,13 @@ namespace ZTB.OA.BLL
 {
     public class UserInfoService: BaseService<UserInfo>, IUserInfoService
     {
+        public  IDbSession DbSession { get; set; }
+
+        //public UserInfoService(IDbSession dbSession):base(dbSession)
+        //{
+        //  //  DbSession = dbSession;
+        //}
+
         //菜鸟级别
         //UserInfoDal userInfoDal = new UserInfoDal();
         //IUserInfoDal userInfoDal =  new UserInfoDal();//依赖接口编程
@@ -23,9 +30,9 @@ namespace ZTB.OA.BLL
         //更高级 Ioc DI 依赖注入
         //IDbSession dbSession = DbSessionFactory.GetCurrentDbSession();
 
-        public override void SetCurrentDal()
-        {
-            CurrentDal = DbSession.UserInfoDal;
-        }
+        //public override void SetCurrentDal()
+        //{
+        //    CurrentDal = DbSession.UserInfoDal;
+        //}
     }
 }

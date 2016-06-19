@@ -6,3 +6,11 @@ E:\测试\OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapper.xml
 E:\测试\OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.exe
 E:\测试\OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.pdb
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapperDemo.exe.config
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapperDemo.exe
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapperDemo.pdb
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapper.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapper.xml
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.csprojResolveAssemblyReference.cache
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.exe
+E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.pdb
