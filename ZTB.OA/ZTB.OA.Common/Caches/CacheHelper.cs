@@ -15,7 +15,7 @@ namespace ZTB.OA.Common.Caches
     {
         public static Queue<Dictionary<string, object>> cacheQueue = new Queue<Dictionary<string, object>>();
 
-        static HttpRuntimeCache hrc = new HttpRuntimeCache();
+        public static HttpRuntimeCache hrc = new HttpRuntimeCache();
 
         static CacheHelper()
         {
