@@ -59,6 +59,7 @@ using System.Linq;
 
  public partial class StaticFactory
 {   
+//TODO 此处需要增加缓存
 	static  string assemblyName = System.Configuration.ConfigurationManager.AppSettings["DalAssemblyName"];
 <#
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
