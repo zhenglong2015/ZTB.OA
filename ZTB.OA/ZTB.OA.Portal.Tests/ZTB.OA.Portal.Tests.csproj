@@ -64,6 +64,10 @@
       <Project>{34DE48BF-B3EE-46A0-AFDF-75DEABB4AC18}</Project>
       <Name>ZTB.OA.EFDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZTB.OA.IDAL\ZTB.OA.IDAL.csproj">
+      <Project>{81D577C5-34C6-4DDC-9BC4-31C999A909BB}</Project>
+      <Name>ZTB.OA.IDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZTB.OA.Model\ZTB.OA.Model.csproj">
       <Project>{d2ecdb25-b287-45af-90a0-f4a81cdd7a86}</Project>
       <Name>ZTB.OA.Model</Name>

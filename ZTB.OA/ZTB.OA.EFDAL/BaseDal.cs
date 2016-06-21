@@ -43,7 +43,7 @@ namespace ZTB.OA.EFDAL
         public T Add(T entity)
         {
             Db.Set<T>().Add(entity);
-            //Db.SaveChanges();
+           // Db.SaveChanges();
             return entity;
         }
 

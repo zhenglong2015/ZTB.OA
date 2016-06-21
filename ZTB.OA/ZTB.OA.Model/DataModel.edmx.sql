@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/15/2016 21:41:57
--- Generated from EDMX file: E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Model\DataModel.edmx
+-- Date Created: 06/21/2016 08:22:22
+-- Generated from EDMX file: E:\测试\OA\ZTB.OA\ZTB.OA.Model\DataModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -51,6 +51,12 @@ CREATE TABLE [dbo].[OrderInfo] (
 );
 GO
 
+-- Creating table 'RoleInfo'
+CREATE TABLE [dbo].[RoleInfo] (
+    [Id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -64,6 +70,12 @@ GO
 -- Creating primary key on [Id] in table 'OrderInfo'
 ALTER TABLE [dbo].[OrderInfo]
 ADD CONSTRAINT [PK_OrderInfo]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'RoleInfo'
+ALTER TABLE [dbo].[RoleInfo]
+ADD CONSTRAINT [PK_RoleInfo]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

@@ -34,3 +34,5 @@ E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\EntityFramework.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.IBLL.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.IBLL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.IBLL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.IBLL.pdb

@@ -40,7 +40,7 @@ namespace ZTB.OA.BLL
 {	
 	public class <#=entity.Name#>Service: BaseService<<#=entity.Name#>>, I<#=entity.Name#>Service
     {
-        public  IDbSession DbSession { get; set; }
+      //  public  IDbSession DbSession { get; }
     }
 }
 <#

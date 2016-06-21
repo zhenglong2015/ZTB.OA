@@ -6,16 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZTB.OA.Model;
+using ZTB.OA.IDAL;
 
 namespace ZTB.OA.EFDAL.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class UserInfoDalTests
     {
         [TestMethod()]
         public void GetUsersTest()
         {
-            UserInfoDal dal = new UserInfoDal();
+            IUserInfoDal dal = new UserInfoDal();
             //单元测试必须自己处理数据，不能依赖第三方数据
 
             for (int i = 0; i < 10; i++)

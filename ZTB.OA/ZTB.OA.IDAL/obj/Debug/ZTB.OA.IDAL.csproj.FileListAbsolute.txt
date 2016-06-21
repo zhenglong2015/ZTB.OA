@@ -24,3 +24,7 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\ZTB.OA.IDAL.dll.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\EntityFramework.SqlServer.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\EntityFramework.SqlServer.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\ZTB.OA.IDAL.dll.config
+E:\测试\OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.IDAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

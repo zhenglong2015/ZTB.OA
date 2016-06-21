@@ -20,17 +20,8 @@ namespace ZTB.OA.BLL
 
         public IDbSession DbSession
         {
-            get; set;
-            //get { return DbSessionFactory.GetCurrentDbSession(); }
+            get;set;
         }
-
-        //public BaseService(IDbSession dbSession)
-        //{
-        //    DbSession = dbSession;
-        //    // SetCurrentDal();
-        //}
-
-     //   public abstract void SetCurrentDal();//抽象方法，子类必须实现
 
 
         #region 查询
