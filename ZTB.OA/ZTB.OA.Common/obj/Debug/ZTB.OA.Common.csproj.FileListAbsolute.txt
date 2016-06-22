@@ -11,3 +11,6 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.pdb
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4.config
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.csprojResolveAssemblyReference.cache
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4.config
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4net.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4net.xml

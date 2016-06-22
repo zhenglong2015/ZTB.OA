@@ -104,6 +104,10 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -454,6 +458,7 @@
     <Content Include="Lib\Spring.Core.xml" />
     <Content Include="Lib\Spring.Web.Extensions.dll" />
     <Content Include="Lib\Spring.Web.Mvc.dll" />
+    <Content Include="Lib\System.Web.Optimization.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

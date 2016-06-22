@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logs\SqlServerWrite.cs" />
     <Compile Include="Logs\TextWrite.cs" />
+    <Compile Include="ValidateCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4.config">
