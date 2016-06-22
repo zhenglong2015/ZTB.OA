@@ -8,9 +8,13 @@ namespace ZTB.OA.Common
 {
     public class TextWrite : ILogWrite
     {
-        public void WriteLogInfo(string str)
+        public void Error(string message)
         {
-          
+            throw new NotImplementedException();
+        }
+        public void Info(string message)
+        {
+            throw new NotImplementedException();
         }
     }
 }

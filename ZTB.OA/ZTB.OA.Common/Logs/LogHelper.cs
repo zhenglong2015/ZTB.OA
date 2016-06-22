@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -10,14 +11,14 @@ namespace ZTB.OA.Common
 {
     public class LogHelper
     {
-        public static Queue<string> ExceptionStringQueue = new Queue<string>();
-        public static List<ILogWrite> logWriteList = new List<ILogWrite>();
+        public static Queue<ExceptionClass> ExceptionStringQueue = new Queue<ExceptionClass>();
+        public static IList<ILogWrite> logWriteList = new List<ILogWrite>();
 
         static LogHelper()
         {
             //logWriteList.Add(new TextWrite());
             //logWriteList.Add(new SqlServerWrite());
-            logWriteList.Add(new Log4NetWrite());
+            logWriteList.Add(LoggingFactory.GetDefaultLogger());
 
             ThreadPool.QueueUserWorkItem(o =>
             {
@@ -26,10 +27,13 @@ namespace ZTB.OA.Common
                     if (ExceptionStringQueue.Count > 0)
                     {
                         //从队列中读取日志信息
-                        string str = ExceptionStringQueue.Dequeue();
+                        ExceptionClass exc = ExceptionStringQueue.Dequeue();
                         foreach (var item in logWriteList)
                         {
-                            item.WriteLogInfo(str);
+                            if (exc.Type == ExceptionType.Error)
+                                item.Error(exc.Message);
+                            else
+                                item.Info(exc.Message);
                         }
                     }
                     else
@@ -39,9 +43,31 @@ namespace ZTB.OA.Common
                 }
             });
         }
-        public static void WriteLog(string exceptionText)
+        public static void WriteErrorLog(string exceptionText)
         {
-            ExceptionStringQueue.Enqueue(exceptionText);
+            ExceptionStringQueue.Enqueue(new ExceptionClass() { Type = ExceptionType.Error, Message = exceptionText });
+        }
+
+        public static void WriteInfoLog(string exceptionText)
+        {
+            ExceptionStringQueue.Enqueue(new ExceptionClass() { Type = ExceptionType.Info, Message = exceptionText });
+        }
+
+        /// <summary>
+        /// 异常信息
+        /// </summary>
+        public class ExceptionClass
+        {
+            public ExceptionType Type { get; set; }
+            public string Message { get; set; }
+        }
+        /// <summary>
+        /// 错误消息枚举
+        /// </summary>
+        public enum ExceptionType
+        {
+            Info,
+            Error
         }
     }
 }

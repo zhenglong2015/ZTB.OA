@@ -12,7 +12,7 @@ namespace ZTB.OA.Portal.Models
         {
             base.OnException(filterContext);
             //自己处理异常信息
-            Common.LogHelper.WriteLog(filterContext.Exception.ToString());
+            Common.LogHelper.WriteErrorLog(filterContext.Exception.ToString());
         }
     }
 }

@@ -10,15 +10,13 @@ using Spring.Web.Mvc;
 
 namespace ZTB.OA.Portal
 {
-    public class MvcApplication : SpringMvcApplication
+    public class MvcApplication :HttpApplication// SpringMvcApplication
     {
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
-            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4.config"));
         }
     }
 }

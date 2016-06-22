@@ -15,12 +15,23 @@ using log4net;
 
 namespace ZTB.OA.Common.Logs
 {
-    public class Log4NetWrite : ILogWrite
+    public  class Log4NetWrite : ILogWrite
     {
-        public void WriteLogInfo(string str)
+      private readonly  ILog logger = LogManager.GetLogger("Log4Net");
+       
+        public Log4NetWrite()
         {
-            ILog logger = LogManager.GetLogger("Log4Net");
-            logger.Error(str);
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.BaseDirectory + @"bin\log4.config"));
+        }
+
+        public void Error(string message)
+        {
+            logger.Error(message);
+        }
+
+        public void Info(string message)
+        {
+            logger.Info(message);
         }
     }
 }

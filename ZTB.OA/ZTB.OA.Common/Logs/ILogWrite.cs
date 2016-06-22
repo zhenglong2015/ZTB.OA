@@ -8,6 +8,7 @@ namespace ZTB.OA.Common
 {
     public interface ILogWrite
     {
-        void WriteLogInfo(string str);
+        void Info(string message);
+        void Error(string message);
     }
 }
