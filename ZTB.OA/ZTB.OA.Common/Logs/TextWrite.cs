@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZTB.OA.Common
+namespace ZTB.OA.Common.Logs
 {
     public class TextWrite : ILogWrite
     {

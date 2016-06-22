@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ZTB.OA.Common.Logs;
 
-namespace ZTB.OA.Common
+namespace ZTB.OA.Common.Logs
 {
     public class LogHelper
     {
