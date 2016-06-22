@@ -147,3 +147,4 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\Spring.Web.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\Spring.Aop.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\Spring.Web.Mvc.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\Spring.Aop.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.Portal\bin\log4.config

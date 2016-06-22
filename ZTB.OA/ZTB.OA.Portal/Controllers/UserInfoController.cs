@@ -15,8 +15,6 @@ namespace ZTB.OA.Portal.Controllers
 
         public ActionResult Index()
         {
-            throw new Exception("ssssss");
-
             ViewData.Model = UserInfoService.GetEntities(t => true).ToList();
             return View();
         }
