@@ -11,44 +11,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>智恒后台管理系统登录</title>
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link href="~/Content/hplus1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/hplus1/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/hplus1/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/hplus1/css/style.min.css" rel="stylesheet" />
     <base target="_blank">
     <!--[if lt IE 8]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+    </script>
+    <style>
+        #fengche {
+            position: fixed;
+            bottom: 10px;
+            right: 30px;
+        }
+    </style>
 </head>
-<body class="gray-bg">
+<body class="gray-bg" style="background-image: url('http://img.infinitynewtab.com/wallpaper/3261.jpg')">
     <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
-            <div>
-                <h1 class="logo-name">智恒</h1>
-            </div>
-            <h3>欢迎使用智恒后台管理系统</h3>
-            <form class="m-t" role="form" action="@Url.Action("")">
+            <h1 class="logo-name">ZH</h1>
+        </div>
+        <div>
+            <h3>智恒后台管理系统</h3>
+            <form role="form" action="@Url.Action("")">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="用户名" required="">
+                    <input type="email" class="form-control" placeholder="用户名" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="密码" required="">
+                    <input type="password" class="form-control" placeholder="密码" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="验证码" required="">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" maxlength="4" placeholder="验证码" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-responsive" alt="code" src="">
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
-
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                </div>
                 <p class="text-muted text-center">
                     <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
                 </p>
             </form>
         </div>
     </div>
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.5"></script>
-    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+    <div id="fengche">
+        <img src="~/Content/imgs/fengche.png" class="img-responsive"/>
+    </div>
+    <script src="~/Content/hplus1/js/jquery.min.js"></script>
+    <script src="~/Content/hplus1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready({
+
+        });
+
+    </script>
+
 </body>
 </html>
