@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ZTB.OA.Common.Logs;
 
 namespace ZTB.OA.Common
 {
@@ -14,18 +15,26 @@ namespace ZTB.OA.Common
 
         static LogHelper()
         {
-            logWriteList.Add(new TextWrite());
-            logWriteList.Add(new SqlServerWrite());
+            //logWriteList.Add(new TextWrite());
+            //logWriteList.Add(new SqlServerWrite());
+            logWriteList.Add(new Log4NetWrite());
 
             ThreadPool.QueueUserWorkItem(o =>
             {
                 lock (ExceptionStringQueue)
                 {
-                    //从队列中读取日志信息
-                    string str = ExceptionStringQueue.Dequeue();
-                    foreach (var item in logWriteList)
+                    if (ExceptionStringQueue.Count > 0)
                     {
-                        item.WriteLogInfo(str);
+                        //从队列中读取日志信息
+                        string str = ExceptionStringQueue.Dequeue();
+                        foreach (var item in logWriteList)
+                        {
+                            item.WriteLogInfo(str);
+                        }
+                    }
+                    else
+                    {
+                        Thread.Sleep(30);
                     }
                 }
             });

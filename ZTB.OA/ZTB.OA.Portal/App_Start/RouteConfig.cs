@@ -18,6 +18,12 @@ namespace ZTB.OA.Portal
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+             name: "*",
+             url: "*",
+             defaults: new { controller = "UserInfo", action = "Create" }
+         );
         }
     }
 }
