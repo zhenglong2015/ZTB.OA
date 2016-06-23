@@ -462,6 +462,11 @@
     <Content Include="Lib\Spring.Web.Extensions.dll" />
     <Content Include="Lib\Spring.Web.Mvc.dll" />
     <Content Include="Lib\System.Web.Optimization.dll" />
+    <None Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
