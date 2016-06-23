@@ -37,7 +37,7 @@ namespace ZTB.OA.Portal.Controllers
 
         public ActionResult Login(string userName, string pwd, string vcode)
         {
-            if (string.IsNullOrEmpty(vcode))
+            if (string.IsNullOrEmpty(vcode) || Session["Vcode"] == null)
             {
                 return Content("验证码有误！");
             }
@@ -45,16 +45,13 @@ namespace ZTB.OA.Portal.Controllers
             {
                 return Content("验证码有误！");
             }
-
-            //  var user = UserInfoService.GetEntities(u => u.UName == userName && u.Pwd == pwd).FirstOrDefault();
-            UserInfo user = null;
+            Session["Vcode"] = null;
+            var user = UserInfoService.GetEntities(u => u.UName == userName && u.Pwd == pwd).FirstOrDefault();
             if (user == null)
-            {
-                return RedirectToAction("Index", "UserInfo");
                 return Content("用户名或密码错误！");
-            }
             else
-                return RedirectToAction("UserInfo", "Index");
+                return Content("Ok");
+         
 
         }
     }

@@ -484,7 +484,6 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\UserInfo\Index.cshtml" />
-    <Content Include="Views\UserInfo\Create.cshtml" />
     <Content Include="Content\hplus1\.DS_Store" />
     <Content Include="Content\hplus1\._.DS_Store" />
     <Content Include="Content\hplus1\css\plugins\footable\fonts\footable.eot" />
@@ -506,6 +505,7 @@
     <Content Include="Content\hplus1\js\plugins\jqgrid\i18n\grid.locale-cn.js0820" />
     <Content Include="Content\hplus1\js\plugins\jqgrid\jquery.jqGrid.min.js0820" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\UserInfo\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -10,7 +10,7 @@ using Spring.Web.Mvc;
 
 namespace ZTB.OA.Portal
 {
-    public class MvcApplication :HttpApplication// SpringMvcApplication
+    public class MvcApplication : SpringMvcApplication
     {
         protected void Application_Start()
         {

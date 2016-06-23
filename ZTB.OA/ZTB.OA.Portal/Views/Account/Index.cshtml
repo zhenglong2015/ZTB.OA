@@ -15,18 +15,51 @@
     <link href="~/Content/hplus1/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/hplus1/css/animate.min.css" rel="stylesheet" />
     <link href="~/Content/hplus1/css/style.min.css" rel="stylesheet" />
-    <base target="_blank">
-    <!--[if lt IE 8]>
-    <meta http-equiv="refresh" content="0;ie.html" />
-    <![endif]-->
-    <script>
-        if (window.top !== window.self) {
-            window.top.location = window.location;
+   
+    <script src="~/Scripts/jquery-1.4.4.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        //加载背景图片
+        function changebackgroundImage() {
+            var num = Math.floor(1 + Math.random() * (4000));
+            var url = 'http://img.infinitynewtab.com/wallpaper/' + num + '.jpg';
+            $("#body").css('background-image', 'url(' + url + ')');
         }
-
+        function login(data) {
+            if (data == "Ok") {
+                window.location.href = "/UserInfo/Index";
+            } else if (data == "验证码有误！") {
+                alert(data);
+                var old = $("#Vcode").attr('src');
+                $('#Vcode').attr('src', old + "?/r=" + Math.random());
+            } else {
+                alert(data);
+            }
+        }
+        //记载随机背景图
+        $(window).load(function () {
+            changebackgroundImage();
+        });
+       
+        $(document).ready(function () {
+            var clickNum = 0;
+            //更换验证码
+            $('#Vcode').click(function () {
+                var old = $(this).attr('src');
+                $(this).attr('src', old + "?/r=" + Math.random());
+            });
+            //点击风车旋转并更换背景图片
+            $("#fengCheImg").click(function () {
+                clickNum = clickNum + 1;
+                $(this).css('transform', 'rotate(' + 360 * clickNum + 'deg)').css('-moz-transform', 'rotate(' + 360 * clickNum + 'deg)')
+                    .css('-webkit-transform', 'rotate(' + 360 * clickNum + 'deg)').css('-o-transform', 'rotate(' + 360 * clickNum + 'deg)');
+                changebackgroundImage();
+            });
+        });
     </script>
 </head>
-<body id="body" class="gray-bg" style="background-size: cover;background-attachment: fixed;background-position: center;background-repeat: no-repeat;">
+<body id="body" class="gray-bg" style="background-size: cover;background-attachment: fixed;
+background-position: center;background-repeat: no-repeat; ">
     <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
             <h1 class="logo-name">ZH</h1>
@@ -51,57 +84,20 @@
                             <input type="text" class="form-control" name="vcode" maxlength="4" placeholder="验证码" required>
                         </div>
                         <div class="col-xs-6">
-                            <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode", new {r = DateTime.Now})">
+                            <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode")">
                         </div>
                     </div>
                 </div>
                 <div class="form-group ">
                     <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
                 </div>
-                <p class="text-muted text-center">
-                    <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
-                </p>
             }
         </div>
     </div>
     <div id="fengChe">
         <img id="fengCheImg" src="@Url.Content("/Content/imgs/fengche.png")" style="width: 50px; height: 50px; position: fixed; right: 10px; bottom: 10px; z-index:10;
                                                                                                                         -moz-transition: -moz-transform 1s; -webkit-transition: -webkit-transform 1s; -o-transition: -o-transform 1s" />
-        <img src="@Url.Content("/Content/imgs/wind.png")"  style="width: 50px; height: 50px; position: fixed; right: 10px; bottom:-10px" />
-    </div>
-    <script src="~/Content/hplus1/js/jquery.min.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script type="text/javascript">
-        //加载背景图片
-        function changebackgroundImage() {
-            var num = Math.floor(1 + Math.random() * (4000));
-            var url = 'http://img.infinitynewtab.com/wallpaper/' + num + '.jpg';
-            document.getElementById("body").style.backgroundImage = "url(" + url + ")";
-        }
-        //记载随机背景图
-        $(window).load(function () {
-            changebackgroundImage();
-        });
-        //更换验证码
-        $(document).ready(function () {
-            var clickNum = 0;
-            $('#Vcode').click(function () {
-                var old = $(this).attr('src');
-                $(this).attr('src', old + '1');
-            });
-            //点击风车旋转并更换背景图片
-            $("#fengCheImg").click(function () {
-                clickNum = clickNum + 1;
-                $(this).css('transform', 'rotate(' + 360 * clickNum + 'deg)').css('-moz-transform', 'rotate(' + 360 * clickNum + 'deg)')
-                    .css('-webkit-transform', 'rotate(' + 360 * clickNum + 'deg)').css('-o-transform', 'rotate(' + 360 * clickNum + 'deg)');
-                changebackgroundImage();
-            });
-            function login(data) {
-                if (data != "Ok") {
-                    alert(data);
-                }
-            }
-        });
-    </script>
+        <img src="@Url.Content("/Content/imgs/wind.png")" style="width: 50px; height: 50px; position: fixed; right: 10px; bottom:-10px" />
+    </div>    
 </body>
 </html>
