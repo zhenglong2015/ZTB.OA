@@ -8,7 +8,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.Portal.Controllers
 {
-    public class UserInfoController : Controller
+    public class UserInfoController : BaseController
     {
         // GET: UserInfo
        public IUserInfoService UserInfoService { get; set; }

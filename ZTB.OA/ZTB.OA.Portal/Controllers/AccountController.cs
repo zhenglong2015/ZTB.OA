@@ -49,9 +49,10 @@ namespace ZTB.OA.Portal.Controllers
             var user = UserInfoService.GetEntities(u => u.UName == userName && u.Pwd == pwd).FirstOrDefault();
             if (user == null)
                 return Content("用户名或密码错误！");
-            else
+            else {
+                Session["LoginUser"] = user;
                 return Content("Ok");
-         
+            }
 
         }
     }
