@@ -34,34 +34,39 @@
         <div>
             <h3>智恒后台管理系统</h3>
             @using (Ajax.BeginForm("Login", new AjaxOptions()
-                {
-                    HttpMethod = "Post",
-                    OnSuccess = "login"
-            })) {
-            <div class="form-group">
-                <input type="text" class="form-control" name="userName" placeholder="用户名" required>
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="pwd" placeholder="密码" required>
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="vcode" maxlength="4" placeholder="验证码" required>
-                    </div>
-                    <div class="col-sm-6">
-                        <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode", new { r = DateTime.Now })">
+            {
+                HttpMethod = "Post",
+                OnSuccess = "login"
+            }))
+            {
+                <div class="form-group">
+                    <input type="text" class="form-control" name="userName" placeholder="用户名" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="pwd" placeholder="密码" required>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="vcode" maxlength="4" placeholder="验证码" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode", new {r = DateTime.Now})">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group ">
-                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
-            </div>
-            <p class="text-muted text-center">
-                <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
-            </p>
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                </div>
+                <p class="text-muted text-center">
+                    <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
+                </p>
             }
         </div>
+    </div>
+    <div id="fengChe">
+        <img id="fengCheImg" src="~/Content/imgs/fengche.png" style="width:50px; height :50px; position:fixed ; right:10px; bottom: 20px;
+   -moz-transition: -moz-transform 1s;-webkit-transition: -webkit-transform 1s; -o-transition:  -o-transform 1s " />
     </div>
     <script src="~/Content/hplus1/js/jquery.min.js"></script>
     @*<script src="~/Content/hplus1/js/bootstrap.min.js"></script>*@
@@ -78,16 +83,18 @@
         });
         //更换验证码
         $(document).ready(function () {
+            var clickNum = 0;
             $('#Vcode').click(function () {
                 var old = $(this).attr('src');
                 $(this).attr('src', old + '1');
-                return false;
             });
-            //更换背景图片
-            $("body").dblclick(function () {
+            //点击风车旋转并更换背景图片
+            $("#fengCheImg").click(function () {
+                clickNum = clickNum + 1;
+                $(this).css('transform', 'rotate(' + 360 * clickNum + 'deg)').css('-moz-transform', 'rotate(' + 360 * clickNum + 'deg)')
+                    .css('-webkit-transform', 'rotate(' + 360 * clickNum + 'deg)').css('-o-transform', 'rotate(' + 360 * clickNum + 'deg)');
                 changebackgroundImage();
             });
-
             function login(data) {
                 if (data != "Ok") {
                     alert(data);
