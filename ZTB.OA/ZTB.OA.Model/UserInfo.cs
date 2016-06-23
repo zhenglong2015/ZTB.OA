@@ -31,6 +31,10 @@ public partial class UserInfo
 
     public string UName { get; set; }
 
+    public string Pwd { get; set; }
+
+    public string IsDel { get; set; }
+
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

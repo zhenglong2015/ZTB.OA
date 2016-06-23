@@ -16,6 +16,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UName" Type="String" Nullable="true" MaxLength="64" />
     <NavigationProperty Name="OrderInfo" Relationship="DataModel.UserInfoOrderInfo" FromRole="UserInfo" ToRole="OrderInfo" />
+    <Property Name="Pwd" Type="String" Nullable="false" />
+    <Property Name="IsDel" Type="String" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderInfo">
     <Key>

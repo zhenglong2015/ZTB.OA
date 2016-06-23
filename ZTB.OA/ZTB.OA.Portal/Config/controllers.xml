@@ -5,4 +5,8 @@
     <property name="UserInfoService" ref="UserInfoService"/>
   </object>
 
+  <object type="ZTB.OA.Portal.Controllers.AccountController, ZTB.OA.Portal" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
+  </object>
+
 </objects>

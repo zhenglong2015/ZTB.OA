@@ -25,52 +25,46 @@
         }
 
     </script>
-    <style>
-        #fengche {
-            position: fixed;
-            bottom: 10px;
-            right: 30px;
-        }
-    </style>
 </head>
-<body id="body" class="gray-bg" style=" background-size: 100%,100%">
+<body id="body" class="gray-bg" style="background-size: 100%,100%">
     <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
             <h1 class="logo-name">ZH</h1>
         </div>
         <div>
             <h3>智恒后台管理系统</h3>
-            <form role="form" action="@Url.Action("")">
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="用户名" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="密码" required>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" maxlength="4" placeholder="验证码" required>
-                        </div>
-                        <div class="col-sm-6">
-                            <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode", new { r = DateTime.Now })">
-                        </div>
+            @using (Ajax.BeginForm("Login", new AjaxOptions()
+                {
+                    HttpMethod = "Post",
+                    OnSuccess = "login"
+            })) {
+            <div class="form-group">
+                <input type="text" class="form-control" name="userName" placeholder="用户名" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="pwd" placeholder="密码" required>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="vcode" maxlength="4" placeholder="验证码" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode", new { r = DateTime.Now })">
                     </div>
                 </div>
-                <div class="form-group ">
-                    <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
-                </div>
-                <p class="text-muted text-center">
-                    <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
-                </p>
-            </form>
+            </div>
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+            </div>
+            <p class="text-muted text-center">
+                <a href="login.html#"><small>忘记密码了？</small></a> | <a href="register.html">注册一个新账号</a>
+            </p>
+            }
         </div>
     </div>
-    <div id="fengche">
-        <img id="fengCheImg" src="@Url.Content("/Content/imgs/fengche.png")" class="img-responsive" style="width:50px; height:50px" />
-    </div>
     <script src="~/Content/hplus1/js/jquery.min.js"></script>
-    <script src="~/Content/hplus1/js/bootstrap.min.js"></script>
+    @*<script src="~/Content/hplus1/js/bootstrap.min.js"></script>*@
     <script type="text/javascript">
         //加载背景图片
         function changebackgroundImage() {
@@ -78,22 +72,27 @@
             var url = 'http://img.infinitynewtab.com/wallpaper/' + num + '.jpg';
             document.getElementById("body").style.backgroundImage = "url(" + url + ")";
         }
-        window.onload = function () {
+        //记载随机背景图
+        $(window).load(function () {
             changebackgroundImage();
-        };
+        });
         //更换验证码
         $(document).ready(function () {
             $('#Vcode').click(function () {
                 var old = $(this).attr('src');
                 $(this).attr('src', old + '1');
+                return false;
             });
             //更换背景图片
-            $("#fengCheImg").click(function () {
+            $("body").dblclick(function () {
                 changebackgroundImage();
             });
 
-       
-
+            function login(data) {
+                if (data != "Ok") {
+                    alert(data);
+                }
+            }
         });
     </script>
 

@@ -6,6 +6,8 @@
         <MappingFragment StoreEntitySet="UserInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="IsDel" ColumnName="IsDel" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

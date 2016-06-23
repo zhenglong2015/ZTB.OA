@@ -20,6 +20,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UName" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="Pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDel" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderInfo">
     <Key>
@@ -67,6 +69,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UName" Type="String" Nullable="true" MaxLength="64" />
           <NavigationProperty Name="OrderInfo" Relationship="DataModel.UserInfoOrderInfo" FromRole="UserInfo" ToRole="OrderInfo" />
+          <Property Name="Pwd" Type="String" Nullable="false" />
+          <Property Name="IsDel" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderInfo">
           <Key>
@@ -106,6 +110,8 @@
         <MappingFragment StoreEntitySet="UserInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="IsDel" ColumnName="IsDel" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

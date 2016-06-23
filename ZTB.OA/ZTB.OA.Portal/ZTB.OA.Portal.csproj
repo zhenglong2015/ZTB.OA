@@ -148,6 +148,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\imgs\fengche.png" />
+    <Content Include="Content\js\jquery.rotate.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\hplus1\404.html" />
     <Content Include="Content\hplus1\500.html" />

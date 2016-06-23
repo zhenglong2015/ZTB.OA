@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
-    <Compile Include="IRoleInfoDal.cs">
+    <Compile Include="IOrderInfoService.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRoleInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="ISevice.cs">
@@ -51,10 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
-    <Compile Include="IOrderInfoDal.cs">
-      <DependentUpon>ISevice.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IUserInfoDal.cs">
+    <Compile Include="IUserInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
