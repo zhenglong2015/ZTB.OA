@@ -15,16 +15,11 @@
     <link href="~/Content/hplus1/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/hplus1/css/animate.min.css" rel="stylesheet" />
     <link href="~/Content/hplus1/css/style.min.css" rel="stylesheet" />
-   
+
     <script src="~/Scripts/jquery-1.4.4.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
     <script type="text/javascript">
-        //加载背景图片
-        function changebackgroundImage() {
-            var num = Math.floor(1 + Math.random() * (4000));
-            var url = 'http://img.infinitynewtab.com/wallpaper/' + num + '.jpg';
-            $("#body").css('background-image', 'url(' + url + ')');
-        }
         function login(data) {
             if (data == "Ok") {
                 window.location.href = "/UserInfo/Index";
@@ -38,9 +33,15 @@
         }
         //记载随机背景图
         $(window).load(function () {
-            changebackgroundImage();
+            var imgNum = $.cookie("imgNum");//取出上次保存的背景图的ID
+            if (imgNum == "" || imgNum == null) {
+                imgNum = Math.floor(1 + Math.random() * (4000));
+            }
+            var url = 'http://img.infinitynewtab.com/wallpaper/' + imgNum + '.jpg';
+            $("#body").css('background-image', 'url(' + url + ')');
+            $.cookie("imgNum", imgNum, { expires: 1 });
         });
-       
+
         $(document).ready(function () {
             var clickNum = 0;
             //更换验证码
@@ -53,7 +54,10 @@
                 clickNum = clickNum + 1;
                 $(this).css('transform', 'rotate(' + 360 * clickNum + 'deg)').css('-moz-transform', 'rotate(' + 360 * clickNum + 'deg)')
                     .css('-webkit-transform', 'rotate(' + 360 * clickNum + 'deg)').css('-o-transform', 'rotate(' + 360 * clickNum + 'deg)');
-                changebackgroundImage();
+                var imgNum = Math.floor(1 + Math.random() * (4000));
+                var url = 'http://img.infinitynewtab.com/wallpaper/' + imgNum + '.jpg';
+                $("#body").css('background-image', 'url(' + url + ')');
+                $.cookie("imgNum", imgNum, { expires: 1 });
             });
         });
     </script>
@@ -98,6 +102,6 @@ background-position: center;background-repeat: no-repeat; ">
         <img id="fengCheImg" src="@Url.Content("/Content/imgs/fengche.png")" style="width: 50px; height: 50px; position: fixed; right: 10px; bottom: 10px; z-index:10;
                                                                                                                         -moz-transition: -moz-transform 1s; -webkit-transition: -webkit-transform 1s; -o-transition: -o-transform 1s" />
         <img src="@Url.Content("/Content/imgs/wind.png")" style="width: 50px; height: 50px; position: fixed; right: 10px; bottom:-10px" />
-    </div>    
+    </div>
 </body>
 </html>

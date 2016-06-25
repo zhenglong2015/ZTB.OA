@@ -22,7 +22,10 @@ namespace ZTB.OA.Portal.Controllers
             if (IsCheckLogin)
             {
                 if (filterContext.HttpContext.Session["LoginUser"] == null)
+                {
                     filterContext.HttpContext.Response.Redirect("/Account/Index");
+                    return;
+                }
             }
             UserInfo = filterContext.HttpContext.Session["LoginUser"] as UserInfo;
         }
