@@ -12,6 +12,7 @@ namespace ZTB.OA.Model
     using System;
     using System.Collections.Generic;
     
+    [Serializable]
     public partial class RoleInfo
     {
         public int Id { get; set; }

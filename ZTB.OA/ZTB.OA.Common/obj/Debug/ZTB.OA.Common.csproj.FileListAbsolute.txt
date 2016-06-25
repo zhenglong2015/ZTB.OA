@@ -10,6 +10,11 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ZTB.OA.Common.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ZTB.OA.Common.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4net.dll
-E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\log4net.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.pdb
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Memcached.ClientLibrary.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Common.Logging.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.xml
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.csprojResolveAssemblyReference.cache

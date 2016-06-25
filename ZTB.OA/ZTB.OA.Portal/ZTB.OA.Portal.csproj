@@ -131,6 +131,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\common.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config\dal.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

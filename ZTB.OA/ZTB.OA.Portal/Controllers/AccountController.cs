@@ -48,14 +48,14 @@ namespace ZTB.OA.Portal.Controllers
             var user = UserInfoService.GetEntities(u => u.UName == userName && u.Pwd == pwd).FirstOrDefault();
             if (user == null)
                 return Content("用户名或密码错误！");
-            else {
-                Session["LoginUser"] = user;
+            else
+            {
+                string userId = Guid.NewGuid().ToString();
+                Common.Caches.CacheHelper.InsertCache(userId, user);
+
+                Response.Cookies["LoginUser"].Value = userId;//网客户端写Cookie
                 return Content("Ok");
             }
-
         }
     }
-
-
-
 }

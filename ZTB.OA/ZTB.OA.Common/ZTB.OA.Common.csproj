@@ -41,9 +41,20 @@
       <HintPath>..\packages\CacheManager.Web.0.8.0\lib\net45\CacheManager.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Memcached.ClientLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42c0400964dcc297, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Memcached.ClientLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\ZTB.OA.Portal\Lib\Spring.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -61,6 +72,7 @@
     <Compile Include="Caches\CacheHelper.cs" />
     <Compile Include="Caches\HttpRuntimeCache.cs" />
     <Compile Include="Caches\ICache.cs" />
+    <Compile Include="Caches\MemCache.cs" />
     <Compile Include="Logs\ILogWrite.cs" />
     <Compile Include="Logs\Log4NetWrite.cs" />
     <Compile Include="Logs\LoggingFactory.cs" />
@@ -71,6 +83,10 @@
     <Compile Include="ValidateCode.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Lib\Commons.dll" />
+    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Lib\log4net.dll" />
+    <Content Include="Lib\Memcached.ClientLibrary.dll" />
     <Content Include="log4.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

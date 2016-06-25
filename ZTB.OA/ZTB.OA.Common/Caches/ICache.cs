@@ -10,6 +10,5 @@ namespace ZTB.OA.Common.Caches
     {
         void Insert(string key, object obj, int expires = 20);
         object Get(string key);
-        T Get<T>(string key);
     }
 }

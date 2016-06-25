@@ -138,7 +138,6 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Web.Webpages.Deploy
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Web.Webpages.Razor.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Web.Helpers.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Web.Mvc.xml
-E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\log4net.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\EntityFramework.resources.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Razor.resources.dll
@@ -152,3 +151,6 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\obj\Debug\ZTB.OA.Portal.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\obj\Debug\ZTB.OA.Portal.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.BLL.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.BLL.pdb
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Config\common.xml
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Memcached.ClientLibrary.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ICSharpCode.SharpZipLib.dll

@@ -5,6 +5,8 @@ using System.Text;
 using System.Web.Caching;
 using System.Web;
 using System.Threading;
+using Spring.Context;
+using Spring.Context.Support;
 
 namespace ZTB.OA.Common.Caches
 {
@@ -13,32 +15,22 @@ namespace ZTB.OA.Common.Caches
     /// </summary>
     public class CacheHelper
     {
-        public static Queue<Dictionary<string, object>> cacheQueue = new Queue<Dictionary<string, object>>();
-
-        public static HttpRuntimeCache hrc = new HttpRuntimeCache();
+        public static ICache CacheWriter { get; set; }
 
         static CacheHelper()
         {
-            ThreadPool.QueueUserWorkItem(o =>
-            {
-                lock (cacheQueue)
-                {
-                    //从队列中读取日志信息
-                    Dictionary<string, object> dic = cacheQueue.Dequeue();
-                    hrc.Insert(dic.Keys.First(), dic.Values.First());
-                }
-            });
+            IApplicationContext ctx = ContextRegistry.GetContext();
+            ctx.GetObject("CacheHelper");
         }
+      
         public static void InsertCache(string key, object obj)
         {
-            Dictionary<string, object> dic = new Dictionary<string, object>();
-            dic.Add(key, obj);
-            cacheQueue.Enqueue(dic);
+            CacheWriter.Insert(key, obj);
         }
 
         public static object GetCache(string key)
         {
-            return hrc.Get(key);
+            return CacheWriter.Get(key);
         }
 
     }

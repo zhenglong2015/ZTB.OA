@@ -21,13 +21,24 @@ namespace ZTB.OA.Portal.Controllers
             base.OnActionExecuting(filterContext);
             if (IsCheckLogin)
             {
-                if (filterContext.HttpContext.Session["LoginUser"] == null)
+
+                if (Request.Cookies["LoginUser"] == null)
                 {
                     filterContext.HttpContext.Response.Redirect("/Account/Index");
                     return;
                 }
+                string userId = Request.Cookies["LoginUser"].Value;
+                UserInfo userInfo = Common.Caches.CacheHelper.GetCache(userId) as UserInfo;
+                if (userInfo == null)
+                {
+                    //登录超时
+                    filterContext.HttpContext.Response.Redirect("/Account/Index");
+                    return;
+                }
+                UserInfo = userInfo;
+                //滑动窗口机制
+                Common.Caches.CacheHelper.InsertCache(userId, userInfo);
             }
-            UserInfo = filterContext.HttpContext.Session["LoginUser"] as UserInfo;
         }
     }
 }
