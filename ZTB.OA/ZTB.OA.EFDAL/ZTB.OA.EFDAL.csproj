@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionInfoDal.cs">
+      <DependentUpon>Dal.tt</DependentUpon>
+    </Compile>
     <Compile Include="BaseDal.cs" />
     <Compile Include="DbContextFactory.cs" />
     <Compile Include="Dal.cs">
@@ -65,7 +68,13 @@
     <Compile Include="RoleInfoDal.cs">
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
+    <Compile Include="R_UserInfo_ActionInfoDal.cs">
+      <DependentUpon>Dal.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoDal.cs">
+      <DependentUpon>Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoExtDal.cs">
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -13,6 +13,7 @@ namespace ZTB.OA.Web.Models
             base.OnException(filterContext);
             //自己处理异常信息
             Common.Logs.LogHelper.WriteErrorLog(filterContext.Exception.ToString());
+            filterContext.RequestContext.HttpContext.Response.Redirect("Base/Error");
         }
     }
 }

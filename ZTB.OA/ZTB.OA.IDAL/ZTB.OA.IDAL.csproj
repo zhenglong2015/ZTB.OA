@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IActionInfoDal.cs">
+      <DependentUpon>IDal.tt</DependentUpon>
+    </Compile>
     <Compile Include="IBaseDal.cs" />
     <Compile Include="IDal.cs">
       <AutoGen>True</AutoGen>
@@ -68,7 +71,13 @@
     <Compile Include="IRoleInfoDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
+    <Compile Include="IR_UserInfo_ActionInfoDal.cs">
+      <DependentUpon>IDal.tt</DependentUpon>
+    </Compile>
     <Compile Include="IUserInfoDal.cs">
+      <DependentUpon>IDal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IUserInfoExtDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -52,10 +52,14 @@ namespace ZTB.OA.Web.Controllers
             {
                 string userId = Guid.NewGuid().ToString();
                 Common.Caches.CacheHelper.InsertCache(userId, user);
-
                 Response.Cookies["LoginUser"].Value = userId;//网客户端写Cookie
                 return Content("Ok");
             }
+        }
+        public ActionResult LogOut()
+        {
+            Response.Cookies["LoginUser"].Value = null;
+            return RedirectToAction("Login");
         }
     }
 }

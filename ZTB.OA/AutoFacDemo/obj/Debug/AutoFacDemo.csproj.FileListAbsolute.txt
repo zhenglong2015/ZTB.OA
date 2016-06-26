@@ -1,15 +1,3 @@
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\AutoFacDemo.exe.config
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\AutoFacDemo.exe
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\AutoFacDemo.pdb
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\Autofac.Configuration.dll
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\Autofac.dll
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\Autofac.Extras.RegistrationAttributes.dll
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\Autofac.xml
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\bin\Debug\Autofac.Configuration.xml
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\obj\Debug\AutoFacDemo.csprojResolveAssemblyReference.cache
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\obj\Debug\AutoFacDemo.csproj.AutoFacDemo.exe.config
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\obj\Debug\AutoFacDemo.exe
-E:\学习测试项目\ZTB.OA\ZTB.OA\AutoFacDemo\obj\Debug\AutoFacDemo.pdb
 E:\测试\OA\ZTB.OA\AutoFacDemo\bin\Debug\AutoFacDemo.exe.config
 E:\测试\OA\ZTB.OA\AutoFacDemo\bin\Debug\AutoFacDemo.exe
 E:\测试\OA\ZTB.OA\AutoFacDemo\bin\Debug\AutoFacDemo.pdb

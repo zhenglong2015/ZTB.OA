@@ -40,5 +40,9 @@ namespace ZTB.OA.Web.Controllers
                 Common.Caches.CacheHelper.InsertCache(userId, userInfo);
             }
         }
+        public ActionResult Error()
+        {
+            return View();
+        }
     }
 }
