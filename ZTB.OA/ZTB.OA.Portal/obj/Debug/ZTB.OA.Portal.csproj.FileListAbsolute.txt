@@ -127,7 +127,6 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.Model.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\EntityFramework.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\EntityFramework.SqlServer.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Spring.Core.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Net.Http.Formatting.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Web.Http.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\System.Web.Http.Common.xml

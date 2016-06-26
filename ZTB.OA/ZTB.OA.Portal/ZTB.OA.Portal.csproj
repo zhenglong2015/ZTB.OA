@@ -454,7 +454,6 @@
     <Content Include="Content\hplus1\widgets.html" />
     <Content Include="Lib\Common.Logging.dll" />
     <Content Include="Lib\Spring.Core.dll" />
-    <Content Include="Lib\Spring.Core.xml" />
     <Content Include="Lib\Spring.Web.Extensions.dll" />
     <Content Include="Lib\Spring.Web.Mvc.dll" />
     <Content Include="Lib\System.Web.Optimization.dll" />
