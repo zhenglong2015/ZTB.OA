@@ -119,7 +119,6 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.IBLL.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.IDAL.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.Model.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\log4net.dll
-E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Common.Logging.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.Common.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.IBLL.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.IDAL.pdb
@@ -153,3 +152,6 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ZTB.OA.BLL.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Config\common.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\Memcached.ClientLibrary.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\ICSharpCode.SharpZipLib.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Http.resources.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Portal\bin\zh-Hans\System.Web.Http.WebHost.resources.dll

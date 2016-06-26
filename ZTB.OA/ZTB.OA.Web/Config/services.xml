@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+   
+  <object name="UserInfoService" type="ZTB.OA.BLL.UserInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="UserInfoDal"/>    
+  </object>
+  
+   <object name="OrderInfoService" type="ZTB.OA.BLL.OrderInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="OrderInfoDal"/>    
+  </object>
+
+
+</objects>
