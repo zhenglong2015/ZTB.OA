@@ -22,16 +22,11 @@ namespace ZTB.OA.Web.Controllers
 
         public ActionResult CreateValidateCode()
         {
-            ValidateCode vc = new ValidateCode();
-            Bitmap map = vc.CreateValidateCode();
+            var code = ValidateCode.CreateRandomCode(4);
 
-            MemoryStream stream = new MemoryStream();
-            map.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-            stream.Seek(0, 0);
+            Session["Vcode"] = code;
 
-            Session["Vcode"] = vc.strValidateCode;
-
-            return File(stream.ToArray(), @"image/jpeg");
+            return File(ValidateCode.DrawImage(code, 22,Color.White), @"image/jpeg");
         }
         [HttpPost]
         public ActionResult Login(string userName, string pwd, string vcode)

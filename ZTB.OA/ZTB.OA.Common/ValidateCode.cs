@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,91 +13,98 @@ namespace ZTB.OA.Common
     /// <summary>
     ///ValidateCode 的摘要说明
     /// </summary>
-    public class ValidateCode
+    public static class ValidateCode
     {
-        //验证码长度
-        public int codeLen = 4;
-        //图片清晰度
-        public int sightRate = 55;
-        //图片宽度
-        public int imgWidth = 135;
-        //图片高度
-        public int imgHeight = 33;
-        //字体家族名称
-        public string fontFamily = "Times New Roman";
-        //字体大小
-        public int fontSize = 20;
-        //字体样式
-        public int fontStyle = 1;
-        //绘制起始坐标X
-        public int posX = 35;
-        //绘制起始坐标Y
-        public int posY = 0;
-        //生成的验证码
-        public string strValidateCode = null;
-
-        public ValidateCode()
+        /// <summary>  
+        /// 生成随机码  
+        /// </summary>  
+        /// <param  name="length">随机码个数</param>  
+        /// <returns></returns>  
+        public static string CreateRandomCode(int length)
         {
-
+            return Guid.NewGuid().ToString("N").Substring(0, length);
         }
 
-        public Bitmap CreateValidateCode()
+        /// <summary>  
+        /// 创建随机码图片  
+        /// </summary>  
+        /// <param  name="vcode">验证码</param>
+        /// <param name="fontSize">字体大小</param>
+        /// <param name="background">背景颜色</param>
+        /// <param name="border">边框颜色</param>
+        /// <returns>Gif图片二进制流</returns>
+        public static byte[] DrawImage(string vcode, float fontSize = 14, Color background = default(Color), Color border = default(Color))
         {
-            string validateCode = GetValidateCode();//生成验证码
+            // 随机转动角度 
+            const int RandAngle = 45;
 
-            Bitmap bitmap = new Bitmap(imgWidth, imgHeight);//生成BITMAP图像
+            // var height = (int) (fontSize + 4);
+            var width = vcode.Length * (int)fontSize;
 
-            DisturbBitmap(bitmap);//图像背景
-
-            DrawValidateCode(bitmap, validateCode);//绘制验证码图像
-
-            return bitmap;
-        }
-
-        /// <summary>
-        /// 生成验证码
-        /// </summary>
-        /// <returns></returns>
-        private string GetValidateCode()
-        {
-            string validateCode = "";
-            Random random = new Random();
-            for (int i = 0; i < codeLen; i++)
+            // 创建图片背景 
+            using (var map = new Bitmap(width + 50, (int)fontSize + 10))
             {
-                int n = random.Next(10);
-                validateCode += n.ToString();
-            }
-            this.strValidateCode = validateCode;
-            return validateCode;
-        }
-
-        /// <summary>
-        /// 图像背景
-        /// </summary>
-        /// <param name="bitmap"></param>
-        private void DisturbBitmap(Bitmap bitmap)
-        {
-            Random random = new Random();
-            for (int i = 0; i < bitmap.Width; i++)
-            {
-                for (int j = 0; j < bitmap.Height; j++)
+                using (var graphics = Graphics.FromImage(map))
                 {
-                    if (random.Next(90) <= this.sightRate)
-                        bitmap.SetPixel(i, j, Color.White);
-                }
-            }
-        }
+                    graphics.Clear(background); // 清除画面，填充背景  
+                    graphics.DrawRectangle(new Pen(border, 0), 0, 0, map.Width - 1, map.Height - 1); // 画一个边框  
+                    // graph.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;//模式 
+                    var random = new Random();
 
-        /// <summary>
-        /// 绘制验证码图像
-        /// </summary>
-        /// <param name="bitmap"></param>
-        /// <param name="validateCode"></param>
-        private void DrawValidateCode(Bitmap bitmap, string validateCode)
-        {
-            Graphics g = Graphics.FromImage(bitmap);//获取绘制器对象
-            Font font = new Font(fontFamily, fontSize, FontStyle.Bold);//设置绘制字体
-            g.DrawString(validateCode, font, Brushes.Black, posX, posY);//绘制验证码图像
+                    // 背景噪点生成
+                    var blackPen = new Pen(Color.DarkGray, 0);
+                    for (var i = 0; i < 50; i++)
+                    {
+                        int x = random.Next(0, map.Width);
+                        int y = random.Next(0, map.Height);
+                        graphics.DrawRectangle(blackPen, x, y, 1, 1);
+                    }
+
+                    // 验证码旋转，防止机器识别    
+                    var chars = vcode.ToCharArray(); // 拆散字符串成单字符数组  
+                    // 文字距中  
+                    var format = new StringFormat(StringFormatFlags.NoClip)
+                    {
+                        Alignment = StringAlignment.Center,
+                        LineAlignment = StringAlignment.Center
+                    };
+
+                    // 定义颜色  
+                    Color[] colors = { Color.Black, Color.DarkBlue, Color.Green, Color.Orange, Color.Brown, Color.DarkCyan, Color.Purple, Color.DarkGoldenrod };
+
+                    FontStyle[] styles = { FontStyle.Bold, FontStyle.Italic, FontStyle.Regular, /*FontStyle.Strikeout,*/ FontStyle.Underline };
+
+                    // 定义字体  
+                    string[] fonts = { "Verdana", "Microsoft Sans Serif", "Comic Sans MS", "Arial", "宋体" };
+                    foreach (char item in chars)
+                    {
+                        int cindex = random.Next(8);
+                        int findex = random.Next(5);
+                        int sindex = random.Next(4);
+                        var font = new Font(fonts[findex], fontSize, styles[sindex]); // 字体样式(参数2为字体大小)  
+                        Brush b = new SolidBrush(colors[cindex]);
+                        var dot = new Point(25,16);
+
+                        // graph.DrawString(dot.X.ToString(),fontstyle,new SolidBrush(Color.Black),10,150);//测试X坐标显示间距的  
+                        float angle = random.Next(-RandAngle, RandAngle); // 转动的度数  
+                        graphics.TranslateTransform(dot.X, dot.Y); // 移动光标到指定位置  
+                        graphics.RotateTransform(angle);
+                        graphics.DrawString(item.ToString(CultureInfo.InvariantCulture), font, b, 1, 1, format);
+
+                        // graph.DrawString(chars.ToString(),fontstyle,new SolidBrush(Color.Blue),1,1,format);  
+                        graphics.RotateTransform(-angle); // 转回去  
+                        graphics.TranslateTransform(2, -dot.Y); // 移动光标到指定位置  
+                    }
+                }
+
+                // graph.DrawString(randomcode,fontstyle,new SolidBrush(Color.Blue),2,2); //标准随机码  
+                // 生成图片  
+                var stream = new MemoryStream();
+                map.Save(stream, ImageFormat.Gif);
+
+                // 输出图片流
+                return stream.ToArray();
+            }
         }
     }
 }
