@@ -9,7 +9,14 @@ namespace ZTB.OA.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Content/js/jquery.metisMenu.js",
+                        "~/Content/js/jquery.slimscroll.min.js",
+                        "~/Content/js/layer.min.js",
+                        "~/Content/js/hplus.min.js",
+                        "~/Content/js/pace.min.js",
+                        "~/Content/js/contabs.min.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -21,11 +28,18 @@ namespace ZTB.OA.Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js", 
+                      "~/Content/js/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/bootstrap.min.css",
+                      "~/Content/css/site.css",
+                      "~/Content/css/font-awesome.min.css",
+                      "~/Content/css/animate.min.css",
+                      "~/Content/css/style.min.css"
+                      ));
         }
+
+
     }
 }

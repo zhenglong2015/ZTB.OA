@@ -1,40 +1,425 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 8]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close">
+                <i class="fa fa-times-circle"></i>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span><img alt="image" class="img-circle" src="~/Content/imgs/head.jpg" /></span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
+                                    <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li>
+                                    <a class="J_menuItem" href="~/Content/hplus1/form_avatar.html">修改头像</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="~/Content/hplus1/profile.html">个人资料</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="~/Content/hplus1/contacts.html">联系我们</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="@Url.Action("LogOut","Account")">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            ZH
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">主页</span>
+                            <span class="a fa-columns"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="~/Content/hplus1/layouts.html">
+                            <i class="fa fa-columns"></i>
+                            <span class="nav-label">布局</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa fa-bar-chart-o"></i>
+                            <span class="nav-label">统计图表</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_echarts.html">百度ECharts</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_flot.html">Flot</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_morris.html">Morris.js</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_rickshaw.html">Rickshaw</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_peity.html">Peity</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_sparkline.html">Sparkline</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/graph_metrics.html">图表组合</a>
+                            </li>
+                        </ul>
+                    </li>
+                  
+                    <li>
+                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/form_basic.html">基本表单</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/form_validate.html">表单验证</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/form_advanced.html">高级插件</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/form_wizard.html">表单向导</a>
+                            </li>
+                            <li>
+                                <a href="#">文件上传 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/form_webuploader.html">百度WebUploader</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/form_file_upload.html">DropzoneJS</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/form_avatar.html">头像裁剪上传</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">编辑器 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/form_editors.html">富文本编辑器</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/form_simditor.html">simditor</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/form_markdown.html">MarkDown编辑器</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/code_editor.html">代码编辑器</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/suggest.html">搜索自动补全</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/layerdate.html">日期选择器layerDate</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">页面</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/contacts.html">联系人</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/profile.html">个人资料</a>
+                            </li>
+                            <li>
+                                <a href="#">项目管理 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/projects.html">项目</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/project_detail.html">项目详情</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/teams_board.html">团队管理</a>
+                            </li>
+                           
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/clients.html">客户管理</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/file_manager.html">文件管理器</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/calendar.html">日历</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/pin_board.html">标签墙</a>
+                            </li>
+                            <li>
+                                <a href="#">单据 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/invoice.html">单据</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/invoice_print.html">单据打印</a>
+                                    </li>
+                                </ul>
+                            </li>
+                          
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/forum_main.html">论坛</a>
+                            </li>
+                            
+                            <li>
+                                <a href="#">登录注册相关 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="~/Content/hplus1/login.html" target="_blank">登录页面</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Content/hplus1/login_v2.html" target="_blank">登录页面v2</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Content/hplus1/register.html" target="_blank">注册页面</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Content/hplus1/lockscreen.html" target="_blank">登录超时</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/404.html">404页面</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/500.html">500页面</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/empty_page.html">空白页</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI元素</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/typography.html">排版</a>
+                            </li>
+                            <li>
+                                <a href="#">字体图标 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/fontawesome.html">Font Awesome</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/glyphicons.html">Glyphicon</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/iconfont.html">阿里巴巴矢量图标库</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">拖动排序 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/draggable_panels.html">拖动面板</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/agile_board.html">任务清单</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/buttons.html">按钮</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/tabs_panels.html">选项卡 &amp; 面板</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/notifications.html">通知 &amp; 提示</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/badges_labels.html">徽章，标签，进度条</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/grid_options.html">栅格</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/plyr.html">视频、音频</a>
+                            </li>
+                            <li>
+                                <a href="#">弹框插件 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/layer.html">Web弹层组件layer</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/modal_window.html">模态窗口</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/sweetalert.html">SweetAlert</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">树形视图 <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/jstree.html">jsTree</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/tree_view.html">Bootstrap Tree View</a>
+                                    </li>
+                                    <li>
+                                        <a class="J_menuItem" href="~/Content/hplus1/nestable_list.html">nestable</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/toastr_notifications.html">Toastr通知</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/diff.html">文本对比</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/spinners.html">加载动画</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/widgets.html">小部件</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/table_basic.html">基本表格</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/table_data_tables.html">DataTables</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/table_jqgrid.html">jqGrid</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/table_foo_table.html">Foo Tables</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/table_bootstrap.html">
+                                    Bootstrap Table
+                                    <span class="label label-danger pull-right">推荐</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">相册</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/basic_gallery.html">基本图库</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/carousel.html">图片切换</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/layerphotos.html">layer相册</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/blueimp.html">Blueimp相册</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="~/Content/hplus1/css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS动画</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-cutlery"></i> <span class="nav-label">工具 </span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="~/Content/hplus1/form_builder.html">表单构建器</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row content-tabs">
+                <button class="roll-nav roll-left J_tabLeft">
+                    <i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content">
+                        <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
+                    </div>
+                </nav>
+                <button class="roll-nav roll-right J_tabRight">
+                    <i class="fa fa-forward"></i>
+                </button>
+                <div class="btn-group roll-nav roll-right">
+                    <button class="dropdown J_tabClose" data-toggle="dropdown">
+                        关闭操作<span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                        <li class="J_tabShowActive">
+                            <a>定位当前选项卡</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="J_tabCloseAll">
+                            <a>关闭全部选项卡</a>
+                        </li>
+                        <li class="J_tabCloseOther">
+                            <a>关闭其他选项卡</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="@Url.Action("LogOut", "Account")" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+            </div>
+            @*<div class="row J_mainContent" id="content-main">
+                    <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="" frameborder="0" data-id="index_v2.html" seamless></iframe>
+                </div>*@
+
+            <div class="row J_mainContent" id="content-main">
+                @RenderBody()
+            </div>
+            <div class="footer">
+                <div class="pull-right">
+                    &copy; 2015-2016 <a href="http://www.cnblogs.com/ztb123/" target="_blank">ztb's blog</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

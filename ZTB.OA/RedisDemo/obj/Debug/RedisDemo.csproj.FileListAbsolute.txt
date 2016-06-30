@@ -1,0 +1,10 @@
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\RedisDemo.exe.config
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\RedisDemo.exe
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\RedisDemo.pdb
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\ServiceStack.Common.dll
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\ServiceStack.Interfaces.dll
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\ServiceStack.Redis.dll
+E:\测试\OA\ZTB.OA\RedisDemo\bin\Debug\ServiceStack.Text.dll
+E:\测试\OA\ZTB.OA\RedisDemo\obj\Debug\RedisDemo.csprojResolveAssemblyReference.cache
+E:\测试\OA\ZTB.OA\RedisDemo\obj\Debug\RedisDemo.exe
+E:\测试\OA\ZTB.OA\RedisDemo\obj\Debug\RedisDemo.pdb

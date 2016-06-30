@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>智恒后台管理系统登录</title>
-    <link href="~/Content/hplus1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Content/hplus1/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/Content/hplus1/css/animate.min.css" rel="stylesheet" />
-    <link href="~/Content/hplus1/css/style.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/style.min.css" rel="stylesheet" />
 
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -71,7 +71,9 @@ background-position: center;background-repeat: no-repeat; ">
             <h1 class="logo-name">ZH</h1>
         </div>
         <div>
-            <h3>智恒后台管理系统</h3>
+            <div style="color: orange; font-weight:bold">
+                <h2>智恒后台管理系统</h2>
+            </div>
             @using (Ajax.BeginForm("Login", new AjaxOptions()
             {
                 HttpMethod = "Post",
@@ -90,7 +92,7 @@ background-position: center;background-repeat: no-repeat; ">
                             <input type="text" class="form-control" name="vcode" maxlength="4" placeholder="验证码" required>
                         </div>
                         <div class="col-xs-6">
-                            <img id="Vcode" class="img-responsive" alt="code" src="@Url.Action("CreateValidateCode")">
+                            <img id="Vcode" class="img-responsive" title="看不清？点击更换" alt="code" src="@Url.Action("CreateValidateCode")">
                         </div>
                     </div>
                 </div>
