@@ -13,5 +13,10 @@ namespace ZTB.OA.Web.Controllers
         {
             return View();
         }
+        //主页查找
+        public ActionResult Search()
+        {
+            return View();
+        }
     }
 }

@@ -15,7 +15,8 @@ namespace ZTB.OA.Web
                         "~/Content/js/layer.min.js",
                         "~/Content/js/hplus.min.js",
                         "~/Content/js/pace.min.js",
-                        "~/Content/js/contabs.min.js"
+                        "~/Content/js/contabs.min.js",
+                        "~/Content/js/pace.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -28,13 +29,12 @@ namespace ZTB.OA.Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js", 
+                      "~/Scripts/respond.js",
                       "~/Content/js/bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.min.css",
-                      "~/Content/css/site.css",
-                      "~/Content/css/font-awesome.min.css",
+                         "~/Content/css/font-awesome.min.css",
                       "~/Content/css/animate.min.css",
                       "~/Content/css/style.min.css"
                       ));

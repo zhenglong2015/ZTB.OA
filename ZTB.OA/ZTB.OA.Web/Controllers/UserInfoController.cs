@@ -12,22 +12,5 @@ namespace ZTB.OA.Web.Controllers
     {
         // GET: UserInfo
        public IUserInfoService UserInfoService { get; set; }
-
-        public ActionResult Index()
-        {
-            ViewData.Model = UserInfoService.GetEntities(t => true).ToList();
-            return View();
-        }
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Create(UserInfo userInfo)
-        {
-            UserInfoService.Add(userInfo);
-            return RedirectToAction("Index");
-        }
     }
 }
