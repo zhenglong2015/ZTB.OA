@@ -13,10 +13,6 @@
     <!--[if lt IE 8]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-    @*<link href="~/Content/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-        <link href="~/Content/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-        <link href="~/Content/css/animate.min.css" rel="stylesheet">
-        <link href="~/Content/css/style.min.css?v=4.0.0" rel="stylesheet">*@
     @Styles.Render("~/Content/css")
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden;">
@@ -51,6 +47,24 @@
                     <li>
                         <a href="#">
                             <i class="glyphicon glyphicon-user"></i>
+                            <span class="nav-label">权限管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem"  href="">用户管理</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="">权限管理</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="">用户权限管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-user"></i>
                             <span class="nav-label">个人信息</span>
                             <span class="fa arrow"></span>
                         </a>
@@ -62,12 +76,18 @@
                                 <a class="J_menuItem" href="">修改密码</a>
                             </li>
                             <li>
-                                <a class="J_menuItem"  href="@Url.Action("ModifyHead", "Manage")">修改头像</a>
+                                <a class="J_menuItem" href="@Url.Action("ModifyHead", "Manage")">修改头像</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a  class="J_menuItem" href="@Url.Action("Contacts", "Manage")">
+                        <a class="J_menuItem" href="#">
+                            <i class="glyphicon glyphicon-phone-alt"></i>
+                            <span class="nav-label">系统日志</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="@Url.Action("Contacts", "Manage")">
                             <i class="glyphicon glyphicon-phone-alt"></i>
                             <span class="nav-label">联系我们</span>
                         </a>
