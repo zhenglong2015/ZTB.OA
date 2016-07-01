@@ -13,6 +13,7 @@
     <!--[if lt IE 8]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
+    <link href="~/Content/iconfont/iconfont.css" rel="stylesheet" />
     @Styles.Render("~/Content/css")
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden;">
@@ -40,19 +41,19 @@
                     </li>
                     <li>
                         <a href="@Url.Action("Index","Home")">
-                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="icon iconfont">&#x3478;</i>
                             <span class="nav-label">主页</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-user"></i>
+                            <i class="icon iconfont">&#xe722;</i>
                             <span class="nav-label">权限管理</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem"  href="">用户管理</a>
+                                <a class="J_menuItem" href="">用户管理</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="">权限管理</a>
@@ -64,7 +65,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="glyphicon glyphicon-user"></i>
+                            <i class="icon iconfont">&#xe64e;</i>
                             <span class="nav-label">个人信息</span>
                             <span class="fa arrow"></span>
                         </a>
@@ -81,14 +82,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="J_menuItem" href="#">
-                            <i class="glyphicon glyphicon-phone-alt"></i>
+                        <a href="#">
+                            <i class="icon iconfont">&#xe7df;</i>
                             <span class="nav-label">系统日志</span>
                         </a>
                     </li>
                     <li>
                         <a class="J_menuItem" href="@Url.Action("Contacts", "Manage")">
-                            <i class="glyphicon glyphicon-phone-alt"></i>
+                            <i class="icon iconfont">&#xe614;</i>
                             <span class="nav-label">联系我们</span>
                         </a>
                     </li>
@@ -159,13 +160,16 @@
         </div>
     </div>
     <script src="~/Content/js/jquery.min.js?v=2.1.4"></script>
-        <script src="~/Content/js/bootstrap.min.js?v=3.3.5"></script>
-        <script src="~/Content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="~/Content/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="~/Content/js/plugins/layer/layer.min.js"></script>
-        <script src="~/Content/js/hplus.min.js?v=4.0.0"></script>
-        <script type="text/javascript" src="~/Content/js/contabs.min.js"></script>
-        <script src="~/Content/js/plugins/pace/pace.min.js"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/js/plugins/layer/layer.min.js"></script>
+    <script src="~/Content/js/hplus.min.js?v=4.0.0"></script>
+    <script type="text/javascript" src="~/Content/js/contabs.min.js"></script>
+    <script src="~/Content/js/plugins/pace/pace.min.js"></script>
+    <script src="~/Content/js/bootstrap-table.js"></script>
+    <script src="~/Content/js/bootstrap-table-zh-CN.js"></script>
+    
 </body>
 </html>
 

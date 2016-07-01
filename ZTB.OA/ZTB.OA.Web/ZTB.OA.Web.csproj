@@ -187,6 +187,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\bootstrap-table.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\demo\webuploader-demo.min.css" />
@@ -257,6 +258,8 @@
     <Content Include="Content\css\style.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\iconfont\iconfont.css" />
+    <Content Include="Content\iconfont\iconfont.svg" />
     <Content Include="Content\img\a1.jpg" />
     <Content Include="Content\img\a2.jpg" />
     <Content Include="Content\img\a3.jpg" />
@@ -291,6 +294,8 @@
     <Content Include="Content\img\user.png" />
     <Content Include="Content\img\wenku_logo.png" />
     <Content Include="Content\img\wind.png" />
+    <Content Include="Content\js\bootstrap-table-zh-CN.js" />
+    <Content Include="Content\js\bootstrap-table.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\contabs.min.js" />
     <Content Include="Content\js\content.min.js" />
@@ -429,6 +434,9 @@
     <Content Include="Content\css\plugins\jqgrid\ui.jqgrid.css0820" />
     <Content Include="Content\js\plugins\jqgrid\i18n\grid.locale-cn.js0820" />
     <Content Include="Content\js\plugins\jqgrid\jquery.jqGrid.min.js0820" />
+    <Content Include="Content\iconfont\iconfont.eot" />
+    <Content Include="Content\iconfont\iconfont.ttf" />
+    <Content Include="Content\iconfont\iconfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
