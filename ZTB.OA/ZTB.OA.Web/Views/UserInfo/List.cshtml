@@ -3,40 +3,45 @@
 @using PagedList.Mvc
 
 @{
-    ViewBag.Title = "List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create", new { id = "CreateBtn" }, new { @class = "btn btn-success" })
-</p>
+<div style="margin-top:10px; margin-bottom:10px" class="container">
+    <input type="button" value="添加行" id = "createBtn" class="btn btn-primary" />
+    <form class="form-inline" style="float:right">     
+            <div class="input-group">             
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键词">
+            </div>      
+        <button type="button" class="btn btn-info">搜索</button>
+    </form>
+</div>
 
 
-<div class="table-responsive">
-    <table class="table table-bordered table-striped">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UName)
+<div class="table-responsive table-condensed table-hover">
+    <table class="table table-bordered table-striped" style="text-align:center">
+        <tr >
+            <th style="text-align:center">
+             姓名
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pwd)
+            <th style="text-align:center">
+             密码
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DelFag)
+            <th style="text-align:center">
+               是否删除
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ShowName)
+            <th style="text-align:center">
+               显示名
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Remark)
+            <th style="text-align:center">
+               备注
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ModifiedOn)
+            <th style="text-align:center">
+             修改时间
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubTime)
+            <th style="text-align:center">
+               提交时间
             </th>
-            <th></th>
+            <th style="text-align:center">操作</th>
         </tr>
 
         @foreach (var item in Model)
@@ -64,14 +69,33 @@
                     @Html.DisplayFor(modelItem => item.SubTime)
                 </td>
                 <td>
-                    @Html.ActionLink("编辑", "Edit",new { id = item.Id},new { @class = "btn btn-primary" })  
-                    @Html.ActionLink("详情", "Details", new { id = item.Id }, new { @class = "btn btn-primary"} )  
-                    @Html.ActionLink("删除", "Delete", new { id = item.Id },new { @class = "btn btn-primary" })
+                    @Html.ActionLink("编辑", "Edit",new { id = item.Id},new { @class = "btn btn-lg btn-warning" })  
+                    @Html.ActionLink("删除", "Delete", new { id = item.Id },new { @class = "btn btn-xs btn-danger" })
                 </td>
             </tr>
         }
     </table>
-    <div>
+    <div style="text-align:right">
         @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", new { page = page }))
     </div>
 </div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Content/dist/sweetalert.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#createBtn").click(function () {
+            swal({
+                title: "您确定要删除这条信息吗",
+                text: "删除后将无法恢复，请谨慎操作！",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false
+            }, function () {
+                swal("删除成功！", "您已经永久删除了这条信息。", "success");
+            });
+        });
+    });
+
+</script>

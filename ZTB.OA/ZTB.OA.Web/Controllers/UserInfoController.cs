@@ -18,7 +18,7 @@ namespace ZTB.OA.Web.Controllers
         {
             var users = UserInfoService.GetEntities(u => true).OrderBy(u=>u.Id);
 
-            int pageSize = 2;
+            int pageSize = 100;
 
             int pageNumber = (page ?? 1);
 

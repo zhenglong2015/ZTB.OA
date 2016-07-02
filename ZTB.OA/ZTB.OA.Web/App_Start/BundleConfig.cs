@@ -18,7 +18,8 @@ namespace ZTB.OA.Web
                         "~/Content/js/contabs.min.js",
                         "~/Content/js/pace.min.js",
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
-                        "~/Scripts/jquery.cookie-1.4.1.min.js"
+                        "~/Scripts/jquery.cookie-1.4.1.min.js",
+                        "~/Content/dist/sweetalert-dev.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -40,7 +41,8 @@ namespace ZTB.OA.Web
                          "~/Content/css/font-awesome.min.css",
                       "~/Content/css/animate.min.css",
                       "~/Content/css/style.min.css",
-                      "~/Content/PagedList.css"
+                      "~/Content/PagedList.css",
+                      "~/Content/dist/sweetalert.css"
                       ));
         }
     }
