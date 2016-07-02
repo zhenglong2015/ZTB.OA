@@ -32,15 +32,15 @@ namespace ZTB.OA.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Content/js/bootstrap.min.js","~/Content/js/bootstrap-table.js"
-                      ,"~/Content/js/bootstrap-table-zh-CN.js"));
+                      "~/Content/js/bootstrap.min.js"
+                     ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.min.css",
                          "~/Content/css/font-awesome.min.css",
                       "~/Content/css/animate.min.css",
                       "~/Content/css/style.min.css",
-                      "~/Content/css/bootstrap-table.css"
+                      "~/Content/PagedList.css"
                       ));
         }
     }

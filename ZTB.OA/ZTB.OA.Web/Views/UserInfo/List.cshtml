@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ZTB.OA.Model.UserInfo>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = "CreateBtn" }, new { @class = "btn btn-success" })
+</p>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DelFag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubTime)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pwd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelFag)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTime)
+                </td>
+                <td>
+                    @Html.ActionLink("编辑", "Edit",new { id = item.Id},new { @class = "btn btn-primary" })  
+                    @Html.ActionLink("详情", "Details", new { id = item.Id }, new { @class = "btn btn-primary"} )  
+                    @Html.ActionLink("删除", "Delete", new { id = item.Id },new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </table>
+    <div>
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", new { page = page }))
+    </div>
+</div>

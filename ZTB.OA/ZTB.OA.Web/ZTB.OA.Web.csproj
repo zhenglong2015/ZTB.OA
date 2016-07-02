@@ -66,6 +66,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Spring.Core, Version=1.3.1.40711, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Spring.Core.2.0.1\lib\net45\Spring.Core.dll</HintPath>
@@ -295,7 +303,6 @@
     <Content Include="Content\img\wenku_logo.png" />
     <Content Include="Content\img\wind.png" />
     <Content Include="Content\js\bootstrap-table-zh-CN.js" />
-    <Content Include="Content\js\bootstrap-table.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\contabs.min.js" />
     <Content Include="Content\js\content.min.js" />
@@ -311,6 +318,7 @@
     <Content Include="Content\js\demo\sparkline-demo.min.js" />
     <Content Include="Content\js\demo\treeview-demo.min.js" />
     <Content Include="Content\js\demo\webuploader-demo.min.js" />
+    <Content Include="Content\js\Extend\layer.ext.js" />
     <Content Include="Content\js\hplus.min.js" />
     <Content Include="Content\js\jquery-ui-1.10.4.min.js" />
     <Content Include="Content\js\jquery-ui.custom.min.js" />
@@ -407,7 +415,9 @@
     <Content Include="Content\js\plugins\validate\jquery.validate.min.js" />
     <Content Include="Content\js\plugins\validate\messages_zh.min.js" />
     <Content Include="Content\js\plugins\webuploader\webuploader.min.js" />
+    <Content Include="Content\js\skin\layer.css" />
     <Content Include="Content\js\welcome.min.js" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
     <Content Include="Content\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
     <Content Include="Content\plugins\fullavatareditor\scripts\swfobject.js" />
@@ -472,11 +482,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
+    <Content Include="Views\UserInfo\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\js\skin\" />
-    <Folder Include="Views\UserInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

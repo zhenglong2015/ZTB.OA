@@ -192,3 +192,7 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.d
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\obj\Debug\ZTB.OA.Web.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\obj\Debug\ZTB.OA.Web.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\obj\Debug\ZTB.OA.Web.pdb
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.Mvc.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.xml
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.Mvc.xml
