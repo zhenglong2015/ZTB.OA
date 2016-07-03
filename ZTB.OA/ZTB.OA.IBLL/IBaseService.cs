@@ -21,5 +21,7 @@ namespace ZTB.OA.IBLL
         bool Update(TEntity entity);
 
         bool Delete(TEntity entity);
+
+        int DeleteListByLogical(List<int> ids);
     }
 }

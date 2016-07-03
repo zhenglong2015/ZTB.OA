@@ -7,11 +7,12 @@
 }
 
 <div style="margin-top:10px; margin-bottom:10px" class="container">
-    <input type="button" value="添加行" id = "createBtn" class="btn btn-primary" />
-    <form class="form-inline" style="float:right">     
-            <div class="input-group">             
-                <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键词">
-            </div>      
+    <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
+    <input type="button" value="添加" id="showOk" class="btn btn-primary" />
+    <form class="form-inline" style="float:right">
+        <div class="input-group">
+            <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键词">
+        </div>
         <button type="button" class="btn btn-info">搜索</button>
     </form>
 </div>
@@ -19,27 +20,27 @@
 
 <div class="table-responsive table-condensed table-hover">
     <table class="table table-bordered table-striped" style="text-align:center">
-        <tr >
+        <tr>
             <th style="text-align:center">
-             姓名
+                姓名
             </th>
             <th style="text-align:center">
-             密码
+                密码
             </th>
             <th style="text-align:center">
-               是否删除
+                是否删除
             </th>
             <th style="text-align:center">
-               显示名
+                显示名
             </th>
             <th style="text-align:center">
-               备注
+                备注
             </th>
             <th style="text-align:center">
-             修改时间
+                修改时间
             </th>
             <th style="text-align:center">
-               提交时间
+                提交时间
             </th>
             <th style="text-align:center">操作</th>
         </tr>
@@ -69,8 +70,8 @@
                     @Html.DisplayFor(modelItem => item.SubTime)
                 </td>
                 <td>
-                    @Html.ActionLink("编辑", "Edit",new { id = item.Id},new { @class = "btn btn-lg btn-warning" })  
-                    @Html.ActionLink("删除", "Delete", new { id = item.Id },new { @class = "btn btn-xs btn-danger" })
+                    <a data-id="@item.Id" name="modify" class="btn btn-xs btn-warning">编辑</a>
+                    <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
                 </td>
             </tr>
         }
@@ -79,23 +80,63 @@
         @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", new { page = page }))
     </div>
 </div>
-<script src="~/Scripts/jquery-1.10.2.js"></script>
-<script src="~/Content/dist/sweetalert.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#createBtn").click(function () {
-            swal({
-                title: "您确定要删除这条信息吗",
-                text: "删除后将无法恢复，请谨慎操作！",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "删除",
-                closeOnConfirm: false
-            }, function () {
-                swal("删除成功！", "您已经永久删除了这条信息。", "success");
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#createBtn").click(function () {
+                layer.open({
+                    type: 2,
+                    title: '用户添加',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['60%', '90%'],
+                    content: '@Url.Action("Create")'
+                });
+            });
+
+            $("#showOk").click(function () {
+                swal("OK!")
+            });
+            //编辑
+            $("a[name='modify']").click(function () {
+                var id = $(this).attr('data-id');
+                layer.open({
+                    type: 2,
+                    title: '用户修改',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['60%', '90%'],
+                    content: '@Url.Action("Modify")' + '/' + id
+                });
+            });
+            //删除
+            $("a[name='delete']").click(function () {
+                var id = $(this).attr('data-id');
+                swal({
+                    title: "提示",
+                    text: "确定删除么?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                }, function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("Delete")',
+                        data: { id: id },
+                        success: function (data) {
+                            if (data == "ok") {
+                                //swal("Good job!", "You clicked the button!", "success")
+                                swal({ title: "删除成功!", text: "I will close in 2 seconds.", timer: 2000, showConfirmButton: false });
+                            } else {
+                                swal("Deleted!", "No", "error");
+                            }
+                        }
+                    });
+                });
             });
         });
-    });
-
-</script>
+    </script>
+}

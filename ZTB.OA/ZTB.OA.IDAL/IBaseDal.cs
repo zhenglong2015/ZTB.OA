@@ -21,5 +21,9 @@ namespace ZTB.OA.IDAL
         bool Update(TEntity entity);
 
         bool Delete(TEntity entity);
+
+        bool Delete(int id);
+
+        int DeleteListByLogical(List<int> ids);
     }
 }

@@ -43,7 +43,7 @@ namespace ZTB.OA.EFDAL
         public T Add(T entity)
         {
             Db.Set<T>().Add(entity);
-           // Db.SaveChanges();
+            // Db.SaveChanges();
             return entity;
         }
 
@@ -59,6 +59,24 @@ namespace ZTB.OA.EFDAL
             Db.Entry(entity).State = EntityState.Deleted;
             // return Db.SaveChanges() > 0;
             return true;
+        }
+
+        public bool Delete(int id)
+        {
+            var entity = Db.Set<T>().Find(id);
+            Db.Set<T>().Remove(entity);
+            return true;
+        }
+
+        public int DeleteListByLogical(List<int> ids)
+        {
+            foreach (var  id in ids)
+            {
+                var entity = Db.Set<T>().Find(id);
+                Db.Entry(entity).Property("DelFlag").CurrentValue = "1";
+                Db.Entry(entity).Property("DelFlag").IsModified = true;
+            }
+            return ids.Count;
         }
     }
 }

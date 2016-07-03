@@ -16,13 +16,59 @@ namespace ZTB.OA.Web.Controllers
 
         public ActionResult List(int? page)
         {
-            var users = UserInfoService.GetEntities(u => true).OrderBy(u=>u.Id);
+            var users = UserInfoService.GetEntities(u => true).OrderByDescending(u => u.Id);
 
-            int pageSize = 100;
+            int pageSize = 6;
 
             int pageNumber = (page ?? 1);
 
             return View(users.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(UserInfo user)
+        {
+            user.ModifiedOn = DateTime.Now;
+            user.ShowName = "测试";
+            user.SubTime = DateTime.Now;
+
+            UserInfoService.Add(user);
+            return Content("ok");
+        }
+
+        public ActionResult Modify(int id)
+        {
+           var user= UserInfoService.GetEntities(u=>u.Id==id).FirstOrDefault();
+            return View(user);
+        }
+        [HttpPost]
+        public ActionResult Modify(UserInfo user)
+        {
+            if (UserInfoService.Update(user))
+            {
+                return Content("ok");
+            }
+            else
+            {
+                return Content("no");
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
+            if (UserInfoService.Delete(user))
+            {
+                return Content("ok");
+            }
+            else
+                return Content("no");
         }
     }
 }

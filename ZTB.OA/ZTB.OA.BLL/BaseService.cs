@@ -20,7 +20,7 @@ namespace ZTB.OA.BLL
 
         public IDbSession DbSession
         {
-            get;set;
+            get; set;
         }
 
 
@@ -57,5 +57,28 @@ namespace ZTB.OA.BLL
             return DbSession.SaveChanges() > 0;
         }
 
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public int DeleteList(List<int> ids)
+        {
+            foreach (var id in ids)
+            {
+                CurrentDal.Delete(id);
+            }
+            return DbSession.SaveChanges();
+        }
+        /// <summary>
+        /// 批量的逻辑删除
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public int DeleteListByLogical(List<int> ids)
+        {
+            CurrentDal.DeleteListByLogical(ids);
+            return DbSession.SaveChanges();
+        }
     }
 }

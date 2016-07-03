@@ -19,7 +19,7 @@ namespace ZTB.OA.Web
                         "~/Content/js/pace.min.js",
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
                         "~/Scripts/jquery.cookie-1.4.1.min.js",
-                        "~/Content/dist/sweetalert-dev.js"
+                        "~/Content/dist/sweetalert.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

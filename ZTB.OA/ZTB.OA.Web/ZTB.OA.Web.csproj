@@ -321,7 +321,7 @@
     <Content Include="Content\js\demo\sparkline-demo.min.js" />
     <Content Include="Content\js\demo\treeview-demo.min.js" />
     <Content Include="Content\js\demo\webuploader-demo.min.js" />
-    <Content Include="Content\js\Extend\layer.ext.js" />
+    <Content Include="Content\js\extend\layer.ext.js" />
     <Content Include="Content\js\hplus.min.js" />
     <Content Include="Content\js\jquery-ui-1.10.4.min.js" />
     <Content Include="Content\js\jquery-ui.custom.min.js" />
@@ -393,6 +393,7 @@
     <Content Include="Content\js\plugins\layer\skin\default\loading-1.gif" />
     <Content Include="Content\js\plugins\layer\skin\default\loading-2.gif" />
     <Content Include="Content\js\plugins\layer\skin\layer.css" />
+    <Content Include="Content\js\plugins\layer\skin\layer.ext.css" />
     <Content Include="Content\js\plugins\markdown\bootstrap-markdown.js" />
     <Content Include="Content\js\plugins\markdown\bootstrap-markdown.zh.js" />
     <Content Include="Content\js\plugins\markdown\markdown.js" />
@@ -432,6 +433,7 @@
     <Content Include="Content\js\skin\default\loading-1.gif" />
     <Content Include="Content\js\skin\default\loading-2.gif" />
     <Content Include="Content\js\skin\layer.css" />
+    <Content Include="Content\js\skin\layer.ext.css" />
     <Content Include="Content\js\welcome.min.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
@@ -499,6 +501,8 @@
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
     <Content Include="Views\UserInfo\List.cshtml" />
+    <Content Include="Views\UserInfo\Create.cshtml" />
+    <Content Include="Views\UserInfo\Modify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
