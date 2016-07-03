@@ -80,12 +80,23 @@
     <script>
         function modifySuccess(data) {
             if (data == "ok") {
-                parent.$("#showOk").click();
-                //当你在iframe页面关闭自身时
-                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-                parent.layer.close(index); //再执行关闭
+                swal({
+                    title: "提示",
+                    text: "修改成功",
+                    type: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "#AEDEF4",
+                    confirmButtonText: "确定",
+                    timer: 2000,
+                    closeOnConfirm: false,
+                }, function () {
+                    parent.$("#searchForm").submit();
+                    //当你在iframe页面关闭自身时
+                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                    parent.layer.close(index); //再执行关闭
+                });
             } else {
-                swal("添加失败!")
+                swal("修改失败!")
             }
         };
 

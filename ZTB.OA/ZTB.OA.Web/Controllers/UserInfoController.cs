@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ZTB.OA.IBLL;
 using ZTB.OA.Model;
 using PagedList;
+using ZTB.OA.Model.Param;
 
 namespace ZTB.OA.Web.Controllers
 {
@@ -14,14 +15,18 @@ namespace ZTB.OA.Web.Controllers
         // GET: UserInfo
         public IUserInfoService UserInfoService { get; set; }
 
-        public ActionResult List(int? page)
+        public ActionResult List(int? page, string name, string pwd)
         {
-            var users = UserInfoService.GetEntities(u => true).OrderByDescending(u => u.Id);
 
             int pageSize = 6;
 
             int pageNumber = (page ?? 1);
 
+            var users = UserInfoService.LoagPageData(new UserQueryParam()
+            {
+                Name = name,
+                Pwd = pwd
+            });
             return View(users.ToPagedList(pageNumber, pageSize));
         }
 
@@ -42,7 +47,7 @@ namespace ZTB.OA.Web.Controllers
 
         public ActionResult Modify(int id)
         {
-           var user= UserInfoService.GetEntities(u=>u.Id==id).FirstOrDefault();
+            var user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
             return View(user);
         }
         [HttpPost]

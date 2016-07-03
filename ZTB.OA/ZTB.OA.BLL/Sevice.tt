@@ -38,7 +38,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {	
-	public class <#=entity.Name#>Service: BaseService<<#=entity.Name#>>, I<#=entity.Name#>Service
+	public partial class <#=entity.Name#>Service: BaseService<<#=entity.Name#>>, I<#=entity.Name#>Service
     {
      
     }

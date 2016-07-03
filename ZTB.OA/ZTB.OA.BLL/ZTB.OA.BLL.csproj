@@ -55,6 +55,7 @@
     <Compile Include="R_UserInfo_ActionInfoService.cs">
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\UserInfoService.cs" />
     <Compile Include="Sevice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

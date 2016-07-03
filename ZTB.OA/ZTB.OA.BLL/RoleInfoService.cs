@@ -15,7 +15,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {	
-	public class RoleInfoService: BaseService<RoleInfo>, IRoleInfoService
+	public partial class RoleInfoService: BaseService<RoleInfo>, IRoleInfoService
     {
      
     }

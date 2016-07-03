@@ -8,15 +8,16 @@
 
 <div style="margin-top:10px; margin-bottom:10px" class="container">
     <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
-    <input type="button" value="添加" id="showOk" class="btn btn-primary" />
-    <form class="form-inline" style="float:right">
-        <div class="input-group">
-            <input type="text" class="form-control" id="exampleInputAmount" placeholder="请输入关键词">
-        </div>
-        <button type="button" class="btn btn-info">搜索</button>
-    </form>
-</div>
+    <input type="button" value="添加" id="showOk" class="btn btn-primary" style="display:none" />
+    <div class=" form-inline" style="float:right">
+        @using (Html.BeginForm("List","UserInfo",FormMethod.Post,new { id="searchForm"})){
 
+            <input type="text" class="form-control" name="name" placeholder="用户名">
+            <input type="text" class="form-control" name="pwd" placeholder="密码">
+            <button type="submit" class="btn btn-info">搜索</button>
+            }
+    </div>
+</div>
 
 <div class="table-responsive table-condensed table-hover">
     <table class="table table-bordered table-striped" style="text-align:center">
@@ -93,10 +94,6 @@
                     content: '@Url.Action("Create")'
                 });
             });
-
-            $("#showOk").click(function () {
-                swal("OK!")
-            });
             //编辑
             $("a[name='modify']").click(function () {
                 var id = $(this).attr('data-id');
@@ -109,6 +106,7 @@
                     content: '@Url.Action("Modify")' + '/' + id
                 });
             });
+
             //删除
             $("a[name='delete']").click(function () {
                 var id = $(this).attr('data-id');
@@ -128,8 +126,18 @@
                         data: { id: id },
                         success: function (data) {
                             if (data == "ok") {
-                                //swal("Good job!", "You clicked the button!", "success")
-                                swal({ title: "删除成功!", text: "I will close in 2 seconds.", timer: 2000, showConfirmButton: false });
+                                swal({
+                                    title: "提示",
+                                    text: "删除成功",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonColor: "#AEDEF4",
+                                    confirmButtonText: "确定",
+                                    timer: 2000,
+                                    closeOnConfirm: false,
+                                }, function () {
+                                    $("#searchForm").submit();
+                                });
                             } else {
                                 swal("Deleted!", "No", "error");
                             }

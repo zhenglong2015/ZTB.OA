@@ -15,7 +15,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {	
-	public class OrderInfoService: BaseService<OrderInfo>, IOrderInfoService
+	public partial class OrderInfoService: BaseService<OrderInfo>, IOrderInfoService
     {
      
     }

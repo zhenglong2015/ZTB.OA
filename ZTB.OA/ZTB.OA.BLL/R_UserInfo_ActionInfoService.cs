@@ -15,7 +15,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {	
-	public class R_UserInfo_ActionInfoService: BaseService<R_UserInfo_ActionInfo>, IR_UserInfo_ActionInfoService
+	public partial class R_UserInfo_ActionInfoService: BaseService<R_UserInfo_ActionInfo>, IR_UserInfo_ActionInfoService
     {
      
     }

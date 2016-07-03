@@ -55,6 +55,7 @@
     <Compile Include="IR_UserInfo_ActionInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
+    <Compile Include="IService\IUserInfoService.cs" />
     <Compile Include="ISevice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
