@@ -18,5 +18,10 @@ namespace ZTB.OA.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Home()
+        {
+            return View();
+        }
     }
 }

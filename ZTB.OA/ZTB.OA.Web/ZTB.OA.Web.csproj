@@ -511,6 +511,7 @@
     <Content Include="Views\RoleInfo\Index.cshtml" />
     <Content Include="Views\RoleInfo\Create.cshtml" />
     <Content Include="Views\RoleInfo\Modify.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
