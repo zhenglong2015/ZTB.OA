@@ -8,8 +8,7 @@
 
 <div style="margin-top:10px; margin-bottom:10px" class="container">
     <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
-    <input type="button" value="添加" id="showOk" class="btn btn-primary" style="display:none" />
-    <div class=" form-inline" style="float:right">
+    <div class="form-inline" style="float:right">
         @using (Html.BeginForm("List","UserInfo",FormMethod.Post,new { id="searchForm"})){
 
             <input type="text" class="form-control" name="name" placeholder="用户名">
@@ -19,7 +18,7 @@
     </div>
 </div>
 
-<div class="table-responsive table-condensed table-hover">
+<div >
     <table class="table table-bordered table-striped" style="text-align:center">
         <tr>
             <th style="text-align:center">

@@ -9,4 +9,13 @@
     <property name="UserInfoService" ref="UserInfoService"/>
   </object>
 
+  <object type="ZTB.OA.Web.Controllers.ActionInfoController, ZTB.OA.Web" singleton="false" >
+    <property name="ActionInfoService" ref="ActionInfoService"/>
+  </object>
+
+
+  <object type="ZTB.OA.Web.Controllers.RoleInfoController, ZTB.OA.Web" singleton="false" >
+    <property name="RoleInfoService" ref="RoleInfoService"/>
+  </object>
+
 </objects>

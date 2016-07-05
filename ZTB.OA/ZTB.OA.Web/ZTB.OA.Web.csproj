@@ -174,6 +174,8 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ActionInfoController.cs" />
+    <Compile Include="Controllers\RoleInfoController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -500,9 +502,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
     <Content Include="Views\Error\Error500.cshtml" />
-    <Content Include="Views\UserInfo\List.cshtml" />
     <Content Include="Views\UserInfo\Create.cshtml" />
     <Content Include="Views\UserInfo\Modify.cshtml" />
+    <Content Include="Views\UserInfo\List.cshtml" />
+    <Content Include="Views\ActionInfo\Index.cshtml" />
+    <Content Include="Views\ActionInfo\Create.cshtml" />
+    <Content Include="Views\ActionInfo\Modify.cshtml" />
+    <Content Include="Views\RoleInfo\Index.cshtml" />
+    <Content Include="Views\RoleInfo\Create.cshtml" />
+    <Content Include="Views\RoleInfo\Modify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

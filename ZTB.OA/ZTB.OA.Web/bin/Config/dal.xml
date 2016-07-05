@@ -12,6 +12,11 @@
 
   <object name="OrderInfoDal" type="ZTB.OA.EFDAL.OrderInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
-  
+
+  <object name="ActionInfoDal" type="ZTB.OA.EFDAL.ActionInfoDal,ZTB.OA.EFDAL" singleton="false" >
+  </object>
+ 
+  <object name="RoleInfoDal" type="ZTB.OA.EFDAL.RoleInfoDal,ZTB.OA.EFDAL" singleton="false" >
+  </object>
 
 </objects>

@@ -7,6 +7,7 @@ using ZTB.OA.IBLL;
 using ZTB.OA.Model;
 using PagedList;
 using ZTB.OA.Model.Param;
+using System.Configuration;
 
 namespace ZTB.OA.Web.Controllers
 {
@@ -14,11 +15,10 @@ namespace ZTB.OA.Web.Controllers
     {
         // GET: UserInfo
         public IUserInfoService UserInfoService { get; set; }
-
         public ActionResult List(int? page, string name, string pwd)
         {
 
-            int pageSize = 6;
+            int pageSize = Convert.ToInt32(ConfigurationManager.AppSettings["PageSize"]);
 
             int pageNumber = (page ?? 1);
 

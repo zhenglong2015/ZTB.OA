@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,6 +12,11 @@ namespace ZTB.OA.Web.Controllers
     {
         public bool IsCheckLogin = true;
         public UserInfo UserInfo { get; set; }
+
+        public int PageSize
+        {
+            get { return Convert.ToInt32(ConfigurationManager.AppSettings["PageSize"]); }
+        }
 
         /// <summary>
         /// 校验数据登录

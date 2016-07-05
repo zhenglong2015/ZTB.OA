@@ -10,6 +10,17 @@
     <property name="DbSession" ref="DbSession"/>
     <property name="CurrentDal" ref="OrderInfoDal"/>    
   </object>
+  
+
+  <object name="ActionInfoService" type="ZTB.OA.BLL.ActionInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="ActionInfoDal"/>
+  </object>
+
+  <object name="RoleInfoService" type="ZTB.OA.BLL.RoleInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="RoleInfoDal"/>
+  </object>
 
 
 </objects>

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<ZTB.OA.Model.RoleInfo>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="margin-top:10px; margin-bottom:10px" class="container">
+    <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
+    <div class="form-inline" style="float:right">
+        @using (Html.BeginForm("Index", "RoleInfo", FormMethod.Post, new { id = "searchForm" }))
+        {
+
+            <input type="text" class="form-control" name="name" placeholder="用户名">
+            <input type="text" class="form-control" name="pwd" placeholder="密码">
+            <button type="submit" class="btn btn-info">搜索</button>
+        }
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            角色名称
+        </th>
+        <th>
+            是否删除
+        </th>
+        <th>
+            备注
+        </th>
+        <th>
+            修改时间
+        </th>
+        <th>
+            提交时间
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DelFag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTime)
+            </td>
+
+            <td>
+                <a data-id="@item.Id" name="modify" class="btn btn-xs btn-warning">编辑</a>
+                <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div style="text-align:right">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#createBtn").click(function () {
+                layer.open({
+                    type: 2,
+                    title: '用户添加',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['60%', '90%'],
+                    content: '@Url.Action("Create")'
+                });
+            });
+            //编辑
+            $("a[name='modify']").click(function () {
+                var id = $(this).attr('data-id');
+                layer.open({
+                    type: 2,
+                    title: '用户修改',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['60%', '90%'],
+                    content: '@Url.Action("Modify")' + '/' + id
+                });
+            });
+
+            //删除
+            $("a[name='delete']").click(function () {
+                var id = $(this).attr('data-id');
+                swal({
+                    title: "提示",
+                    text: "确定删除么?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                }, function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("Delete")',
+                        data: { id: id },
+                        success: function (data) {
+                            if (data == "ok") {
+                                swal({
+                                    title: "提示",
+                                    text: "删除成功",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonColor: "#AEDEF4",
+                                    confirmButtonText: "确定",
+                                    timer: 2000,
+                                    closeOnConfirm: false,
+                                }, function () {
+                                    $("#searchForm").submit();
+                                });
+                            } else {
+                                swal("Deleted!", "No", "error");
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}
