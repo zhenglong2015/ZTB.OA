@@ -1,0 +1,135 @@
+﻿@model  IEnumerable<ZTB.OA.Model.ActionInfo>
+@using ZTB.OA.Model
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "SetAction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+
+    UserInfo user = ViewBag.user as UserInfo;
+    <h2>给 @user.UName 设置权限角色</h2>
+    <input type="hidden" name="uId" value="@user.Id" />
+
+    <table class="table table-bordered table-striped" style="text-align:center">
+        <tr>
+            <th style="text-align:center">
+                ID
+            </th>
+            <th style="text-align:center">
+                权限名称
+            </th>
+            <th style="text-align:center">
+                URL
+            </th>
+            <th style="text-align:center">
+                是否删除
+            </th>
+            <th style="text-align:center">
+                备注
+            </th>
+            <th style="text-align:center">操作</th>
+        </tr>
+
+        @foreach (var item in Model)
+            {
+                string str = "rd_" + item.Id;
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelFag)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remark)
+                </td>
+                <td>
+                    允许：<input data-id="@item.Id" type="radio" name="@str" value="1" />
+                    拒绝：<input data-id="@item.Id" type="radio" name="@str" value="0" />
+                    <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(":radio").click(function () {
+                var id = $(this).attr('data-id');
+                var uid = $("input[name='uId']").val();
+                var val = $(this).val();
+                $.post("/UserInfo/SetActionPost", { id, id, uid, uid, val: val }, function (data) {
+                    if (data == "ok") {
+                        swal({
+                            title: "提示",
+                            text: "删除成功",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonColor: "#AEDEF4",
+                            confirmButtonText: "确定",
+                            timer: 2000,
+                            closeOnConfirm: false
+                        });
+                    }
+                });
+            });
+
+
+            //删除
+            $("a[name='delete']").click(function () {
+                var id = $(this).attr('data-id');
+                var uid = $("input[name='uId']").val();
+                swal({
+                    title: "提示",
+                    text: "确定删除么?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                }, function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("DeleteAction")',
+                        data: { id: uid, actinId: id },
+                        success: function (data) {
+                            if (data == "ok") {
+                                swal({
+                                    title: "提示",
+                                    text: "删除成功",
+                                    type: "success",
+                                    showCancelButton: false,
+                                    confirmButtonColor: "#AEDEF4",
+                                    confirmButtonText: "确定",
+                                    timer: 2000,
+                                    closeOnConfirm: false,
+                                }, function () {
+                                    $("#searchForm").submit();
+                                });
+                            } else {
+                                swal("Deleted!", "No", "error");
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}
+
+
+
+
+
+

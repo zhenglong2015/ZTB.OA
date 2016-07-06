@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Spring.Context;
+using Spring.Context.Support;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZTB.OA.IBLL;
 using ZTB.OA.Model;
 
 namespace ZTB.OA.Web.Controllers
@@ -27,7 +30,6 @@ namespace ZTB.OA.Web.Controllers
             base.OnActionExecuting(filterContext);
             if (IsCheckLogin)
             {
-
                 if (Request.Cookies["LoginUser"] == null)
                 {
                     filterContext.HttpContext.Response.Redirect("/Account/Login");
@@ -44,6 +46,47 @@ namespace ZTB.OA.Web.Controllers
                 UserInfo = userInfo;
                 //滑动窗口机制
                 Common.Caches.CacheHelper.InsertCache(userId, userInfo);
+
+                //#region 校验权限
+                ////校验权限
+                //if (UserInfo.UName == "admin")
+                //    return;
+
+                ////获取当前的请求地址
+                //string url = HttpContext.Request.RawUrl.ToLower();
+                //string method = HttpContext.Request.HttpMethod.ToLower();
+
+                //IApplicationContext ctx = ContextRegistry.GetContext();
+                //IActionInfoService actionInfoService = ctx.GetObject("ActionInfoService") as IActionInfoService;
+                //IR_UserInfo_ActionInfoService R_UserInfo_ActionInfoService = ctx.GetObject("R_UserInfo_ActionInfoService") as IR_UserInfo_ActionInfoService;
+                //IUserInfoService UserInfoService = ctx.GetObject("UserInfoService") as IUserInfoService;
+
+
+                //var actionInfo = actionInfoService.GetEntities(a => a.Url.ToLower() == url && a.HttpMethod.ToLower() == method).FirstOrDefault();
+
+                //if (actionInfo == null)
+                //    filterContext.HttpContext.Response.Redirect("/Error/Error404");//跳转到错误页面
+
+                //var rUas = R_UserInfo_ActionInfoService.GetEntities(u => u.UserInfoId == UserInfo.Id);
+
+                //var item = (from a in rUas where a.ActionInfoId == actionInfo.Id select a).FirstOrDefault();
+
+                //if (item != null)
+                //{
+                //    if (item.HasPermission)
+                //        return;
+                //    else
+                //        filterContext.HttpContext.Response.Redirect("/Error/Error404");//跳转到错误页面
+                //}
+
+                ////第2条线
+                //var user = UserInfoService.GetEntities(u => u.Id == UserInfo.Id).FirstOrDefault();
+                //var allRole = from a in user.RoleInfo select a;
+                //var actions = from r in allRole from a in r.ActionInfo select a;
+                //var tem = (from t in actions where t.Id == actionInfo.Id select t).Count();
+                //if (tem <= 0)
+                //    filterContext.HttpContext.Response.Redirect("/Error/Error404");//跳转到错误页面
+                //#endregion
             }
         }
     }

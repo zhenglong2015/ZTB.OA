@@ -3,6 +3,9 @@
 
   <object type="ZTB.OA.Web.Controllers.UserInfoController, ZTB.OA.Web" singleton="false" >
     <property name="UserInfoService" ref="UserInfoService"/>
+    <property name="RoleInfoService" ref="RoleInfoService"/>
+    <property name="ActionInfoService" ref="ActionInfoService"/>
+    <property name="R_UserInfo_ActionInfoService" ref="R_UserInfo_ActionInfoService"/>
   </object>
 
   <object type="ZTB.OA.Web.Controllers.AccountController, ZTB.OA.Web" singleton="false" >
@@ -11,6 +14,7 @@
 
   <object type="ZTB.OA.Web.Controllers.ActionInfoController, ZTB.OA.Web" singleton="false" >
     <property name="ActionInfoService" ref="ActionInfoService"/>
+    <property name="RoleInfoService" ref="RoleInfoService"/>
   </object>
 
 

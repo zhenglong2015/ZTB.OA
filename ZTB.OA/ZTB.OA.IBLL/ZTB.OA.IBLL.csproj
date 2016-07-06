@@ -46,22 +46,18 @@
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="IBaseService.cs" />
-    <Compile Include="IOrderInfoService.cs">
-      <DependentUpon>ISevice.tt</DependentUpon>
-    </Compile>
     <Compile Include="IRoleInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="IR_UserInfo_ActionInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
+    <Compile Include="IService\IActionInfoService.cs" />
+    <Compile Include="IService\IRoleInfoService.cs" />
     <Compile Include="IService\IUserInfoService.cs" />
     <Compile Include="ISevice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ISevice.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IUserInfoExtService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="IUserInfoService.cs">

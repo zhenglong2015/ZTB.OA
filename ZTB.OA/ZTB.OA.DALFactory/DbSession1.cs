@@ -27,14 +27,6 @@ namespace ZTB.OA.DALFactory
                 }
             }       
     		
-    		 public IOrderInfoDal OrderInfoDal
-            {
-                get
-                {
-                    return StaticFactory.GetOrderInfoDal();
-                }
-            }       
-    		
     		 public IR_UserInfo_ActionInfoDal R_UserInfo_ActionInfoDal
             {
                 get
@@ -56,14 +48,6 @@ namespace ZTB.OA.DALFactory
                 get
                 {
                     return StaticFactory.GetUserInfoDal();
-                }
-            }       
-    		
-    		 public IUserInfoExtDal UserInfoExtDal
-            {
-                get
-                {
-                    return StaticFactory.GetUserInfoExtDal();
                 }
             }       
     		 public int SaveChanges()

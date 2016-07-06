@@ -7,25 +7,11 @@
     <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="DataModelStoreContainer">
     <EntitySet Name="ActionInfo" EntityType="DataModel.Store.ActionInfo" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="OrderInfo" EntityType="DataModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="R_UserInfo_ActionInfo" EntityType="DataModel.Store.R_UserInfo_ActionInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="RoleInfo" EntityType="DataModel.Store.RoleInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserInfo" EntityType="DataModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="UserInfoExt" EntityType="DataModel.Store.UserInfoExt" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="RoleInfoActionInfo" EntityType="DataModel.Store.RoleInfoActionInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserInfoRoleInfo" EntityType="DataModel.Store.UserInfoRoleInfo" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_UserInfoOrderInfo" Association="DataModel.Store.FK_UserInfoOrderInfo">
-      <End Role="UserInfo" EntitySet="UserInfo" />
-      <End Role="OrderInfo" EntitySet="OrderInfo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RoleInfoActionInfo_ActionInfo" Association="DataModel.Store.FK_RoleInfoActionInfo_ActionInfo">
-      <End Role="ActionInfo" EntitySet="ActionInfo" />
-      <End Role="RoleInfoActionInfo" EntitySet="RoleInfoActionInfo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RoleInfoActionInfo_RoleInfo" Association="DataModel.Store.FK_RoleInfoActionInfo_RoleInfo">
-      <End Role="RoleInfo" EntitySet="RoleInfo" />
-      <End Role="RoleInfoActionInfo" EntitySet="RoleInfoActionInfo" />
-    </AssociationSet>
+    <EntitySet Name="ActionInfoRoleInfo" EntityType="DataModel.Store.ActionInfoRoleInfo" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_UserInfoRoleInfo_RoleInfo" Association="DataModel.Store.FK_UserInfoRoleInfo_RoleInfo">
       <End Role="RoleInfo" EntitySet="RoleInfo" />
       <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
@@ -34,12 +20,20 @@
       <End Role="UserInfo" EntitySet="UserInfo" />
       <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
     </AssociationSet>
-    <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="DataModel.Store.UserInfoR_UserInfo_ActionInfo">
-      <End Role="UserInfo" EntitySet="UserInfo" />
-      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    <AssociationSet Name="FK_ActionInfoRoleInfo_ActionInfo" Association="DataModel.Store.FK_ActionInfoRoleInfo_ActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="ActionInfoRoleInfo" EntitySet="ActionInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActionInfoRoleInfo_RoleInfo" Association="DataModel.Store.FK_ActionInfoRoleInfo_RoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="ActionInfoRoleInfo" EntitySet="ActionInfoRoleInfo" />
     </AssociationSet>
     <AssociationSet Name="ActionInfoR_UserInfo_ActionInfo" Association="DataModel.Store.ActionInfoR_UserInfo_ActionInfo">
       <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="DataModel.Store.UserInfoR_UserInfo_ActionInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
       <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
     </AssociationSet>
   </EntityContainer>
@@ -55,28 +49,19 @@
     <Property Name="ModifiedOn" Type="datetime" Nullable="true" />
     <Property Name="SubTime" Type="datetime" Nullable="true" />
     <Property Name="ActionName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="IsMenu" Type="nvarchar" Nullable="true" MaxLength="10" />
-  </EntityType>
-  <EntityType Name="OrderInfo">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Content" Type="nvarchar" Nullable="true" MaxLength="64" />
-    <Property Name="UserInfoId" Type="int" Nullable="false" />
+    <Property Name="IsMenu" Type="bit" Nullable="true" />
   </EntityType>
   <EntityType Name="R_UserInfo_ActionInfo">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HasPermission" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HasPermission" Type="bit" Nullable="false" />
     <Property Name="UserInfoId" Type="int" Nullable="true" />
-    <Property Name="ActionInfoId" Type="int" Nullable="true" />
+    <Property Name="ActionInfoId" Type="int" Nullable="false" />
     <Property Name="DelFag" Type="nvarchar(max)" Nullable="true" />
     <Property Name="ActionInfo_Id" Type="int" Nullable="false" />
-    <Property Name="UserInfoId1" Type="int" Nullable="false" />
-    <Property Name="ActionInfoId1" Type="int" Nullable="false" />
+    <Property Name="UserInfo_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RoleInfo">
     <Key>
@@ -102,24 +87,6 @@
     <Property Name="ModifiedOn" Type="datetime" Nullable="true" />
     <Property Name="SubTime" Type="datetime" Nullable="true" />
   </EntityType>
-  <EntityType Name="UserInfoExt">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserInfoId" Type="int" Nullable="true" />
-    <Property Name="Age" Type="int" Nullable="true" />
-    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="15" />
-    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="RoleInfoActionInfo">
-    <Key>
-      <PropertyRef Name="ActionInfo_Id" />
-      <PropertyRef Name="RoleInfo_Id" />
-    </Key>
-    <Property Name="ActionInfo_Id" Type="int" Nullable="false" />
-    <Property Name="RoleInfo_Id" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="UserInfoRoleInfo">
     <Key>
       <PropertyRef Name="RoleInfo_Id" />
@@ -128,15 +95,23 @@
     <Property Name="RoleInfo_Id" Type="int" Nullable="false" />
     <Property Name="UserInfo_Id" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK_UserInfoOrderInfo">
-    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
-    <End Role="OrderInfo" Type="DataModel.Store.OrderInfo" Multiplicity="*" />
+  <EntityType Name="ActionInfoRoleInfo">
+    <Key>
+      <PropertyRef Name="ActionInfo_Id" />
+      <PropertyRef Name="RoleInfo_Id" />
+    </Key>
+    <Property Name="ActionInfo_Id" Type="int" Nullable="false" />
+    <Property Name="RoleInfo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ActionInfoR_UserInfo_ActionInfo">
+    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
+    <End Role="R_UserInfo_ActionInfo" Type="DataModel.Store.R_UserInfo_ActionInfo" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UserInfo">
+      <Principal Role="ActionInfo">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="OrderInfo">
-        <PropertyRef Name="UserInfoId" />
+      <Dependent Role="R_UserInfo_ActionInfo">
+        <PropertyRef Name="ActionInfo_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -148,43 +123,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="R_UserInfo_ActionInfo">
-        <PropertyRef Name="UserInfoId1" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ActionInfoR_UserInfo_ActionInfo">
-    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
-    <End Role="R_UserInfo_ActionInfo" Type="DataModel.Store.R_UserInfo_ActionInfo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ActionInfo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="R_UserInfo_ActionInfo">
-        <PropertyRef Name="ActionInfoId1" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RoleInfoActionInfo_ActionInfo">
-    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
-    <End Role="RoleInfoActionInfo" Type="DataModel.Store.RoleInfoActionInfo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ActionInfo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="RoleInfoActionInfo">
-        <PropertyRef Name="ActionInfo_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RoleInfoActionInfo_RoleInfo">
-    <End Role="RoleInfoActionInfo" Type="DataModel.Store.RoleInfoActionInfo" Multiplicity="*" />
-    <End Role="RoleInfo" Type="DataModel.Store.RoleInfo" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="RoleInfo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="RoleInfoActionInfo">
-        <PropertyRef Name="RoleInfo_Id" />
+        <PropertyRef Name="UserInfo_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -212,35 +151,53 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ActionInfoRoleInfo_ActionInfo">
+    <End Role="ActionInfo" Type="DataModel.Store.ActionInfo" Multiplicity="1" />
+    <End Role="ActionInfoRoleInfo" Type="DataModel.Store.ActionInfoRoleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActionInfoRoleInfo">
+        <PropertyRef Name="ActionInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActionInfoRoleInfo_RoleInfo">
+    <End Role="ActionInfoRoleInfo" Type="DataModel.Store.ActionInfoRoleInfo" Multiplicity="*" />
+    <End Role="RoleInfo" Type="DataModel.Store.RoleInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="RoleInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActionInfoRoleInfo">
+        <PropertyRef Name="RoleInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ActionInfo" EntityType="DataModel.ActionInfo" />
-          <EntitySet Name="OrderInfo" EntityType="DataModel.OrderInfo" />
           <EntitySet Name="R_UserInfo_ActionInfo" EntityType="DataModel.R_UserInfo_ActionInfo" />
           <EntitySet Name="RoleInfo" EntityType="DataModel.RoleInfo" />
           <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
-          <EntitySet Name="UserInfoExt" EntityType="DataModel.UserInfoExt" />
-          <AssociationSet Name="FK_UserInfoOrderInfo" Association="DataModel.FK_UserInfoOrderInfo">
-            <End Role="UserInfo" EntitySet="UserInfo" />
-            <End Role="OrderInfo" EntitySet="OrderInfo" />
-          </AssociationSet>
-          <AssociationSet Name="RoleInfoActionInfo" Association="DataModel.RoleInfoActionInfo">
-            <End Role="ActionInfo" EntitySet="ActionInfo" />
-            <End Role="RoleInfo" EntitySet="RoleInfo" />
-          </AssociationSet>
           <AssociationSet Name="UserInfoRoleInfo" Association="DataModel.UserInfoRoleInfo">
             <End Role="RoleInfo" EntitySet="RoleInfo" />
             <End Role="UserInfo" EntitySet="UserInfo" />
           </AssociationSet>
-          <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="DataModel.UserInfoR_UserInfo_ActionInfo">
-            <End Role="UserInfo" EntitySet="UserInfo" />
-            <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+          <AssociationSet Name="ActionInfoRoleInfo" Association="DataModel.ActionInfoRoleInfo">
+            <End Role="ActionInfo" EntitySet="ActionInfo" />
+            <End Role="RoleInfo" EntitySet="RoleInfo" />
           </AssociationSet>
           <AssociationSet Name="ActionInfoR_UserInfo_ActionInfo" Association="DataModel.ActionInfoR_UserInfo_ActionInfo">
             <End Role="ActionInfo" EntitySet="ActionInfo" />
+            <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+          </AssociationSet>
+          <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="DataModel.UserInfoR_UserInfo_ActionInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
             <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
           </AssociationSet>
         </EntityContainer>
@@ -256,33 +213,21 @@
           <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
           <Property Name="SubTime" Type="DateTime" Precision="3" />
           <Property Name="ActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsMenu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RoleInfo" Relationship="DataModel.RoleInfoActionInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
+          <Property Name="IsMenu" Type="Boolean" />
+          <NavigationProperty Name="RoleInfo" Relationship="DataModel.ActionInfoRoleInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
           <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="DataModel.ActionInfoR_UserInfo_ActionInfo" FromRole="ActionInfo" ToRole="R_UserInfo_ActionInfo" />
-        </EntityType>
-        <EntityType Name="OrderInfo">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Content" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="UserInfoId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="UserInfo" Relationship="DataModel.FK_UserInfoOrderInfo" FromRole="OrderInfo" ToRole="UserInfo" />
         </EntityType>
         <EntityType Name="R_UserInfo_ActionInfo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="HasPermission" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HasPermission" Type="Boolean" Nullable="false" />
           <Property Name="UserInfoId" Type="Int32" />
-          <Property Name="ActionInfoId" Type="Int32" />
+          <Property Name="ActionInfoId" Type="Int32" Nullable="false" />
           <Property Name="DelFag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ActionInfo_Id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="UserInfo" />
-          <Property Name="UserInfoId1" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="ActionInfo" />
-          <Property Name="ActionInfoId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="UserInfo" />
         </EntityType>
         <EntityType Name="RoleInfo">
           <Key>
@@ -294,8 +239,8 @@
           <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
           <Property Name="SubTime" Type="DateTime" Precision="3" />
           <Property Name="RoleName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ActionInfo" Relationship="DataModel.RoleInfoActionInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
           <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
+          <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoRoleInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -309,63 +254,24 @@
           <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
           <Property Name="SubTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="OrderInfo" Relationship="DataModel.FK_UserInfoOrderInfo" FromRole="UserInfo" ToRole="OrderInfo" />
           <NavigationProperty Name="RoleInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="UserInfo" ToRole="RoleInfo" />
           <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="DataModel.UserInfoR_UserInfo_ActionInfo" FromRole="UserInfo" ToRole="R_UserInfo_ActionInfo" />
         </EntityType>
-        <EntityType Name="UserInfoExt">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserInfoId" Type="Int32" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <Association Name="FK_UserInfoOrderInfo">
-          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
-          <End Type="DataModel.OrderInfo" Role="OrderInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserInfo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderInfo">
-              <PropertyRef Name="UserInfoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="RoleInfoActionInfo">
-          <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
-          <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
-        </Association>
         <Association Name="UserInfoRoleInfo">
           <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
           <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
         </Association>
-        <Association Name="UserInfoR_UserInfo_ActionInfo">
-          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
-          <End Type="DataModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UserInfo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="R_UserInfo_ActionInfo">
-              <PropertyRef Name="UserInfoId1" />
-            </Dependent>
-          </ReferentialConstraint>
+        <Association Name="ActionInfoRoleInfo">
+          <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+          <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
         </Association>
         <Association Name="ActionInfoR_UserInfo_ActionInfo">
           <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
           <End Type="DataModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ActionInfo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="R_UserInfo_ActionInfo">
-              <PropertyRef Name="ActionInfoId1" />
-            </Dependent>
-          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserInfoR_UserInfo_ActionInfo">
+          <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="DataModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -388,15 +294,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OrderInfo">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.OrderInfo)">
-        <MappingFragment StoreEntitySet="OrderInfo">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="R_UserInfo_ActionInfo">
       <EntityTypeMapping TypeName="IsTypeOf(DataModel.R_UserInfo_ActionInfo)">
         <MappingFragment StoreEntitySet="R_UserInfo_ActionInfo">
@@ -405,9 +302,6 @@
           <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
           <ScalarProperty Name="ActionInfoId" ColumnName="ActionInfoId" />
           <ScalarProperty Name="DelFag" ColumnName="DelFag" />
-          <ScalarProperty Name="ActionInfo_Id" ColumnName="ActionInfo_Id" />
-          <ScalarProperty Name="UserInfoId1" ColumnName="UserInfoId1" />
-          <ScalarProperty Name="ActionInfoId1" ColumnName="ActionInfoId1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -437,18 +331,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserInfoExt">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserInfoExt)">
-        <MappingFragment StoreEntitySet="UserInfoExt">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="RoleInfoActionInfo" TypeName="DataModel.RoleInfoActionInfo" StoreEntitySet="RoleInfoActionInfo">
+    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ActionInfoRoleInfo" TypeName="DataModel.ActionInfoRoleInfo" StoreEntitySet="ActionInfoRoleInfo">
       <EndProperty Name="ActionInfo">
         <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
       </EndProperty>
@@ -456,12 +347,20 @@
         <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
-      <EndProperty Name="RoleInfo">
-        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+    <AssociationSetMapping Name="ActionInfoR_UserInfo_ActionInfo" TypeName="DataModel.ActionInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
+      <EndProperty Name="ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
       </EndProperty>
+      <EndProperty Name="R_UserInfo_ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserInfoR_UserInfo_ActionInfo" TypeName="DataModel.UserInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
       <EndProperty Name="UserInfo">
         <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="R_UserInfo_ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

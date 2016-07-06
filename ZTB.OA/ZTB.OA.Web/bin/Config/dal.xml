@@ -3,20 +3,19 @@
 
   <!--<object name="DbSessionFactory" type="ZTB.OA.DALFactory.DbSessionFactory,ZTB.OA.DALFactory" singleton="true">
   </object>-->
-  
-  <object name="DbSession" type="ZTB.OA.DALFactory.DbSessionFactory,ZTB.OA.DALFactory" singleton="false"  factory-method="GetCurrentDbSession" >    
-  </object>
-  
-  <object name="UserInfoDal" type="ZTB.OA.EFDAL.UserInfoDal,ZTB.OA.EFDAL" singleton="false" >
+
+  <object name="DbSession" type="ZTB.OA.DALFactory.DbSessionFactory,ZTB.OA.DALFactory" singleton="false"  factory-method="GetCurrentDbSession" >
   </object>
 
-  <object name="OrderInfoDal" type="ZTB.OA.EFDAL.OrderInfoDal,ZTB.OA.EFDAL" singleton="false" >
+  <object name="UserInfoDal" type="ZTB.OA.EFDAL.UserInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
 
   <object name="ActionInfoDal" type="ZTB.OA.EFDAL.ActionInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
- 
+
   <object name="RoleInfoDal" type="ZTB.OA.EFDAL.RoleInfoDal,ZTB.OA.EFDAL" singleton="false" >
+  </object>
+  <object name="R_UserInfo_ActionInfoDal" type="ZTB.OA.EFDAL.R_UserInfo_ActionInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
 
 </objects>

@@ -61,9 +61,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderInfoDal.cs">
-      <DependentUpon>Dal.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleInfoDal.cs">
       <DependentUpon>Dal.tt</DependentUpon>
@@ -72,9 +69,6 @@
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
     <Compile Include="UserInfoDal.cs">
-      <DependentUpon>Dal.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserInfoExtDal.cs">
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
   </ItemGroup>

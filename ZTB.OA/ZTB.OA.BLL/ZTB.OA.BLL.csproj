@@ -46,15 +46,14 @@
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
     <Compile Include="BaseService.cs" />
-    <Compile Include="OrderInfoService.cs">
-      <DependentUpon>Sevice.tt</DependentUpon>
-    </Compile>
     <Compile Include="RoleInfoService.cs">
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
     <Compile Include="R_UserInfo_ActionInfoService.cs">
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
+    <Compile Include="Service\ActionInfoService.cs" />
+    <Compile Include="Service\RoleInfoService.cs" />
     <Compile Include="Service\UserInfoService.cs" />
     <Compile Include="Sevice.cs">
       <AutoGen>True</AutoGen>
@@ -62,9 +61,6 @@
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInfoExtService.cs">
-      <DependentUpon>Sevice.tt</DependentUpon>
-    </Compile>
     <Compile Include="UserInfoService.cs">
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>

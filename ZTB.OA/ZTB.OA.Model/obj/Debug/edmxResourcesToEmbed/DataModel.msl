@@ -16,15 +16,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OrderInfo">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.OrderInfo)">
-        <MappingFragment StoreEntitySet="OrderInfo">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="R_UserInfo_ActionInfo">
       <EntityTypeMapping TypeName="IsTypeOf(DataModel.R_UserInfo_ActionInfo)">
         <MappingFragment StoreEntitySet="R_UserInfo_ActionInfo">
@@ -33,9 +24,6 @@
           <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
           <ScalarProperty Name="ActionInfoId" ColumnName="ActionInfoId" />
           <ScalarProperty Name="DelFag" ColumnName="DelFag" />
-          <ScalarProperty Name="ActionInfo_Id" ColumnName="ActionInfo_Id" />
-          <ScalarProperty Name="UserInfoId1" ColumnName="UserInfoId1" />
-          <ScalarProperty Name="ActionInfoId1" ColumnName="ActionInfoId1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -65,18 +53,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserInfoExt">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserInfoExt)">
-        <MappingFragment StoreEntitySet="UserInfoExt">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
-          <ScalarProperty Name="Age" ColumnName="Age" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="RoleInfoActionInfo" TypeName="DataModel.RoleInfoActionInfo" StoreEntitySet="RoleInfoActionInfo">
+    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ActionInfoRoleInfo" TypeName="DataModel.ActionInfoRoleInfo" StoreEntitySet="ActionInfoRoleInfo">
       <EndProperty Name="ActionInfo">
         <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
       </EndProperty>
@@ -84,12 +69,20 @@
         <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
-      <EndProperty Name="RoleInfo">
-        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+    <AssociationSetMapping Name="ActionInfoR_UserInfo_ActionInfo" TypeName="DataModel.ActionInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
+      <EndProperty Name="ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
       </EndProperty>
+      <EndProperty Name="R_UserInfo_ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserInfoR_UserInfo_ActionInfo" TypeName="DataModel.UserInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
       <EndProperty Name="UserInfo">
         <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="R_UserInfo_ActionInfo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

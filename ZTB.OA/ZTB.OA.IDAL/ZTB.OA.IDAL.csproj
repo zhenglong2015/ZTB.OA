@@ -65,9 +65,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IDbSession.tt</DependentUpon>
     </Compile>
-    <Compile Include="IOrderInfoDal.cs">
-      <DependentUpon>IDal.tt</DependentUpon>
-    </Compile>
     <Compile Include="IRoleInfoDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
@@ -75,9 +72,6 @@
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
     <Compile Include="IUserInfoDal.cs">
-      <DependentUpon>IDal.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IUserInfoExtDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

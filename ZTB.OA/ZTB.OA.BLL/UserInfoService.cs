@@ -15,7 +15,7 @@ using ZTB.OA.Model;
 
 namespace ZTB.OA.BLL
 {	
-	public partial  class UserInfoService: BaseService<UserInfo>, IUserInfoService
+	public partial class UserInfoService: BaseService<UserInfo>, IUserInfoService
     {
      
     }

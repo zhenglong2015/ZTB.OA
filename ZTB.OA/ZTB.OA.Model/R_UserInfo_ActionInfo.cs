@@ -16,15 +16,12 @@ namespace ZTB.OA.Model
     public partial class R_UserInfo_ActionInfo
     {
         public int Id { get; set; }
-        public string HasPermission { get; set; }
+        public bool HasPermission { get; set; }
         public Nullable<int> UserInfoId { get; set; }
-        public Nullable<int> ActionInfoId { get; set; }
+        public int ActionInfoId { get; set; }
         public string DelFag { get; set; }
-        public int ActionInfo_Id { get; set; }
-        public int UserInfoId1 { get; set; }
-        public int ActionInfoId1 { get; set; }
     
-        public virtual UserInfo UserInfo { get; set; }
         public virtual ActionInfo ActionInfo { get; set; }
+        public virtual UserInfo UserInfo { get; set; }
     }
 }

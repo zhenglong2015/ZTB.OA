@@ -18,7 +18,6 @@ namespace ZTB.OA.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public UserInfo()
         {
-            this.OrderInfo = new HashSet<OrderInfo>();
             this.RoleInfo = new HashSet<RoleInfo>();
             this.R_UserInfo_ActionInfo = new HashSet<R_UserInfo_ActionInfo>();
         }
@@ -32,8 +31,6 @@ namespace ZTB.OA.Model
         public Nullable<System.DateTime> ModifiedOn { get; set; }
         public Nullable<System.DateTime> SubTime { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderInfo> OrderInfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoleInfo> RoleInfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

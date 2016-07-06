@@ -30,7 +30,7 @@ namespace ZTB.OA.Model
         public Nullable<System.DateTime> ModifiedOn { get; set; }
         public Nullable<System.DateTime> SubTime { get; set; }
         public string ActionName { get; set; }
-        public string IsMenu { get; set; }
+        public Nullable<bool> IsMenu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoleInfo> RoleInfo { get; set; }

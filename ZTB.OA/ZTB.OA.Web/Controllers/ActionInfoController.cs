@@ -13,6 +13,7 @@ namespace ZTB.OA.Web.Controllers
     {
 
         public IActionInfoService ActionInfoService { get; set; }
+        public IRoleInfoService RoleInfoService { get; set; }
         public ActionResult Index(int? page)
         {
             var actions = ActionInfoService.GetEntities(a => true).OrderByDescending(a => a.Id);
@@ -51,7 +52,6 @@ namespace ZTB.OA.Web.Controllers
             }
         }
 
-
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -62,6 +62,30 @@ namespace ZTB.OA.Web.Controllers
             }
             else
                 return Content("no");
+        }
+
+        public ActionResult SetRole(int id)
+        {
+            var action = ActionInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
+            ViewBag.AllRoles = RoleInfoService.GetEntities(r => true).ToList();
+            ViewBag.ExitRoles = action.RoleInfo.Select(u => u.Id).ToList();
+            return View(action);
+        }
+
+        [HttpPost]
+        public ActionResult SetRolePost(int uId)
+        {
+            List<int> setRoleList = new List<int>();
+            foreach (var key in Request.Form.AllKeys)
+            {
+                if (key.StartsWith("ckb"))
+                {
+                    int role = int.Parse(key.Replace("ckb_", ""));
+                    setRoleList.Add(role);
+                }
+            }
+            ActionInfoService.SetRoles(uId, setRoleList);
+            return Content("ok");
         }
     }
 }

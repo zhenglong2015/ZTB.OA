@@ -6,11 +6,6 @@
     <property name="CurrentDal" ref="UserInfoDal"/>    
   </object>
   
-   <object name="OrderInfoService" type="ZTB.OA.BLL.OrderInfoService, ZTB.OA.BLL" singleton="false" >
-    <property name="DbSession" ref="DbSession"/>
-    <property name="CurrentDal" ref="OrderInfoDal"/>    
-  </object>
-  
 
   <object name="ActionInfoService" type="ZTB.OA.BLL.ActionInfoService, ZTB.OA.BLL" singleton="false" >
     <property name="DbSession" ref="DbSession"/>
@@ -22,5 +17,9 @@
     <property name="CurrentDal" ref="RoleInfoDal"/>
   </object>
 
+<object name="R_UserInfo_ActionInfoService" type="ZTB.OA.BLL.R_UserInfo_ActionInfoService, ZTB.OA.BLL" singleton="false" >
+  <property name="DbSession" ref="DbSession"/>
+  <property name="CurrentDal" ref="R_UserInfo_ActionInfoDal"/>
+</object>
 
 </objects>
