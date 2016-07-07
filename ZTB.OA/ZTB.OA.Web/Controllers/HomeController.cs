@@ -14,16 +14,11 @@ namespace ZTB.OA.Web.Controllers
         public IActionInfoService ActionInfoService { get; set; }
         public ActionResult Index()
         {
-
+            LoadMenu();
             return View();
         }
         //主页查找
         public ActionResult Search()
-        {
-            return View();
-        }
-
-        public ActionResult Home()
         {
             return View();
         }
@@ -56,7 +51,7 @@ namespace ZTB.OA.Web.Controllers
             //去重
             allUserActionIds.Distinct();
 
-            var actionList = ActionInfoService.GetEntities(a => allUserActionIds.Contains(a.Id) && a.IsMenu == true);
+            var actionList = ActionInfoService.GetEntities(a => allUserActionIds.Contains(a.Id) && a.IsMenu == true).ToList();
 
             return Content("ok");
 

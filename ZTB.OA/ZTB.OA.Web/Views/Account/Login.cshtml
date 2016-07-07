@@ -8,7 +8,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     @Styles.Render("~/Content/css")
 </head>
 <body id="body" class="gray-bg" style="background-size: cover;background-attachment: fixed;
@@ -62,11 +61,11 @@ background-position: center;background-repeat: no-repeat; ">
             if (data == "Ok") {
                 window.location.href = "/Home/Index";
             } else if (data == "验证码有误！") {
-                alert(data);
+                swal(data)
                 var old = $("#Vcode").attr('src');
                 $('#Vcode').attr('src', old + "?/r=" + Math.random());
             } else {
-                alert(data);
+                window.location.href = data;
             }
         }
         //记载随机背景图

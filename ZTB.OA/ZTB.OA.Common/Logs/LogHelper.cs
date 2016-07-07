@@ -38,7 +38,7 @@ namespace ZTB.OA.Common.Logs
                     }
                     else
                     {
-                        Thread.Sleep(30);
+                        Thread.Sleep(500);
                     }
                 }
             });

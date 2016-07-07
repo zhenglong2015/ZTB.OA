@@ -10,16 +10,15 @@ namespace ZTB.OA.Web
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Content/js/jquery.metisMenu.js",
-                        "~/Content/js/jquery.slimscroll.min.js",
-                        "~/Content/js/layer.min.js",
-                        "~/Content/js/hplus.min.js",
-                        "~/Content/js/pace.min.js",
-                        "~/Content/js/contabs.min.js",
-                        "~/Content/js/pace.min.js",
+                        "~/Scripts/jquery.metisMenu.js",
+                        "~/Scripts/jquery.slimscroll.min.js",
+                        "~/Scripts/layer.min.js",
+                        "~/Scripts/hplus.min.js",
+                        "~/Scripts/pace.min.js",
+                        "~/Scripts/contabs.min.js",
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
                         "~/Scripts/jquery.cookie-1.4.1.min.js",
-                        "~/Content/dist/sweetalert.min.js"
+                        "~/Scripts/sweetalert.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -33,16 +32,17 @@ namespace ZTB.OA.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Content/js/bootstrap.min.js"
+                      "~/Scripts/bootstrap.min.js"
                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/css/bootstrap.min.css",
-                         "~/Content/css/font-awesome.min.css",
-                      "~/Content/css/animate.min.css",
-                      "~/Content/css/style.min.css",
+                      "~/Content/bootstrap.min.css",
+                         "~/Content/font-awesome.min.css",
+                      "~/Content/animate.min.css",
+                      "~/Content/style.min.css",
                       "~/Content/PagedList.css",
-                      "~/Content/dist/sweetalert.css"
+                      "~/Content/sweetalert.css",
+                      "~/Content/iconfont.css"
                       ));
         }
     }

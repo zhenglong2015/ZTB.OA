@@ -1,12 +1,6 @@
-﻿using Spring.Context;
-using Spring.Context.Support;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using ZTB.OA.IBLL;
 using ZTB.OA.Model;
 
 namespace ZTB.OA.Web.Controllers
@@ -27,12 +21,14 @@ namespace ZTB.OA.Web.Controllers
         /// <param name="filterContext"></param>
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            base.OnActionExecuting(filterContext);
+            string backUrl = filterContext.HttpContext.Request.RawUrl;
+            string loginUrl = string.Format("/Account/Login?backUrl={0}", backUrl);
             if (IsCheckLogin)
             {
                 if (Request.Cookies["LoginUser"] == null)
                 {
-                    filterContext.HttpContext.Response.Redirect("/Account/Login");
+                    //filterContext.HttpContext.Response.Redirect("/Account/Login");
+                    filterContext.Result = new RedirectResult(loginUrl);
                     return;
                 }
                 string userId = Request.Cookies["LoginUser"].Value;
@@ -40,7 +36,8 @@ namespace ZTB.OA.Web.Controllers
                 if (userInfo == null)
                 {
                     //登录超时
-                    filterContext.HttpContext.Response.Redirect("/Account/Login");
+                   // filterContext.HttpContext.Response.Redirect("/Account/Login");                    
+                    filterContext.Result = new RedirectResult(loginUrl);
                     return;
                 }
                 UserInfo = userInfo;

@@ -1,24 +1,22 @@
 ﻿@model IEnumerable<ZTB.OA.Model.UserInfo>
 @using PagedList
 @using PagedList.Mvc
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div style="margin-top:10px; margin-bottom:10px">
+<div style="margin-top:10px; margin-bottom:10px;">
     <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
     <div class="form-inline" style="float:right">
-        @using (Html.BeginForm("List","UserInfo",FormMethod.Post,new { id="searchForm"})){
+        @using (Html.BeginForm("List", "UserInfo", FormMethod.Post, new { id = "searchForm" }))
+            {
 
             <input type="text" class="form-control" name="name" placeholder="用户名">
             <input type="text" class="form-control" name="pwd" placeholder="密码">
             <button type="submit" class="btn btn-info">搜索</button>
-            }
+        }
     </div>
 </div>
-
-<div >
+<div>
     <table class="table table-bordered table-striped" style="text-align:center">
         <tr>
             <th style="text-align:center">
@@ -44,9 +42,8 @@
             </th>
             <th style="text-align:center">操作</th>
         </tr>
-
         @foreach (var item in Model)
-        {
+            {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.UName)
@@ -95,7 +92,7 @@
                     content: '@Url.Action("Create")'
                 });
             });
-           //设置角色
+            //设置角色
             $("a[name='setRole']").click(function () {
                 var id = $(this).attr('data-id');
                 layer.open({

@@ -7,25 +7,11 @@
     <!--[if lt IE 8]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-    @*<link href="~/Content/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-    <link href="~/Content/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-    <link href="~/Content/css/animate.min.css" rel="stylesheet">
-    <link href="~/Content/css/style.min.css?v=4.0.0" rel="stylesheet">*@
     @Styles.Render("~/Content/css")
+   
 </head>
-@*<body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden;">*@
-<body>
-    <div class="container-fluid">
-        @RenderBody()
-    </div>
-@*<script src="~/Content/js/jquery.min.js?v=2.1.4"></script>
-    <script src="~/Content/js/bootstrap.min.js?v=3.3.5"></script>
-    <script src="~/Content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="~/Content/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="~/Content/js/plugins/layer/layer.min.js"></script>
-    <script src="~/Content/js/hplus.min.js?v=4.0.0"></script>
-    <script type="text/javascript" src="~/Content/js/contabs.min.js"></script>
-    <script src="~/Content/js/plugins/pace/pace.min.js"></script>*@
+<body style="padding:10px">
+    @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
