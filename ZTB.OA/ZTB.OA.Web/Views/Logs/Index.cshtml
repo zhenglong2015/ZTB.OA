@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+
+    <form id="searchForm">
+        <table class="table table-bordered table-striped" style="text-align:center">
+            <tr>
+                <th style="text-align:center">
+                    文件名称
+                </th>
+                <th style="text-align:center">
+                    文件大小
+                </th>
+                <th style="text-align:center">
+                    最后修改时间
+                </th>
+                <th style="text-align:center">操作</th>
+            </tr>
+            @foreach (var file in ViewBag.Response.Model)
+            {
+                <tr>
+                    <td>
+                        @file.fileName
+                    </td>
+                    <td>
+                        @file.fileSize
+                    </td>
+                    <td>
+                        @file.lastWriteTime
+                    </td>
+                    <td>
+                        <a name="checkLogs" data-path="@file.fullName" class="btn btn-xs btn-info">查看日志</a>
+                        <a name="deleteLog" data-path="@file.fullName" class="btn btn-xs btn-danger">删除</a>
+                    </td>
+                </tr>
+            }
+        </table>
+        <input type="submit" hidden />
+    </form>
+    <div id='logWindow' background-color black; color White; padding 10px">
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            //设置角色
+            $("a[name='checkLogs']").click(function () {
+                var path = $(this).attr('data-path');
+                $.get("@Url.Action("GetContent")", { path: path }, function (obj) {
+                    if (obj.Success) {
+                        obj = obj.Content;
+                        obj = obj.replace(/\r\n/g, "<br>")
+                        obj = obj.replace(/\n/g, "<br>");
+                        obj = obj.replace(/INFO/g, "<font color='green'>INFO</font>");
+                        obj = obj.replace(/ERROR/g, "<font color='red'>ERROR</font>");
+                        var index = layer.open({
+                            type: 1,
+                            title: "日志信息",
+                            closeBtn: 1,
+                            shade: 0.3,
+                            area: ['80%', '90%'],
+                            content: obj
+                        });
+                        layer.style(index, {
+                            pading: '20px',
+                            margin: '20px',
+                            'background-color': 'black',
+                            color: 'White'
+                        });
+                    } else {
+                        alert(obj.message);
+                    }
+                });
+            });
+            //删除
+            $("a[name='deleteLog']").click(function () {
+                var path = $(this).attr('data-path');
+                swal({
+                    title: "提示",
+                    text: "确定删除么?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                }, function () {
+                    $.getJSON("@Url.Action("Remove")", { path: path, rd: Math.random() }, function (data) {
+                        if (data.Success) {
+                            swal({
+                                title: "提示",
+                                text: "删除成功",
+                                type: "success",
+                                showCancelButton: false,
+                                confirmButtonColor: "#AEDEF4",
+                                confirmButtonText: "确定",
+                                timer: 1000,
+                                closeOnConfirm: false,
+                            }, function () {
+                                $("#searchForm").submit();
+                            });
+                        } else {
+                            swal("Deleted!", "No", "error");
+                        }
+                    });
+                });
+            });
+        })
+    </script>
+}
+

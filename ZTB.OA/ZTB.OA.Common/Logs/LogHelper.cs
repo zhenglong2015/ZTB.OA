@@ -12,7 +12,7 @@ namespace ZTB.OA.Common.Logs
     public class LogHelper
     {
         public static Queue<ExceptionClass> ExceptionStringQueue = new Queue<ExceptionClass>();
-        public static IList<ILogWrite> logWriteList = new List<ILogWrite>();
+        public static IList<ILogManger> logWriteList = new List<ILogManger>();
 
         static LogHelper()
         {

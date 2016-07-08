@@ -6,3 +6,4 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\T4Demo\bin\Debug\T4Demo.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\T4Demo\bin\Debug\T4Demo.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\T4Demo\obj\Debug\T4Demo.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\T4Demo\obj\Debug\T4Demo.pdb
+E:\测试\OA\ZTB.OA\T4Demo\obj\Debug\T4Demo.csprojResolveAssemblyReference.cache

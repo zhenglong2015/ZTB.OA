@@ -17,11 +17,6 @@ namespace ZTB.OA.Web.Controllers
             LoadMenu();
             return View();
         }
-        //主页查找
-        public ActionResult Search()
-        {
-            return View();
-        }
 
         /// <summary>
         /// 获取用户的权限菜单

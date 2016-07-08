@@ -16,7 +16,7 @@ namespace ZTB.OA.Common.Logs
 {
     public static class LoggingFactory
     { 
-        public static ILogWrite GetDefaultLogger()
+        public static ILogManger GetDefaultLogger()
         {
             return new Log4NetWrite();
         }

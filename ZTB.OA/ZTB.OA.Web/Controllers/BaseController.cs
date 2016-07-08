@@ -27,8 +27,7 @@ namespace ZTB.OA.Web.Controllers
             {
                 if (Request.Cookies["LoginUser"] == null)
                 {
-                    //filterContext.HttpContext.Response.Redirect("/Account/Login");
-                    filterContext.Result = new RedirectResult(loginUrl);
+                    filterContext.HttpContext.Response.Redirect("/Account/Login");
                     return;
                 }
                 string userId = Request.Cookies["LoginUser"].Value;
@@ -36,8 +35,7 @@ namespace ZTB.OA.Web.Controllers
                 if (userInfo == null)
                 {
                     //登录超时
-                   // filterContext.HttpContext.Response.Redirect("/Account/Login");                    
-                    filterContext.Result = new RedirectResult(loginUrl);
+                   filterContext.HttpContext.Response.Redirect("/Account/Login");                    
                     return;
                 }
                 UserInfo = userInfo;
@@ -84,6 +82,7 @@ namespace ZTB.OA.Web.Controllers
                 //if (tem <= 0)
                 //    filterContext.HttpContext.Response.Redirect("/Error/Error404");//跳转到错误页面
                 //#endregion
+                base.OnActionExecuting(filterContext);
             }
         }
     }
