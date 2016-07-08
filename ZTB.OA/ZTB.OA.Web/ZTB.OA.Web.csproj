@@ -207,6 +207,7 @@
     <Content Include="Content\img\a8.jpg" />
     <Content Include="Content\img\a9.jpg" />
     <Content Include="Content\img\bg.png" />
+    <Content Include="Content\img\connect.jpg" />
     <Content Include="Content\img\fengche.png" />
     <Content Include="Content\img\head.jpg" />
     <Content Include="Content\img\iconfont-logo.png" />
@@ -320,6 +321,7 @@
     <Content Include="Views\ActionInfo\SetRole.cshtml" />
     <Content Include="Views\UserInfo\SetAction.cshtml" />
     <Content Include="Views\Logs\Index.cshtml" />
+    <Content Include="Views\Manage\ModifyPwd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

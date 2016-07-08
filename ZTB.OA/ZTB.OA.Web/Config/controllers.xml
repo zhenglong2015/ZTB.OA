@@ -27,4 +27,8 @@
     <property name="RoleInfoService" ref="RoleInfoService"/>
   </object>
 
+  <object type="ZTB.OA.Web.Controllers.ManageController, ZTB.OA.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
+  </object>
+
 </objects>
