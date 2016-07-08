@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ZTB.OA.Web.Controllers
 {
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         // 修改头像
         public ActionResult ModifyHead()
@@ -14,10 +14,16 @@ namespace ZTB.OA.Web.Controllers
             return View();
         }
         //个人信息
-        public ActionResult Profile()
+        public ActionResult UseProfile()
         {
             return View();
         }
+
+        public ActionResult ModifyPwd()
+        {
+            return View();
+        }
+
         //联系我们
         public ActionResult Contacts()
         {

@@ -302,7 +302,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Manage\ModifyHead.cshtml" />
-    <Content Include="Views\Manage\Profile.cshtml" />
+    <Content Include="Views\Manage\UseProfile.cshtml" />
     <Content Include="Views\Manage\Contacts.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />

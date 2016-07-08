@@ -8,7 +8,7 @@ using ZTB.OA.Common.Logs;
 
 namespace ZTB.OA.Web.Controllers
 {
-    public class LogsController : Controller
+    public class LogsController : BaseController
     {
         // GET: Logs
         public ActionResult Index()
