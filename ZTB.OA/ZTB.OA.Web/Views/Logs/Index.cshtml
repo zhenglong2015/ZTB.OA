@@ -18,23 +18,26 @@
                 </th>
                 <th style="text-align:center">操作</th>
             </tr>
-            @foreach (var file in ViewBag.Response.Model)
+            @if (ViewBag.Response != null)
             {
-                <tr>
-                    <td>
-                        @file.fileName
-                    </td>
-                    <td>
-                        @file.fileSize
-                    </td>
-                    <td>
-                        @file.lastWriteTime
-                    </td>
-                    <td>
-                        <a name="checkLogs" data-path="@file.fullName" class="btn btn-xs btn-info">查看日志</a>
-                        <a name="deleteLog" data-path="@file.fullName" class="btn btn-xs btn-danger">删除</a>
-                    </td>
-                </tr>
+                foreach (var file in ViewBag.Response.Model)
+                {
+                    <tr>
+                        <td>
+                            @file.fileName
+                        </td>
+                        <td>
+                            @file.fileSize
+                        </td>
+                        <td>
+                            @file.lastWriteTime
+                        </td>
+                        <td>
+                            <a name="checkLogs" data-path="@file.fullName" class="btn btn-xs btn-info">查看日志</a>
+                            <a name="deleteLog" data-path="@file.fullName" class="btn btn-xs btn-danger">删除</a>
+                        </td>
+                    </tr>
+                }
             }
         </table>
         <input type="submit" hidden />

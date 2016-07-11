@@ -5,117 +5,88 @@
 }
 <div class="wrapper wrapper-content">
     <div class="row">
-        <div class="col-sm-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>富头像上传编辑器</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
-                            <i class="fa fa-wrench"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li>
-                                <a href="form_editors.html#">选项1</a>
-                            </li>
-                            <li>
-                                <a href="form_editors.html#">选项2</a>
-                            </li>
-                        </ul>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-                    <ul class="nav nav-tabs" id="avatar-tab">
-                        <li class="active" id="upload">
-                            <a href="javascript:;">本地上传</a>
-                        </li>
-                        <li id="webcam">
-                            <a href="javascript:;">视频拍照</a>
-                        </li>
-                        <li id="albums">
-                            <a href="javascript:;">相册选取</a>
-                        </li>
-                    </ul>
-                    <div class="m-t m-b">
-                        <div id="flash1">
-                            <p id="swf1">本组件需要安装Flash Player后才可使用，请从<a href="http://www.adobe.com/go/getflashplayer">这里</a>下载安装。</p>
-                        </div>
-                        <div id="editorPanelButtons" style="display:none">
-                            <p class="m-t">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="src_upload">是否上传原图片？
-                                </label>
-                            </p>
-                            <p>
-                                <a href="javascript:;" class="btn btn-w-m btn-primary button_upload"><i class="fa fa-upload"></i> 上传</a>
-                                <a href="javascript:;" class="btn btn-w-m btn-white button_cancel">取消</a>
-                            </p>
-                        </div>
-                        <p id="webcamPanelButton" style="display:none">
-                            <a href="javascript:;" class="btn btn-w-m btn-info button_shutter"><i class="fa fa-camera"></i> 拍照</a>
-                        </p>
-                        <div id="userAlbums" style="display:none">
-                            <a href="~/Content/img/a1.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a1.jpg" alt="示例图片1" />
-                            </a>
-                            <a href="~/Content/img/a2.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a2.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a3.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a3.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a4.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a4.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a5.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a5.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a6.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a6.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a7.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a7.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a8.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a8.jpg" alt="示例图片2" />
-                            </a>
-                            <a href="~/Content/img/a9.jpg" class="fancybox" title="选取该照片">
-                                <img src="~/Content/img/a9.jpg" alt="示例图片2" />
-                            </a>>
-                        </div>
-                    </div>
-                    <div class="alert alert-warning alert-dismissable m-t">
-                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                        - 本示例不提供图片上传功能，如果需要测试，请访问官网：<a href="http://www.fullavatareditor.com/demo.html" target="_blank">http://www.fullavatareditor.com/demo.html</a>
-                        <br>- 测试 <b>视频拍照</b> 功能时，请注意允许<code>flash</code>和<code>浏览器</code>使用摄像头，否则可能会无法拍照。
-                    </div>
-                </div>
+        <form action="@Url.Action("ProModifyHead")" enctype="multipart/form-data" method="post">
+            <div class="col-sm-12">
+                <img id="ferret" src="" alt="It's coming right for us!" title="It's coming right for us!"
+                     style="float: left; margin-right: 10px; width: 400px; height: 300px" />
+                <input type="hidden" name="x1" value="" />
+                <input type="hidden" name="y1" value="" />
+                <input type="hidden" name="x2" value="" />
+                <input type="hidden" name="y2" value="" />
+                <input id="loadFile" type="file" name="name" onchange="readURL(this);" />
+                <input type="submit" name="submit" value="保存" />
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-content">
-                    <h2>
-                        富头像上传编辑器简介
-                    </h2>
-                    <p>
-                        富头像上传编辑器是一款支持本地上传、预览、视频拍照和网络加载的flash头像编辑上传插件，可缩放、裁剪、旋转、定位和调色等...。
-                    </p>
-                    <div class="alert alert-info">
-                        官网：<a href="http://www.fullavatareditor.com/" target="_blank">http://www.fullavatareditor.com/</a>
-                    </div>
-                    <p>
-                        <span class="label label-warning">注意：这是一款商业插件，如果需要，请在获得许可后使用！</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+
+        //绘制小图
+        function preview(img, selection) {
+            var scaleX = 100 / (selection.width || 1);
+            var scaleY = 100 / (selection.height || 1);
+
+            $('#ferret + div > img').css({
+                width: Math.round(scaleX * 400) + 'px',
+                height: Math.round(scaleY * 300) + 'px',
+                marginLeft: '-' + Math.round(scaleX * selection.x1) + 'px',
+                marginTop: '-' + Math.round(scaleY * selection.y1) + 'px'
+            });
+        }
+
+        $(document).ready(function () {
+            //添加小图
+            $('<div><img id="ferret1"  src="" style="position: relative;" /><div>').css({
+                float: 'left',
+                position: 'relative',
+                overflow: 'hidden',
+                width: '100px',
+                height: '100px'
+            }).insertAfter($('#ferret'));
+
+            //主图编辑
+            $('#ferret').imgAreaSelect({
+                x1: 120, y1: 90, x2: 280, y2: 210, aspectRatio: '4:3', onSelectChange: preview, onSelectEnd: function (img, selection) {
+                    $('input[name="x1"]').val(selection.x1);
+                    $('input[name="y1"]').val(selection.y1);
+                    $('input[name="x2"]').val(selection.x2);
+                    $('input[name="y2"]').val(selection.y2);
+                }
+            });
+
+
+        });
+        //本地预览
+        function readURL(input) {
+            var strSrc = $("#loadFile").val();
+
+            //验证上传文件格式是否正确
+            var pos = strSrc.lastIndexOf(".");
+            var lastname = strSrc.substring(pos, strSrc.length);
+            if (lastname.toLowerCase() != ".jpg") {
+                alert("您上传的文件类型为" + lastname + "，图片必须为 JPG 类型");
+                return false;
+            }
+
+            //验证上传文件是否超出了大小
+            if (input.files[0].size / 1024 > 150) {
+                alert("您上传的文件大小超出了150K限制！");
+                return false;
+            }
+
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#ferret').attr('src', e.target.result);
+                    $('#ferret1').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+}
+

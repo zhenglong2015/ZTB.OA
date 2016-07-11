@@ -14,7 +14,10 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult Index()
         {
             string absoluteLogDirPath = Server.MapPath(ConfigurationManager.AppSettings["logDirPath"].ToString());
-            ViewBag.Response = LogReadService.GetDirFiles(absoluteLogDirPath, "*.*");
+            if (System.IO.Directory.Exists(absoluteLogDirPath))
+            {
+                ViewBag.Response = LogReadService.GetDirFiles(absoluteLogDirPath, "*.*");
+            }
             return View();
         }
 

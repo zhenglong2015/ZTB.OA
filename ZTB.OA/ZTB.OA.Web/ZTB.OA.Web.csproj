@@ -197,6 +197,17 @@
     <Content Include="Config\services.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\imgareaselect\css\border-anim-h.gif" />
+    <Content Include="Content\imgareaselect\css\border-anim-v.gif" />
+    <Content Include="Content\imgareaselect\css\border-h.gif" />
+    <Content Include="Content\imgareaselect\css\border-v.gif" />
+    <Content Include="Content\imgareaselect\css\imgareaselect-animated.css" />
+    <Content Include="Content\imgareaselect\css\imgareaselect-default.css" />
+    <Content Include="Content\imgareaselect\css\imgareaselect-deprecated.css" />
+    <Content Include="Content\imgareaselect\scripts\jquery.imgareaselect.js" />
+    <Content Include="Content\imgareaselect\scripts\jquery.imgareaselect.min.js" />
+    <Content Include="Content\imgareaselect\scripts\jquery.imgareaselect.pack.js" />
+    <Content Include="Content\imgareaselect\scripts\jquery.min.js" />
     <Content Include="Content\img\a1.jpg" />
     <Content Include="Content\img\a2.jpg" />
     <Content Include="Content\img\a3.jpg" />
@@ -217,6 +228,9 @@
     <Content Include="Content\img\loading-upload.gif" />
     <Content Include="Content\img\locked.png" />
     <Content Include="Content\img\login-background.jpg" />
+    <Content Include="Content\img\o_bao.png" />
+    <Content Include="Content\img\o_qq.png" />
+    <Content Include="Content\img\o_wecat.png" />
     <Content Include="Content\img\p1.jpg" />
     <Content Include="Content\img\p2.jpg" />
     <Content Include="Content\img\p3.jpg" />
@@ -325,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

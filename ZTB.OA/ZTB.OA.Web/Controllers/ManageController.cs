@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +19,66 @@ namespace ZTB.OA.Web.Controllers
         {
             return View();
         }
+
+
+        [HttpPost]
+        public ActionResult ProModifyHead(int x1, int y1, int x2, int y2)
+        {
+
+          HttpFileCollection files = System.Web.HttpContext.Current.Request.Files;
+
+            HttpPostedFile file = files[0];
+            file.SaveAs(Server.MapPath("~/Upload/" + file.FileName));
+
+            //设置缩略图
+            int Thumbnailwidth = 400;
+            int Thumbnailheight = 300;
+            //新建一个bmp图片  
+            Bitmap bitmap = new Bitmap(Thumbnailwidth, Thumbnailheight);
+
+            //新建一个画板  
+            Graphics graphic = Graphics.FromImage(bitmap);
+
+            //设置高质量插值法  
+            graphic.InterpolationMode = InterpolationMode.High;
+
+            //设置高质量,低速度呈现平滑程度  
+            graphic.SmoothingMode = SmoothingMode.HighQuality;
+
+            //清空画布并以透明背景色填充  
+            graphic.Clear(Color.Transparent);
+
+            //原图片
+            Bitmap originalImage = new Bitmap(file.InputStream);
+
+            //在指定位置并且按指定大小绘制原图片的指定部分  
+            graphic.DrawImage(originalImage, new Rectangle(0, 0, Thumbnailwidth, Thumbnailheight),
+                new Rectangle(0, 0, originalImage.Width, originalImage.Height), GraphicsUnit.Pixel);
+
+            //得到缩略图
+            Image ThumbnailImage = Image.FromHbitmap(bitmap.GetHbitmap());
+
+            //创建选择图片
+            Bitmap selectbitmap = new Bitmap(x2 - x1, y2 - y1);
+
+            //新建一个画板  
+            Graphics selectgraphic = Graphics.FromImage(selectbitmap);
+
+            //裁切
+            selectgraphic.DrawImage(ThumbnailImage, 0, 0, new Rectangle(x1, y1, x2 - x1, y2 - y1), GraphicsUnit.Pixel);
+
+            //保存
+            string url = "~/Upload/" + Guid.NewGuid() + file.FileName;
+            selectbitmap.Save(Server.MapPath(url), ImageFormat.Jpeg);
+
+            originalImage.Dispose();
+            selectbitmap.Dispose();
+            selectgraphic.Dispose();
+            //todo:将上述资源释放
+
+            return Content(url);
+        }
+
         //个人信息
         public ActionResult UseProfile()
         {
