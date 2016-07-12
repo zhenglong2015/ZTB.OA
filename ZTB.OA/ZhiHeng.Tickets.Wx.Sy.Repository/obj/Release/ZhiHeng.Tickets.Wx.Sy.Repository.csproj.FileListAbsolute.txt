@@ -1,0 +1,12 @@
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\ZhiHeng.Tickets.Wx.Sy.Repository.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\Newtonsoft.Json.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\System.Net.Http.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\System.Net.Http.Formatting.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\System.Net.Http.xml
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\System.Net.Http.Formatting.xml
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Release\ZhiHeng.Tickets.Wx.Sy.Repository.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Release\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\zh-Hans\System.Net.Http.resources.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Release\ZhiHeng.Tickets.Wx.Sy.Repository.csprojResolveAssemblyReference.cache

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EA0D0E7-7E16-4AEE-B5CD-3B25AD6D78E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZhiHeng.Tickets.Wx.App</RootNamespace>
+    <AssemblyName>ZhiHeng.Tickets.Wx.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ZTB.OA.Common\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Libs1.3.2\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Cryptography.cs" />
+    <Compile Include="Common\WXBizMsgCrypt.cs" />
+    <Compile Include="Entity\Handler.cs" />
+    <Compile Include="Entity\MsgEntity\BaseMenuEventMsg.cs" />
+    <Compile Include="Entity\MsgEntity\BaseMsg.cs" />
+    <Compile Include="Entity\MsgEntity\BMsg.cs" />
+    <Compile Include="Entity\MsgEntity\EnterParam.cs" />
+    <Compile Include="Entity\MsgEntity\EventMsg.cs" />
+    <Compile Include="Entity\MsgEntity\EventType.cs" />
+    <Compile Include="Entity\MsgEntity\GroupJobEventMsg.cs" />
+    <Compile Include="Entity\MsgEntity\LocationEventMsg.cs" />
+    <Compile Include="Entity\MsgEntity\LocationMsg.cs" />
+    <Compile Include="Entity\MsgEntity\MaterialType.cs" />
+    <Compile Include="Entity\MsgEntity\MsgHandlerEntity.cs" />
+    <Compile Include="Entity\MsgEntity\MsgType.cs" />
+    <Compile Include="Entity\MsgEntity\ScanMenuEventMsg.cs" />
+    <Compile Include="Entity\MsgEntity\ScanQrEventMsg.cs" />
+    <Compile Include="Entity\MsgEntity\SubEventMsg.cs" />
+    <Compile Include="Entity\ReceiveEntity\GroupSendEntity.cs" />
+    <Compile Include="Entity\ReceiveEntity\GroupStatus.cs" />
+    <Compile Include="Entity\ReceiveEntity\GroupUpLoadEntity.cs" />
+    <Compile Include="Entity\ReceiveEntity\ShortUrl.cs" />
+    <Compile Include="Entity\ReceiveEntity\TemplateMsg.cs" />
+    <Compile Include="Entity\MsgEntity\TextMsg.cs" />
+    <Compile Include="Entity\PayEntity\BasePay.cs" />
+    <Compile Include="Entity\PayEntity\BasePayRes.cs" />
+    <Compile Include="Entity\PayEntity\CloseOrder.cs" />
+    <Compile Include="Entity\PayEntity\CloseOrderRes.cs" />
+    <Compile Include="Entity\PayEntity\JsEntity.cs" />
+    <Compile Include="Entity\PayEntity\OrderInfo.cs" />
+    <Compile Include="Entity\PayEntity\OrderQueryRes.cs" />
+    <Compile Include="Entity\PayEntity\QueryOrder.cs" />
+    <Compile Include="Entity\PayEntity\QueryRefund.cs" />
+    <Compile Include="Entity\PayEntity\QueryRefundRes.cs" />
+    <Compile Include="Entity\PayEntity\ReFund.cs" />
+    <Compile Include="Entity\PayEntity\ReFundRes.cs" />
+    <Compile Include="Entity\PayEntity\UnifiedEntity.cs" />
+    <Compile Include="Entity\PayEntity\UnifiedRes.cs" />
+    <Compile Include="Entity\ReceiveEntity\AccessToken.cs" />
+    <Compile Include="Entity\ReceiveEntity\ErrorEntity.cs" />
+    <Compile Include="Entity\ReceiveEntity\FileStreamInfo.cs" />
+    <Compile Include="Entity\ReceiveEntity\IPEntity.cs" />
+    <Compile Include="Entity\ReceiveEntity\JsApiTicket.cs" />
+    <Compile Include="Entity\ReceiveEntity\MaterialCount.cs" />
+    <Compile Include="Entity\ReceiveEntity\MaterialList.cs" />
+    <Compile Include="Entity\ReceiveEntity\MaterialNews.cs" />
+    <Compile Include="Entity\ReceiveEntity\OAuthToken.cs" />
+    <Compile Include="Entity\ReceiveEntity\QrTicket.cs" />
+    <Compile Include="Entity\ReceiveEntity\UpLoadInfo.cs" />
+    <Compile Include="Entity\ReceiveEntity\UserInfo.cs" />
+    <Compile Include="Entity\ReceiveEntity\UserList.cs" />
+    <Compile Include="Entity\SendEntity\Article.cs" />
+    <Compile Include="Entity\SendEntity\CustomArticle.cs" />
+    <Compile Include="Entity\SendEntity\CustomMusic.cs" />
+    <Compile Include="Entity\SendEntity\CustomVideo.cs" />
+    <Compile Include="Entity\SendEntity\FormEntity.cs" />
+    <Compile Include="Entity\SendEntity\ResArticle.cs" />
+    <Compile Include="Entity\SendEntity\TemplateKey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Code.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Code.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\GroupSendService.cs" />
+    <Compile Include="Service\JsApi.cs" />
+    <Compile Include="Service\MaterialService.cs" />
+    <Compile Include="Service\MenuService.cs" />
+    <Compile Include="Service\MsgFactory.cs" />
+    <Compile Include="Service\OAuthService.cs" />
+    <Compile Include="Service\PayService.cs" />
+    <Compile Include="Service\QrCodeService.cs" />
+    <Compile Include="Service\SendMsgService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\WXService.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\CodeInfo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Code.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Code.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZTB.OA.Common\ZTB.OA.Common.csproj">
+      <Project>{3b3b9951-a239-4779-be60-6022ae6fb10e}</Project>
+      <Name>ZTB.OA.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

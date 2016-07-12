@@ -1,0 +1,13 @@
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\ZhiHeng.Tickets.Wx.App.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\ZhiHeng.Tickets.Wx.App.pdb
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\Newtonsoft.Json.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\obj\Release\ZhiHeng.Tickets.Wx.App.Resources.Code.resources
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\obj\Release\ZhiHeng.Tickets.Wx.App.csproj.GenerateResource.Cache
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\obj\Release\ZhiHeng.Tickets.Wx.App.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\obj\Release\ZhiHeng.Tickets.Wx.App.pdb
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\ZhiHeng.Tickets.Wx.Infrastructure.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\log4net.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\ZhiHeng.Tickets.Wx.Infrastructure.pdb
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\obj\Release\ZhiHeng.Tickets.Wx.App.csprojResolveAssemblyReference.cache
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\NPOI.dll
+E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\bin\Release\Ionic.Zip.dll

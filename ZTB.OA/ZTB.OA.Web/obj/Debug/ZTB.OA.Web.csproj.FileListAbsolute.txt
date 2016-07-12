@@ -200,3 +200,5 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.Mvc.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.Mvc.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\ZhiHeng.Tickets.Wx.App.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\ZhiHeng.Tickets.Wx.App.pdb
