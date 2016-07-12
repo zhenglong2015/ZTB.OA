@@ -5,16 +5,21 @@
 }
 <div class="wrapper wrapper-content">
     <div class="row">
-        <form action="@Url.Action("ProModifyHead")" enctype="multipart/form-data" method="post">
-            <div class="col-sm-12">
-                <img id="ferret" src="" alt="It's coming right for us!" title="It's coming right for us!"
-                     style="float: left; margin-right: 10px; width: 400px; height: 300px" />
+        <form>
+            <div class="form-group">
+                <img id="ferret" src="~/Content/img/head.jpg" class="img-thumbnail" style="float: left; margin-right: 10px; width: 400px; height: 300px" />
                 <input type="hidden" name="x1" value="" />
                 <input type="hidden" name="y1" value="" />
                 <input type="hidden" name="x2" value="" />
                 <input type="hidden" name="y2" value="" />
-                <input id="loadFile" type="file" name="name" onchange="readURL(this);" />
-                <input type="submit" name="submit" value="保存" />
+            </div>
+            <div id="img" class="form-group">
+            </div>
+            <div class="form-group">
+                <input id="loadFile" type="file" class="btn btn-info" name="name" onchange="readURL(this);" />
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" class="btn btn-info" value="保存" />
             </div>
         </form>
     </div>
@@ -37,14 +42,36 @@
         }
 
         $(document).ready(function () {
-            //添加小图
-            $('<div><img id="ferret1"  src="" style="position: relative;" /><div>').css({
-                float: 'left',
-                position: 'relative',
-                overflow: 'hidden',
-                width: '100px',
-                height: '100px'
-            }).insertAfter($('#ferret'));
+            $(":submit").click(function () {
+                $("form").ajaxSubmit({
+                    url: "@Url.Action("ProModifyHead")",
+                    type: "Post",
+                    success: function (data) {
+                        var html = '<img id="showImg" src="' + data + '" class="img-circle" style="height:80px; width:80px;" />';
+                        $("#img").html(html);
+                        swal({
+                            title: "提示",
+                            text: "保存成功",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonColor: "#AEDEF4",
+                            confirmButtonText: "确定",
+                            timer: 2000,
+                            closeOnConfirm: false,
+                        });
+                    }
+                });
+                return false;
+            });
+
+            ////添加小图
+            //$('<div><img id="ferret1"  src="" style="position: relative;" class="img-thumbnail" /><div>').css({
+            //    float: 'left',
+            //    position: 'relative',
+            //    overflow: 'hidden',
+            //    width: '100px',
+            //    height: '100px'
+            //}).insertAfter($('#ferret'));
 
             //主图编辑
             $('#ferret').imgAreaSelect({
@@ -70,11 +97,11 @@
                 return false;
             }
 
-            //验证上传文件是否超出了大小
-            if (input.files[0].size / 1024 > 150) {
-                alert("您上传的文件大小超出了150K限制！");
-                return false;
-            }
+            ////验证上传文件是否超出了大小
+            //if (input.files[0].size / 1024 > 150) {
+            //    alert("您上传的文件大小超出了150K限制！");
+            //    return false;
+            //}
 
 
             if (input.files && input.files[0]) {

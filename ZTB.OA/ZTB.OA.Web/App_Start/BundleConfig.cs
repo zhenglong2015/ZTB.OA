@@ -19,7 +19,8 @@ namespace ZTB.OA.Web
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
                         "~/Scripts/jquery.cookie-1.4.1.min.js",
                         "~/Scripts/sweetalert.min.js",
-                        "~/Content/imgareaselect/scripts/jquery.imgareaselect.pack.js"
+                        "~/Content/imgareaselect/scripts/jquery.imgareaselect.pack.js",
+                        "~/Scripts/jquery.form.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

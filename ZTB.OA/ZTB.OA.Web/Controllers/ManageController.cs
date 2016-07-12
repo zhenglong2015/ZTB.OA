@@ -22,10 +22,14 @@ namespace ZTB.OA.Web.Controllers
 
 
         [HttpPost]
-        public ActionResult ProModifyHead(int x1, int y1, int x2, int y2)
+        public ActionResult ProModifyHead()
         {
+            int x1 = Convert.ToInt32(Request["x1"]);
+            int x2 = Convert.ToInt32(Request["x2"]);
+            int y1 = Convert.ToInt32(Request["y1"]);
+            int y2 = Convert.ToInt32(Request["y2"]);
 
-          HttpFileCollection files = System.Web.HttpContext.Current.Request.Files;
+            HttpFileCollection files = System.Web.HttpContext.Current.Request.Files;
 
             HttpPostedFile file = files[0];
             file.SaveAs(Server.MapPath("~/Upload/" + file.FileName));
@@ -68,14 +72,14 @@ namespace ZTB.OA.Web.Controllers
             selectgraphic.DrawImage(ThumbnailImage, 0, 0, new Rectangle(x1, y1, x2 - x1, y2 - y1), GraphicsUnit.Pixel);
 
             //保存
-            string url = "~/Upload/" + Guid.NewGuid() + file.FileName;
+            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            string url = "/Upload/" + (DateTime.Now - startTime).TotalSeconds.ToString().Replace(".","")+ file.FileName;
             selectbitmap.Save(Server.MapPath(url), ImageFormat.Jpeg);
 
             originalImage.Dispose();
             selectbitmap.Dispose();
             selectgraphic.Dispose();
             //todo:将上述资源释放
-
             return Content(url);
         }
 

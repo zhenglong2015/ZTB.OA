@@ -21,6 +21,5 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.pdb
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.csprojResolveAssemblyReference.cache
-E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ZTB.OA.Common.dll.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ZTB.OA.Common.dll.config
