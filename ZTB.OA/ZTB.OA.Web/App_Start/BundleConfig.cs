@@ -20,7 +20,8 @@ namespace ZTB.OA.Web
                         "~/Scripts/jquery.cookie-1.4.1.min.js",
                         "~/Scripts/sweetalert.min.js",
                         "~/Content/imgareaselect/scripts/jquery.imgareaselect.pack.js",
-                        "~/Scripts/jquery.form.min.js"
+                        "~/Scripts/jquery.form.min.js",
+                        "~/Content/cropper/cropper.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -45,7 +46,8 @@ namespace ZTB.OA.Web
                       "~/Content/PagedList.css",
                       "~/Content/sweetalert.css",
                       "~/Content/iconfont.css",
-                      "~/Content/imgareaselect/css/imgareaselect-default.css"
+                      "~/Content/imgareaselect/css/imgareaselect-default.css",
+                      "~/Content/cropper/cropper.min.css"
                       ));
         }
     }

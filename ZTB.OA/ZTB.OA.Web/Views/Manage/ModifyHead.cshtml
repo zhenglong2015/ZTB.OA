@@ -6,20 +6,22 @@
 <div class="wrapper wrapper-content">
     <div class="row">
         <form>
-            <div class="form-group">
-                <img id="ferret" src="~/Content/img/head.jpg" class="img-thumbnail" style="float: left; margin-right: 10px; width: 400px; height: 300px" />
-                <input type="hidden" name="x1" value="" />
-                <input type="hidden" name="y1" value="" />
-                <input type="hidden" name="x2" value="" />
-                <input type="hidden" name="y2" value="" />
+            <div class="col-md-6">
+                <div class="image-crop">
+                    <img id="ferret" src="~/Content/img/head.jpg" class="img-thumbnail" style="float: left; margin-right: 10px; width: 400px; height: 400px" />
+                    <input type="hidden" name="x1" value="" />
+                    <input type="hidden" name="y1" value="" />
+                    <input type="hidden" name="x2" value="" />
+                    <input type="hidden" name="y2" value="" />
+                </div>
             </div>
-            <div id="img" class="form-group">
-            </div>
-            <div class="form-group">
-                <input id="loadFile" type="file" class="btn btn-info" name="name" onchange="readURL(this);" />
-            </div>
-            <div class="form-group">
-                <input type="submit" name="submit" class="btn btn-info" value="保存" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div id="img">
+                    </div>
+                    <input id="loadFile" type="file" class="btn btn-primary" name="name" onchange="readURL(this);" />
+                    <input type="submit" name="submit" class="btn btn-info" value="保存" />
+                </div>
             </div>
         </form>
     </div>

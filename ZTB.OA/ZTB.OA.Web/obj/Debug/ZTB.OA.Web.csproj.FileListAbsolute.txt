@@ -202,3 +202,6 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\PagedList.Mvc.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\ZhiHeng.Tickets.Wx.App.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\ZhiHeng.Tickets.Wx.App.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\NPOI.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\ThoughtWorks.QRCode.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.Web\bin\Ionic.Zip.dll

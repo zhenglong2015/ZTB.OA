@@ -199,6 +199,10 @@
     <Content Include="Config\services.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\cropper\cropper.css" />
+    <Content Include="Content\cropper\cropper.js" />
+    <Content Include="Content\cropper\cropper.min.css" />
+    <Content Include="Content\cropper\cropper.min.js" />
     <Content Include="Content\imgareaselect\css\border-anim-h.gif" />
     <Content Include="Content\imgareaselect\css\border-anim-v.gif" />
     <Content Include="Content\imgareaselect\css\border-h.gif" />

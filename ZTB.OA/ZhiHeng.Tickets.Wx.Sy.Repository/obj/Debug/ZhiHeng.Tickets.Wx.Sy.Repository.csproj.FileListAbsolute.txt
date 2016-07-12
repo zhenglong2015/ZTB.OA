@@ -17,3 +17,4 @@ E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.F
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.WebRequest.xml
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.csprojResolveAssemblyReference.cache
