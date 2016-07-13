@@ -10,7 +10,6 @@ E:\测试\OA\ZTB.OA\SpringNetIoC\bin\Debug\Spring.Aop.xml
 E:\测试\OA\ZTB.OA\SpringNetIoC\bin\Debug\Spring.Core.xml
 E:\测试\OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.exe
 E:\测试\OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.pdb
-E:\测试\OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\bin\Debug\objects.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\bin\Debug\App.config
 E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\bin\Debug\SpringNetIoC.exe.config
@@ -24,3 +23,4 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\bin\Debug\Spring.Core.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.exe
 E:\学习测试项目\ZTB.OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.pdb
+E:\测试\OA\ZTB.OA\SpringNetIoC\obj\Debug\SpringNetIoC.csprojResolveAssemblyReference.cache

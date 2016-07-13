@@ -9,12 +9,8 @@ E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Re
 E:\WeiXinApp\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
-E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.Formatting.dll
-E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.WebRequest.dll
-E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.xml
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.Formatting.xml
-E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.WebRequest.xml
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.csprojResolveAssemblyReference.cache

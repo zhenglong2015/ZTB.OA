@@ -23,7 +23,6 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.pdb
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Spring.Core.xml
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.pdb
-E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Ionic.Zip.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\NPOI.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ThoughtWorks.QRCode.dll
