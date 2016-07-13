@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFWinFormDemo", "WFWinFormD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowDemo", "WorkflowDemo\WorkflowDemo.csproj", "{2E7C929D-DD10-465B-A1BB-B3B0E3DFF609}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wrokflow", "Wrokflow", "{6DF53EAC-6386-486C-861C-C28E8986290A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
