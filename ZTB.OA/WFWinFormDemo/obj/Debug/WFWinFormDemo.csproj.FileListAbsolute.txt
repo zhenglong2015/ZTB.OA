@@ -4,7 +4,6 @@ E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\_WFWinFormDemo.g.cs
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\Activity1.g.cs
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.csproj.XamlGeneratedCodeFileListAbsolute.txt
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.csproj.XamlGeneratedXamlFileListAbsolute.txt
-E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.dll
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.pdb
 E:\测试\OA\ZTB.OA\WFWinFormDemo\bin\Debug\WFWinFormDemo.exe.config
 E:\测试\OA\ZTB.OA\WFWinFormDemo\bin\Debug\WFWinFormDemo.exe
@@ -16,3 +15,6 @@ E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.Form1.resources
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.Properties.Resources.resources
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.csproj.GenerateResource.Cache
 E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\WFWinFormDemo.exe
+E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\InProcessTempFiles\Activity1.g.cs
+E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\InProcessTempFiles\Activity1.g.xaml
+E:\测试\OA\ZTB.OA\WFWinFormDemo\obj\Debug\InProcessTempFiles\_WFWinFormDemo.g.cs
