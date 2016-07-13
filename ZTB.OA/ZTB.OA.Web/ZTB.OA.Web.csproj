@@ -350,7 +350,6 @@
     <Content Include="Views\Manage\ModifyPwd.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\WeiXin\Models\" />
     <Folder Include="Areas\WeiXin\Views\Shared\" />
     <Folder Include="Upload\" />

@@ -59,12 +59,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="持久化sql\%24R2TV70Q\SearchBox.jss" />
   </ItemGroup>
   <ItemGroup>
     <XamlAppDef Include="Activity.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </XamlAppDef>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="持久化sql\%24R2TV70Q\Combined%281%29.js" />
+    <Content Include="持久化sql\%24R2TV70Q\Combined%282%29.js" />
+    <Content Include="持久化sql\%24R2TV70Q\Combined.css" />
+    <Content Include="持久化sql\%24R2TV70Q\Combined.js" />
+    <Content Include="持久化sql\%24R2TV70Q\IC101471.jpeg" />
+    <Content Include="持久化sql\%24R2TV70Q\IC160177.jpeg" />
+    <Content Include="持久化sql\%24R2TV70Q\IC17938.jpeg" />
+    <Content Include="持久化sql\%24R2TV70Q\ImageSprite.png" />
+    <Content Include="持久化sql\%24R2TV70Q\jquery-1.9.1.min.js" />
+    <Content Include="持久化sql\%24R2TV70Q\jsll-3.2.0.js" />
+    <Content Include="持久化sql\%24R2TV70Q\JumpRedirect.js" />
+    <Content Include="持久化sql\%24R2TV70Q\PrintView.css" />
+    <Content Include="持久化sql\SqlWorkflowInstanceStoreLogic.sql" />
+    <Content Include="持久化sql\SqlWorkflowInstanceStoreSchema.sql" />
+    <Content Include="持久化sql\如何：对工作流和工作流服务启用 SQL 持久性.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
