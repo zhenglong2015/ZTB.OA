@@ -18,6 +18,10 @@ namespace ZTB.OA.IDAL
     		IR_UserInfo_ActionInfoDal R_UserInfo_ActionInfoDal { get;}            
     		IRoleInfoDal RoleInfoDal { get;}            
     		IUserInfoDal UserInfoDal { get;}            
+    		IWP_TempDal WP_TempDal { get;}            
+    		IWF_InstanceDal WF_InstanceDal { get;}            
+    		IFileInfoDal FileInfoDal { get;}            
+    		IWF_StepDal WF_StepDal { get;}            
     		int SaveChanges();
     }
 }

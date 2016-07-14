@@ -46,6 +46,9 @@
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="IBaseService.cs" />
+    <Compile Include="IFileInfoService.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
     <Compile Include="IRoleInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
@@ -61,6 +64,15 @@
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="IUserInfoService.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IWF_InstanceService.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IWF_StepService.cs">
+      <DependentUpon>ISevice.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IWP_TempService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

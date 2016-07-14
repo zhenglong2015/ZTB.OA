@@ -41,5 +41,25 @@ namespace ZTB.OA.DALFactory
         {          
             return Assembly.Load(assemblyName).CreateInstance(assemblyName + ".UserInfoDal") as IUserInfoDal;
         }
+    		
+    	public static IWP_TempDal GetWP_TempDal()
+        {          
+            return Assembly.Load(assemblyName).CreateInstance(assemblyName + ".WP_TempDal") as IWP_TempDal;
+        }
+    		
+    	public static IWF_InstanceDal GetWF_InstanceDal()
+        {          
+            return Assembly.Load(assemblyName).CreateInstance(assemblyName + ".WF_InstanceDal") as IWF_InstanceDal;
+        }
+    		
+    	public static IFileInfoDal GetFileInfoDal()
+        {          
+            return Assembly.Load(assemblyName).CreateInstance(assemblyName + ".FileInfoDal") as IFileInfoDal;
+        }
+    		
+    	public static IWF_StepDal GetWF_StepDal()
+        {          
+            return Assembly.Load(assemblyName).CreateInstance(assemblyName + ".WF_StepDal") as IWF_StepDal;
+        }
     }
 }

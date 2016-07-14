@@ -27,3 +27,6 @@ E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Ionic.Zip.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\NPOI.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ThoughtWorks.QRCode.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.Common\obj\Debug\ZTB.OA.Common.csprojResolveAssemblyReference.cache
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\Ionic.Zip.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\NPOI.dll
+E:\学习测试项目\ZTB.OA\ZTB.OA\ZTB.OA.Common\bin\Debug\ThoughtWorks.QRCode.dll

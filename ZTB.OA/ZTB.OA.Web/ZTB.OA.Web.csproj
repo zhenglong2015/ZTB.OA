@@ -182,6 +182,7 @@
     <Compile Include="Controllers\ActionInfoController.cs" />
     <Compile Include="Controllers\RoleInfoController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\WFTempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -353,6 +354,7 @@
     <Folder Include="Areas\WeiXin\Models\" />
     <Folder Include="Areas\WeiXin\Views\Shared\" />
     <Folder Include="Upload\" />
+    <Folder Include="Views\WFTemp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,0 +1,3 @@
+obj\Debug\_ZTB.OA.Wrokflow.g.cs
+obj\Debug\FincalActivity.g.cs
+obj\Debug\ZTB.OA.Wrokflow_FincalActivity_BeforeInitializeComponentHelper.cs
