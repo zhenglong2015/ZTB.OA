@@ -271,6 +271,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap-paginator.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\iconfont.eot" />
@@ -349,12 +350,14 @@
     <Content Include="Views\UserInfo\SetAction.cshtml" />
     <Content Include="Views\Logs\Index.cshtml" />
     <Content Include="Views\Manage\ModifyPwd.cshtml" />
+    <Content Include="Views\WFTemp\Index.cshtml" />
+    <Content Include="Views\WFTemp\Create.cshtml" />
+    <Content Include="Views\WFTemp\Modify.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\WeiXin\Models\" />
     <Folder Include="Areas\WeiXin\Views\Shared\" />
     <Folder Include="Upload\" />
-    <Folder Include="Views\WFTemp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

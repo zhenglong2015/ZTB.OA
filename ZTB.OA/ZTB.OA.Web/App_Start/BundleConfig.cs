@@ -21,7 +21,8 @@ namespace ZTB.OA.Web
                         "~/Scripts/sweetalert.min.js",
                         "~/Content/imgareaselect/scripts/jquery.imgareaselect.pack.js",
                         "~/Scripts/jquery.form.min.js",
-                        "~/Content/cropper/cropper.min.js"                     
+                        "~/Content/cropper/cropper.min.js",
+                        "~/Scripts/bootstrap-paginator.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

@@ -27,6 +27,7 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Create(RoleInfo role)
         {
+
             role.ModifiedOn = DateTime.Now;
             role.SubTime = DateTime.Now;
 

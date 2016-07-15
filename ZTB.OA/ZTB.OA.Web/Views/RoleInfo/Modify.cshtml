@@ -1,11 +1,8 @@
 ﻿@model ZTB.OA.Model.RoleInfo
 
 @{
-    ViewBag.Title = "Modify";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Modify</h2>
 
 @using (Ajax.BeginForm(new AjaxOptions() { HttpMethod = "Post", OnSuccess = "modifySuccess" }))
 {
