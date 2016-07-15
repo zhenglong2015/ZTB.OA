@@ -9,92 +9,31 @@
 <div style="margin-top:10px; margin-bottom:10px">
     <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
     <div class="form-inline" style="float:right">
-@using (Html.BeginForm("Index", "WFTemp", FormMethod.Post, new { id = "searchForm" }))
-{
-        <input type="text" class="form-control" name="name" placeholder="用户名">
-        <input type="text" class="form-control" name="pwd" placeholder="密码">
-        <button type="submit" class="btn btn-info">搜索</button>
-}
+        @using (Ajax.BeginForm("Index", "WFTemp", new AjaxOptions()
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "table",
+            OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
+        }, new { id = "searchForm" }))
+        {
+
+            <input type="text" class="form-control" name="name" placeholder="用户名">
+            <input type="text" class="form-control" name="pwd" placeholder="密码">
+            <button type="submit" class="btn btn-info">搜索</button>
+        }
     </div>
 </div>
 
-<table class="table">
-    <tr>
-        <th>
-            模板名称
-        </th>
-        <th>
-            模板描述
-        </th>
-        <th>
-            表单模板
-        </th>
-        <th>
-            备注
-        </th>
-        <th>
-            提交时间
-        </th>
-        <th>
-            流程类型
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TepName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TemForm)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Remark)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivyType)
-            </td>
-            <td>
-                <a data-id="@item.Id" name="modify" class="btn btn-xs btn-warning">编辑</a>
-                <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
-            </td>
-        </tr>
-    }
-</table>
-<div style="text-align:right">
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }))
+<div id="table">
+    @Html.Partial("DataTablePartial")
 </div>
 
 @section Scripts {
     <script>
-        $(document).ready(function () {
-            $(":submit").click(function () {
-                $.post('@Url.Action("Index")', {}, function (data) {
-                    $("#dataTable").html(data);
-                });
-                return false;
-            });
 
-            $("#createBtn").click(function () {
-                layer.open({
-                    type: 2,
-                    title: '工作流模板添加',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['60%', '90%'],
-                    content: '@Url.Action("Create")'
-                });
-            });
+        function PagedOnComplete() {
             //编辑
-            $(".table a[name='modify']").click(function () {
+            $(".table a[name='modify']").on("click", function () {
                 var id = $(this).attr('data-id');
                 layer.open({
                     type: 2,
@@ -107,7 +46,7 @@
             });
 
             //删除
-            $(".table a[name='delete']").click(function () {
+            $(".table a[name='delete']").on('click', function () {
                 var id = $(this).attr('data-id');
                 swal({
                     title: "提示",
@@ -144,6 +83,20 @@
                     });
                 });
             });
+        }
+
+        $(document).ready(function () {
+            $("#createBtn").click(function () {
+                layer.open({
+                    type: 2,
+                    title: '工作流模板添加',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['60%', '90%'],
+                    content: '@Url.Action("Create")'
+                });
+            });
+            PagedOnComplete();
         });
     </script>
 }

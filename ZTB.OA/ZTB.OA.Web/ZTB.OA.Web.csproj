@@ -353,6 +353,7 @@
     <Content Include="Views\WFTemp\Index.cshtml" />
     <Content Include="Views\WFTemp\Create.cshtml" />
     <Content Include="Views\WFTemp\Modify.cshtml" />
+    <Content Include="Views\WFTemp\DataTablePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\WeiXin\Models\" />

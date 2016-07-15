@@ -19,7 +19,7 @@
         }
     </div>
 </div>
-<table class="table">
+<table id="table" class="table">
     <tr>
         <th>
             角色名称
@@ -67,7 +67,7 @@
 
 </table>
 <div style="text-align:right">
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }))
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 </div>
 
 

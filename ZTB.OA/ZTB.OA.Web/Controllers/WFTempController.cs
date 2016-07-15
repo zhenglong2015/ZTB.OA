@@ -21,7 +21,8 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult Index(int? page)
         {
             var roles = WP_TempService.GetEntities(w => true).OrderByDescending(w => w.Id);
-            return View(roles.ToPagedList(page ?? 1, base.PageSize));
+            return Request.IsAjaxRequest() ? (ActionResult)PartialView("DataTablePartial", roles.ToPagedList(page ?? 1, base.PageSize))
+                : View(roles.ToPagedList(page ?? 1, base.PageSize));
         }
 
         public ActionResult Create()

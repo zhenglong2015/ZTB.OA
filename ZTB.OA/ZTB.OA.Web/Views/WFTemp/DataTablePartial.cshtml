@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ZTB.OA.Model.WP_Temp>
+@using PagedList
+@using PagedList.Mvc
+<table class="table">
+    <tr>
+        <th>
+            模板名称
+        </th>
+        <th>
+            模板描述
+        </th>
+        <th>
+            表单模板
+        </th>
+        <th>
+            备注
+        </th>
+        <th>
+            提交时间
+        </th>
+        <th>
+            流程类型
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TepName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemForm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivyType)
+            </td>
+            <td>
+                <a data-id="@item.Id" name="modify" class="btn btn-xs btn-warning">编辑</a>
+                <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
+            </td>
+        </tr>
+    }
+</table>
+<div style="text-align:right">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+{
+    HttpMethod = "GET",
+    UpdateTargetId = "table",
+    OnComplete = "PagedOnComplete"
+}))
+</div>
