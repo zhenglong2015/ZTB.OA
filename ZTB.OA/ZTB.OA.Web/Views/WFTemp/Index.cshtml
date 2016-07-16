@@ -72,9 +72,10 @@
                                     confirmButtonColor: "#AEDEF4",
                                     confirmButtonText: "确定",
                                     timer: 2000,
-                                    closeOnConfirm: false,
+                                    closeOnConfirm: true,
                                 }, function () {
                                     $("#searchForm").submit();
+                                    swal.close();
                                 });
                             } else {
                                 swal("Deleted!", "No", "error");
