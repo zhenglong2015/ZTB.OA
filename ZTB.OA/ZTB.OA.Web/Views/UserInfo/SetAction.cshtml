@@ -116,6 +116,7 @@
                                     closeOnConfirm: false,
                                 }, function () {
                                     $("#searchForm").submit();
+                                    swal.close();
                                 });
                             } else {
                                 swal("Deleted!", "No", "error");

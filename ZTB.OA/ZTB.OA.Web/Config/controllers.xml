@@ -31,7 +31,12 @@
     <property name="UserInfoService" ref="UserInfoService"/>
   </object>
 
- <object type="ZTB.OA.Web.Controllers.WFTempController, ZTB.OA.Web" singleton="false" >
+  <object type="ZTB.OA.Web.Controllers.WFTempController, ZTB.OA.Web" singleton="false" >
+    <property name="WP_TempService" ref="WP_TempService"/>
+  </object>
+
+  <object type="ZTB.OA.Web.Controllers.WFInstanceController, ZTB.OA.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
     <property name="WP_TempService" ref="WP_TempService"/>
   </object>
 

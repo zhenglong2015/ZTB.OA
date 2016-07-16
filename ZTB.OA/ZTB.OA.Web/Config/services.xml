@@ -28,4 +28,10 @@
     <property name="CurrentDal" ref="WP_TempDal"/>
   </object>
 
+
+  <object name="WFInstanceService" type="ZTB.OA.BLL.WF_InstanceService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="WF_InstanceDal"/>
+  </object>
+
 </objects>

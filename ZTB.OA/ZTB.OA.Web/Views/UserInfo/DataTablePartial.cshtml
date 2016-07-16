@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ZTB.OA.Model.UserInfo>
+@using PagedList
+@using PagedList.Mvc
+<div>
+    <table class="table table-bordered table-striped" style="text-align:center">
+        <tr>
+            <th style="text-align:center">
+                姓名
+            </th>
+            <th style="text-align:center">
+                密码
+            </th>
+            <th style="text-align:center">
+                是否删除
+            </th>
+            <th style="text-align:center">
+                显示名
+            </th>
+            <th style="text-align:center">
+                备注
+            </th>
+            <th style="text-align:center">
+                修改时间
+            </th>
+            <th style="text-align:center">
+                提交时间
+            </th>
+            <th style="text-align:center">操作</th>
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pwd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelFag)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTime)
+                </td>
+                <td>
+                    <a data-id="@item.Id" name="setRole" class="btn btn-xs btn-info">设置角色</a>
+                    <a data-id="@item.Id" name="setAction" class="btn btn-xs btn-danger">设置特殊角色</a>
+                    <a data-id="@item.Id" name="modify" class="btn btn-xs btn-warning">编辑</a>
+                    <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <div style="text-align:right">
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("List", new { page = page }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+    {
+        HttpMethod = "GET",
+        UpdateTargetId = "table",
+        OnComplete = "PagedOnComplete"
+    }))
+    </div>
+</div>

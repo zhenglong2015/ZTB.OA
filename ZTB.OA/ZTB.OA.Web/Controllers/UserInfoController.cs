@@ -29,7 +29,8 @@ namespace ZTB.OA.Web.Controllers
                 Name = name,
                 Pwd = pwd
             });
-            return View(users.ToPagedList(pageNumber, base.PageSize));
+            return Request.IsAjaxRequest() ? (ActionResult)PartialView("DataTablePartial", users.ToPagedList(page ?? 1, base.PageSize))
+                : View(users.ToPagedList(pageNumber, base.PageSize));
         }
 
         public ActionResult Create()

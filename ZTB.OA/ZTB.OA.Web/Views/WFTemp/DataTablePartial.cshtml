@@ -53,7 +53,8 @@
     }
 </table>
 <div style="text-align:right">
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }), 
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
 {
     HttpMethod = "GET",
     UpdateTargetId = "table",
