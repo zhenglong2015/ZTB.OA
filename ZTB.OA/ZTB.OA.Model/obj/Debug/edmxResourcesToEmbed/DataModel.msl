@@ -53,65 +53,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WP_Temp">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.WP_Temp)">
-        <MappingFragment StoreEntitySet="WP_Temp">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="TepName" ColumnName="TepName" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="TemForm" ColumnName="TemForm" />
-          <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="DelFag" ColumnName="DelFag" />
-          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
-          <ScalarProperty Name="ActivyType" ColumnName="ActivyType" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="WF_Instance">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.WF_Instance)">
-        <MappingFragment StoreEntitySet="WF_Instance">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
-          <ScalarProperty Name="StartBy" ColumnName="StartBy" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="Level" ColumnName="Level" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="DelFag" ColumnName="DelFag" />
-          <ScalarProperty Name="WF_InstanceId" ColumnName="WF_InstanceId" />
-          <ScalarProperty Name="WP_TempId" ColumnName="WP_TempId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FileInfo">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.FileInfo)">
-        <MappingFragment StoreEntitySet="FileInfo">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FileName" ColumnName="FileName" />
-          <ScalarProperty Name="FileType" ColumnName="FileType" />
-          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="WF_Step">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.WF_Step)">
-        <MappingFragment StoreEntitySet="WF_Step">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="StepName" ColumnName="StepName" />
-          <ScalarProperty Name="ProcessBy" ColumnName="ProcessBy" />
-          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
-          <ScalarProperty Name="ProcessTime" ColumnName="ProcessTime" />
-          <ScalarProperty Name="ProcessResult" ColumnName="ProcessResult" />
-          <ScalarProperty Name="ProcessComment" ColumnName="ProcessComment" />
-          <ScalarProperty Name="StepStatus" ColumnName="StepStatus" />
-          <ScalarProperty Name="IsStartStep" ColumnName="IsStartStep" />
-          <ScalarProperty Name="IsEndStep" ColumnName="IsEndStep" />
-          <ScalarProperty Name="ParentStepId" ColumnName="ParentStepId" />
-          <ScalarProperty Name="WF_InstanceId" ColumnName="WF_InstanceId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
       <EndProperty Name="RoleInfo">
         <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
@@ -142,14 +83,6 @@
       </EndProperty>
       <EndProperty Name="R_UserInfo_ActionInfo">
         <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="WF_InstanceFileInfo" TypeName="DataModel.WF_InstanceFileInfo" StoreEntitySet="WF_InstanceFileInfo">
-      <EndProperty Name="WF_Instance">
-        <ScalarProperty Name="Id" ColumnName="WF_Instance_Id" />
-      </EndProperty>
-      <EndProperty Name="FileInfo">
-        <ScalarProperty Name="Id" ColumnName="FileInfo_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

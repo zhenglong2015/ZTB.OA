@@ -1,2 +1,0 @@
-obj\Debug\Activity1.g.xaml
-obj\Debug\WorkflowDemo_Activity_BeforeInitializeComponentHelper.txt

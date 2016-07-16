@@ -10,7 +10,12 @@
 <div style="margin-top:10px; margin-bottom:10px">
     <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
     <div class="form-inline" style="float:right">
-        @using (Html.BeginForm("Index", "RoleInfo", FormMethod.Post, new { id = "searchForm" }))
+        @using (Ajax.BeginForm("Index", "RoleInfo", new AjaxOptions()
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "table",
+            OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
+        }, new { id = "searchForm" }))
         {
 
             <input type="text" class="form-control" name="name" placeholder="用户名">
@@ -19,71 +24,15 @@
         }
     </div>
 </div>
-<table id="table" class="table">
-    <tr>
-        <th>
-            角色名称
-        </th>
-        <th>
-            是否删除
-        </th>
-        <th>
-            备注
-        </th>
-        <th>
-            修改时间
-        </th>
-        <th>
-            提交时间
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoleName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DelFag)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Remark)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModifiedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubTime)
-            </td>
-
-            <td>
-                <a data-id="@item.Id" name="modify" class="btn btn-xs btn-warning">编辑</a>
-                <a data-id="@item.Id" name="delete" class="btn btn-xs btn-danger">删除</a>
-            </td>
-        </tr>
-    }
-
-</table>
-<div style="text-align:right">
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<div id="table">
+    @Html.Partial("DataTablePartial")
 </div>
+
 
 
 @section Scripts {
     <script>
-        $(document).ready(function () {
-            $("#createBtn").click(function () {
-                layer.open({
-                    type: 2,
-                    title: '用户添加',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['60%', '90%'],
-                    content: '@Url.Action("Create")'
-                });
-            });
+        function PagedOnComplete() {
             //编辑
             $("a[name='modify']").click(function () {
                 var id = $(this).attr('data-id');
@@ -127,6 +76,7 @@
                                     closeOnConfirm: false,
                                 }, function () {
                                     $("#searchForm").submit();
+                                    swal.close();
                                 });
                             } else {
                                 swal("Deleted!", "No", "error");
@@ -135,6 +85,19 @@
                     });
                 });
             });
+        }
+        $(document).ready(function () {
+            $("#createBtn").click(function () {
+                layer.open({
+                    type: 2,
+                    title: '用户添加',
+                    shadeClose: true,
+                    shade: 0.8,
+                    area: ['60%', '90%'],
+                    content: '@Url.Action("Create")'
+                });
+            });
+            PagedOnComplete();
         });
     </script>
 }

@@ -1,3 +1,0 @@
-obj\Debug\_WFWinFormDemo.g.cs
-obj\Debug\Activity1.g.cs
-obj\Debug\WorkflowDemo_Activity_BeforeInitializeComponentHelper.cs

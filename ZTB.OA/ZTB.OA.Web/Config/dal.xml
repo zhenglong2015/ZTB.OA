@@ -18,9 +18,4 @@
   <object name="R_UserInfo_ActionInfoDal" type="ZTB.OA.EFDAL.R_UserInfo_ActionInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
 
-  <object name="WP_TempDal" type="ZTB.OA.EFDAL.WP_TempDal,ZTB.OA.EFDAL" singleton="false" >
-  </object>
-
-  <object name="WF_InstanceDal" type="ZTB.OA.EFDAL.WF_InstanceDal,ZTB.OA.EFDAL" singleton="false" >
-  </object>
 </objects>

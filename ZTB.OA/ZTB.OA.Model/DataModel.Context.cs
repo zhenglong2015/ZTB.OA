@@ -29,9 +29,5 @@ namespace ZTB.OA.Model
         public virtual DbSet<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
         public virtual DbSet<RoleInfo> RoleInfo { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
-        public virtual DbSet<WP_Temp> WP_Temp { get; set; }
-        public virtual DbSet<WF_Instance> WF_Instance { get; set; }
-        public virtual DbSet<FileInfo> FileInfo { get; set; }
-        public virtual DbSet<WF_Step> WF_Step { get; set; }
     }
 }

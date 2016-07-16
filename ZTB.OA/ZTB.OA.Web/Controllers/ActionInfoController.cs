@@ -17,7 +17,8 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult Index(int? page)
         {
             var actions = ActionInfoService.GetEntities(a => true).OrderByDescending(a => a.Id);
-            return View(actions.ToPagedList(page ?? 1, base.PageSize));
+            return Request.IsAjaxRequest() ? (ActionResult)PartialView("DataTablePartial", actions.ToPagedList(page ?? 1, base.PageSize))
+                : View(actions.ToPagedList(page ?? 1, base.PageSize));
         }
 
         public ActionResult Create()

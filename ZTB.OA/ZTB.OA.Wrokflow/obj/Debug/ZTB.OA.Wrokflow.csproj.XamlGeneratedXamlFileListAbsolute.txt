@@ -1,2 +1,0 @@
-obj\Debug\FincalActivity.g.xaml
-obj\Debug\ZTB.OA.Wrokflow_FincalActivity_BeforeInitializeComponentHelper.txt

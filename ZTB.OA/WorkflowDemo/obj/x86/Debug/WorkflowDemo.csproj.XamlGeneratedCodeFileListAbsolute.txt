@@ -1,6 +1,0 @@
-obj\x86\Debug\_WorkflowDemo.g.cs
-obj\x86\Debug\Workflow1.g.cs
-obj\x86\Debug\Activity.g.cs
-obj\x86\Debug\WorkflowDemo_Workflow1_BeforeInitializeComponentHelper.cs
-obj\x86\Debug\WorkflowDemo_Activity_BeforeInitializeComponentHelper.cs
-E:\测试\OA\ZTB.OA\WorkflowDemo\obj\x86\Debug\WorkflowDemo_Activity_CompiledExpressionRoot.cs

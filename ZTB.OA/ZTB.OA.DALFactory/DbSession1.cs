@@ -50,38 +50,6 @@ namespace ZTB.OA.DALFactory
                     return StaticFactory.GetUserInfoDal();
                 }
             }       
-    		
-    		 public IWP_TempDal WP_TempDal
-            {
-                get
-                {
-                    return StaticFactory.GetWP_TempDal();
-                }
-            }       
-    		
-    		 public IWF_InstanceDal WF_InstanceDal
-            {
-                get
-                {
-                    return StaticFactory.GetWF_InstanceDal();
-                }
-            }       
-    		
-    		 public IFileInfoDal FileInfoDal
-            {
-                get
-                {
-                    return StaticFactory.GetFileInfoDal();
-                }
-            }       
-    		
-    		 public IWF_StepDal WF_StepDal
-            {
-                get
-                {
-                    return StaticFactory.GetWF_StepDal();
-                }
-            }       
     		 public int SaveChanges()
             {
                return DbContextFactory.GetCurrentDbContext().SaveChanges();

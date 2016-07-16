@@ -182,8 +182,6 @@
     <Compile Include="Controllers\ActionInfoController.cs" />
     <Compile Include="Controllers\RoleInfoController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
-    <Compile Include="Controllers\WFInstanceController.cs" />
-    <Compile Include="Controllers\WFTempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -351,13 +349,9 @@
     <Content Include="Views\UserInfo\SetAction.cshtml" />
     <Content Include="Views\Logs\Index.cshtml" />
     <Content Include="Views\Manage\ModifyPwd.cshtml" />
-    <Content Include="Views\WFTemp\Index.cshtml" />
-    <Content Include="Views\WFTemp\Create.cshtml" />
-    <Content Include="Views\WFTemp\Modify.cshtml" />
-    <Content Include="Views\WFTemp\DataTablePartial.cshtml" />
-    <Content Include="Views\WFInstance\Index.cshtml" />
-    <Content Include="Views\WFInstance\Add.cshtml" />
     <Content Include="Views\UserInfo\DataTablePartial.cshtml" />
+    <Content Include="Views\RoleInfo\DataTablePartial.cshtml" />
+    <Content Include="Views\ActionInfo\DataTablePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\WeiXin\Models\" />

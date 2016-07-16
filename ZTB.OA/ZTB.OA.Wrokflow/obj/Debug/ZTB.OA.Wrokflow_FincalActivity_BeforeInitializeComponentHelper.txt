@@ -1,2 +1,0 @@
-FincalActivity.g.xaml
-XamlStaticHelperNamespace._XamlStaticHelper
