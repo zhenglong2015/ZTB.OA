@@ -9,6 +9,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+    </script>
 </head>
 <body id="body" class="gray-bg" style="background-size: cover;background-attachment: fixed;
 background-position: center;background-repeat: no-repeat; ">
@@ -66,8 +71,6 @@ background-position: center;background-repeat: no-repeat; ">
                 $('#Vcode').attr('src', old + "?/r=" + Math.random());
             } else if (data == "用户名或密码错误！") {
                 swal(data)
-            } else {
-                window.location.href = data;
             }
         }
         //记载随机背景图
@@ -75,10 +78,10 @@ background-position: center;background-repeat: no-repeat; ">
             var imgNum = $.cookie("imgNum");//取出上次保存的背景图的ID
             if (imgNum == "" || imgNum == null) {
                 imgNum = Math.floor(1 + Math.random() * (4000));
+                $.cookie("imgNum", imgNum, { expires: 1 });
             }
             var url = 'http://img.infinitynewtab.com/wallpaper/' + imgNum + '.jpg';
             $("#body").css('background-image', 'url(' + url + ')');
-            $.cookie("imgNum", imgNum, { expires: 1 });
         });
 
         $(document).ready(function () {

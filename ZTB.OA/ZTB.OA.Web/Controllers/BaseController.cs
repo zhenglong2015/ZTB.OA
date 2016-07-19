@@ -15,14 +15,14 @@ namespace ZTB.OA.Web.Controllers
             get { return Convert.ToInt32(ConfigurationManager.AppSettings["PageSize"]); }
         }
 
+
+
         /// <summary>
         /// 校验数据登录
         /// </summary>
         /// <param name="filterContext"></param>
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            string backUrl = filterContext.HttpContext.Request.RawUrl;
-            string loginUrl = string.Format("/Account/Login?backUrl={0}", backUrl);
             if (IsCheckLogin)
             {
                 if (Request.Cookies["LoginUser"] == null)
@@ -35,7 +35,7 @@ namespace ZTB.OA.Web.Controllers
                 if (userInfo == null)
                 {
                     //登录超时
-                   filterContext.HttpContext.Response.Redirect("/Account/Login");                    
+                    filterContext.HttpContext.Response.Redirect("/Account/Login");                    
                     return;
                 }
                 UserInfo = userInfo;

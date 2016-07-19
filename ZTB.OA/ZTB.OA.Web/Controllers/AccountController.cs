@@ -29,7 +29,7 @@ namespace ZTB.OA.Web.Controllers
             return File(ValidateCode.DrawImage(code, 22, Color.White), @"image/jpeg");
         }
         [HttpPost]
-        public ActionResult Login(string userName, string pwd, string vcode, string backUrl)
+        public ActionResult Login(string userName, string pwd, string vcode)
         {
             if (string.IsNullOrEmpty(vcode) || Session["Vcode"] == null)
             {
@@ -48,8 +48,6 @@ namespace ZTB.OA.Web.Controllers
                 string userId = Guid.NewGuid().ToString();
                 Common.Caches.CacheHelper.InsertCache(userId, user);
                 Response.Cookies["LoginUser"].Value = userId;//网客户端写Cookie
-                if (!string.IsNullOrEmpty(backUrl))
-                    return Content(backUrl);
                 return Content("Ok");
             }
         }
