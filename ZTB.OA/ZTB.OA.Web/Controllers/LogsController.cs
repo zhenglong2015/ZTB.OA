@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ZTB.OA.Common.Logs;
@@ -24,12 +25,12 @@ namespace ZTB.OA.Web.Controllers
 
         public ActionResult GetContent(string path)
         {
-            var response = LogReadService.ReadContent(path);
+            var response =LogReadService.ReadContent(path);
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
 
-        public ActionResult Remove(string path)
+        public  ActionResult Remove(string path)
         {
             var response = LogReadService.Delete(path);
             return Json(response, JsonRequestBehavior.AllowGet);

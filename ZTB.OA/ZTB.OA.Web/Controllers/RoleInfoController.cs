@@ -6,16 +6,21 @@ using System.Web.Mvc;
 using ZTB.OA.IBLL;
 using PagedList;
 using ZTB.OA.Model;
+using System.Linq.Expressions;
 
 namespace ZTB.OA.Web.Controllers
 {
     public class RoleInfoController : BaseController
     {
         public IRoleInfoService RoleInfoService { get; set; }
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string roleName)
         {
-            var roles = RoleInfoService.GetEntities(r => true).OrderByDescending(r => r.Id);
-
+            var roles = RoleInfoService.GetEntities(r => true);
+            if (!string.IsNullOrEmpty(roleName))
+            {
+                roles = roles.Where(r => r.RoleName.Contains(roleName));
+            }
+            roles = roles.OrderBy(r => r.Id);
             return Request.IsAjaxRequest() ? (ActionResult)PartialView("DataTablePartial", roles.ToPagedList(page ?? 1, base.PageSize))
                 : View(roles.ToPagedList(page ?? 1, base.PageSize));
         }
@@ -31,6 +36,7 @@ namespace ZTB.OA.Web.Controllers
 
             role.ModifiedOn = DateTime.Now;
             role.SubTime = DateTime.Now;
+            role.DelFag = "1";
 
             RoleInfoService.Add(role);
             return Content("ok");

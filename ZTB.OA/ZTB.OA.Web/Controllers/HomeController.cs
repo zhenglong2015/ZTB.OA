@@ -14,7 +14,7 @@ namespace ZTB.OA.Web.Controllers
         public IActionInfoService ActionInfoService { get; set; }
         public ActionResult Index()
         {
-            LoadMenu();
+            //LoadMenu();
             return View();
         }
 

@@ -5,17 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div style="margin-top:10px; margin-bottom:10px;">
-    <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
+    <input type="button" value="添加" id="createBtn" class="btn btn-primary" />
     <div class="form-inline" style="float:right">
-      @using (Ajax.BeginForm("List", "UserInfo", new AjaxOptions()
-      {
-          HttpMethod = "Get",
-          UpdateTargetId = "table",
-          OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
-      }, new { id = "searchForm" }))
-      {
+        @using (Ajax.BeginForm("List", "UserInfo", new AjaxOptions()
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "table",
+            OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
+        }, new { id = "searchForm" }))
+        {
             <input type="text" class="form-control" name="name" placeholder="用户名">
-            <input type="text" class="form-control" name="pwd" placeholder="密码">
             <button type="submit" class="btn btn-info">搜索</button>
         }
     </div>
@@ -28,6 +27,15 @@
 
 @section Scripts {
     <script>
+        function showSuccess(obj) {
+            toastr.success(obj);
+        }
+        function showError(obj)
+        {
+            toastr.error(obj);
+         }
+
+
         function PagedOnComplete() {
             //设置角色
             $("a[name='setRole']").click(function () {
@@ -38,6 +46,7 @@
                     shadeClose: true,
                     shade: 0.8,
                     area: ['60%', '90%'],
+                    zIndex :100,
                     content: '@Url.Action("SetRole")' + '/' + id
                 });
             });
@@ -51,6 +60,7 @@
                     shadeClose: true,
                     shade: 0.8,
                     area: ['60%', '90%'],
+                    zIndex :100,
                     content: '@Url.Action("SetAction")' + '/' + id
                 });
             });
@@ -63,6 +73,7 @@
                     shadeClose: true,
                     shade: 0.8,
                     area: ['60%', '90%'],
+                    zIndex :100,
                     content: '@Url.Action("Modify")' + '/' + id
                 });
             });
@@ -86,21 +97,11 @@
                         data: { id: id },
                         success: function (data) {
                             if (data == "ok") {
-                                swal({
-                                    title: "提示",
-                                    text: "删除成功",
-                                    type: "success",
-                                    showCancelButton: false,
-                                    confirmButtonColor: "#AEDEF4",
-                                    confirmButtonText: "确定",
-                                    timer: 2000,
-                                    closeOnConfirm: false,
-                                }, function () {
-                                    $("#searchForm").submit();
-                                    swal.close();
-                                });
+                                toastr.success("删除成功");
+                                $("#searchForm").submit();
+                                swal.close();
                             } else {
-                                swal("Deleted!", "No", "error");
+                                toastr.error("删除失败");
                             }
                         }
                     });
@@ -116,6 +117,7 @@
                     shadeClose: true,
                     shade: 0.8,
                     area: ['60%', '90%'],
+                    zIndex :100,
                     content: '@Url.Action("Create")'
                 });
             });

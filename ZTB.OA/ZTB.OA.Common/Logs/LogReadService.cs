@@ -22,26 +22,30 @@ namespace ZTB.OA.Common.Logs
             GetDirFilesResponse response = new GetDirFilesResponse();
             if (Directory.Exists(dirPath))
             {
-                string[] files = Directory.GetFiles(dirPath, filter);
-                response.Model = new List<LogFile>();
-                if (files.Length > 0)
+                Task task = Task.Run(() =>
                 {
-                    foreach (string fullName in files)
+                    string[] files = Directory.GetFiles(dirPath, filter);
+                    response.Model = new List<LogFile>();
+                    if (files.Length > 0)
                     {
-                        FileInfo inf = new FileInfo(fullName);
-                        float value = inf.Length / 1024;
-                        response.Model.Add(new LogFile
+                        foreach (string fullName in files)
                         {
-                            fullName = fullName,
-                            fileName = inf.Name,
-                            fileSize = value + "KB",
-                            LastWrite = inf.LastWriteTime,
-                            lastWriteTime = inf.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss")
-                        });
+                            FileInfo inf = new FileInfo(fullName);
+                            float value = inf.Length / 1024;
+                            response.Model.Add(new LogFile
+                            {
+                                fullName = fullName,
+                                fileName = inf.Name,
+                                fileSize = value + "KB",
+                                LastWrite = inf.LastWriteTime,
+                                lastWriteTime = inf.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss")
+                            });
+                        }
                     }
-                }
-                response.Model = response.Model.OrderByDescending(m => m.LastWrite).ToList();
-                response.Success = true;
+                    response.Model = response.Model.OrderByDescending(m => m.LastWrite).ToList();
+                    response.Success = true;
+                });
+                Task.WaitAll(task);
             }
             else
             {
@@ -68,9 +72,10 @@ namespace ZTB.OA.Common.Logs
                         sb.Append(line.ToString() + "\r\n");
                     }
                 }
+
                 dy = new { Success = true, Message = "读取成功！", Content = sb.ToString() };
             }
-            return dy;
+            return  dy;
         }
 
         public static dynamic Delete(string path)
@@ -91,7 +96,7 @@ namespace ZTB.OA.Common.Logs
                 }
             }
 
-            return dy;
+            return  dy;
         }
 
     }

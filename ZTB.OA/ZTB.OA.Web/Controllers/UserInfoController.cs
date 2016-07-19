@@ -22,15 +22,13 @@ namespace ZTB.OA.Web.Controllers
 
         public ActionResult List(int? page, string name, string pwd)
         {
-            int pageNumber = (page ?? 1);
-
             var users = UserInfoService.LoagPageData(new UserQueryParam()
             {
                 Name = name,
                 Pwd = pwd
             });
             return Request.IsAjaxRequest() ? (ActionResult)PartialView("DataTablePartial", users.ToPagedList(page ?? 1, base.PageSize))
-                : View(users.ToPagedList(pageNumber, base.PageSize));
+                : View(users.ToPagedList(page ?? 1, base.PageSize));
         }
 
         public ActionResult Create()
@@ -41,6 +39,7 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult Create(UserInfo user)
         {
             user.ModifiedOn = DateTime.Now;
+            user.DelFag = "1";
             user.ShowName = "测试";
             user.SubTime = DateTime.Now;
 
@@ -110,7 +109,7 @@ namespace ZTB.OA.Web.Controllers
             var action = ActionInfoService.GetEntities(a => true).OrderBy(a => a.Id).ToList();
             return View(action);
         }
-
+        [HttpPost]
         public ActionResult DeleteAction(int uId, int actinId)
         {
             var rua = R_UserInfo_ActionInfoService.GetEntities(r => r.ActionInfoId == actinId && r.UserInfoId == uId).FirstOrDefault();

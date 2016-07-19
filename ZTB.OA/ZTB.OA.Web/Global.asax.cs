@@ -9,7 +9,7 @@ using System.Web.Routing;
 
 namespace ZTB.OA.Web
 {
-    public class MvcApplication : SpringMvcApplication//System.Web.HttpApplication
+    public class MvcApplication : SpringMvcApplication
     {
         protected void Application_Start()
         {
@@ -17,6 +17,7 @@ namespace ZTB.OA.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
         }
     }
 }

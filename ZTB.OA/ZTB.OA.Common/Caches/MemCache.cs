@@ -60,7 +60,7 @@ namespace ZTB.OA.Common.Caches
 
         public void Insert(string key, object obj, int expires = 20)
         {
-            memClient.Set(key, obj);
+            memClient.Set(key, obj, expires);
         }
     }
 }

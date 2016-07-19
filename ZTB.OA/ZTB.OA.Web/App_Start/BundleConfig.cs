@@ -22,7 +22,8 @@ namespace ZTB.OA.Web
                         "~/Content/imgareaselect/scripts/jquery.imgareaselect.pack.js",
                         "~/Scripts/jquery.form.min.js",
                         "~/Content/cropper/cropper.min.js",
-                        "~/Scripts/bootstrap-paginator.js"
+                        "~/Scripts/bootstrap-paginator.js",
+                        "~/Scripts/toastr.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -42,7 +43,8 @@ namespace ZTB.OA.Web
                       "~/Content/sweetalert.css",
                       "~/Content/iconfont.css",
                       "~/Content/imgareaselect/css/imgareaselect-default.css",
-                      "~/Content/cropper/cropper.min.css"
+                      "~/Content/cropper/cropper.min.css",
+                      "~/Content/toastr.min.css"
                       ));
         }
     }

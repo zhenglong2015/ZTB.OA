@@ -14,9 +14,14 @@ namespace ZTB.OA.Web.Controllers
 
         public IActionInfoService ActionInfoService { get; set; }
         public IRoleInfoService RoleInfoService { get; set; }
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string name)
         {
-            var actions = ActionInfoService.GetEntities(a => true).OrderByDescending(a => a.Id);
+            var actions = ActionInfoService.GetEntities(a => true);
+            if (!string.IsNullOrEmpty(name))
+            {
+                actions = actions.Where(a => a.ActionName.Contains(name));
+            }
+            actions = actions.OrderByDescending(a => a.Id);
             return Request.IsAjaxRequest() ? (ActionResult)PartialView("DataTablePartial", actions.ToPagedList(page ?? 1, base.PageSize))
                 : View(actions.ToPagedList(page ?? 1, base.PageSize));
         }
@@ -30,7 +35,7 @@ namespace ZTB.OA.Web.Controllers
         {
             actionInfo.ModifiedOn = DateTime.Now;
             actionInfo.SubTime = DateTime.Now;
-
+            actionInfo.DelFag = "0";
             ActionInfoService.Add(actionInfo);
             return Content("ok");
         }

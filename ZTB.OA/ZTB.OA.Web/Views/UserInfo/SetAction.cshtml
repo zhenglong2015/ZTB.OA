@@ -3,7 +3,6 @@
 @using PagedList
 @using PagedList.Mvc
 @{
-    ViewBag.Title = "SetAction";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
@@ -31,7 +30,6 @@
             </th>
             <th style="text-align:center">操作</th>
         </tr>
-
         @foreach (var item in Model)
             {
                 string str = "rd_" + item.Id;
@@ -60,26 +58,18 @@
         }
     </table>
 }
-
 @section Scripts{
     <script>
         $(document).ready(function () {
             $(":radio").click(function () {
                 var id = $(this).attr('data-id');
-                var uid = $("input[name='uId']").val();
+                var uId = $("input[name='uId']").val();
                 var val = $(this).val();
-                $.post("/UserInfo/SetActionPost", { id, id, uid, uid, val: val }, function (data) {
+                $.post("/UserInfo/SetActionPost", { id: id, uId: uId, val: val }, function (data) {
                     if (data == "ok") {
-                        swal({
-                            title: "提示",
-                            text: "删除成功",
-                            type: "success",
-                            showCancelButton: false,
-                            confirmButtonColor: "#AEDEF4",
-                            confirmButtonText: "确定",
-                            timer: 2000,
-                            closeOnConfirm: false
-                        });
+                        toastr.success("修改成功");
+                    } else {
+                        toastr.error("修改失败");
                     }
                 });
             });
@@ -99,28 +89,16 @@
                     cancelButtonText: "取消",
                     closeOnConfirm: false,
                 }, function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: '@Url.Action("DeleteAction")',
-                        data: { id: uid, actinId: id },
-                        success: function (data) {
-                            if (data == "ok") {
-                                swal({
-                                    title: "提示",
-                                    text: "删除成功",
-                                    type: "success",
-                                    showCancelButton: false,
-                                    confirmButtonColor: "#AEDEF4",
-                                    confirmButtonText: "确定",
-                                    timer: 2000,
-                                    closeOnConfirm: false,
-                                }, function () {
-                                    $("#searchForm").submit();
-                                    swal.close();
-                                });
-                            } else {
-                                swal("Deleted!", "No", "error");
-                            }
+                    $.post('@Url.Action("DeleteAction")', { uid: uid, actinId: id }, function (data) {
+                        if (data == "ok") {
+                            parent.window.showSuccess("删除成功");
+                            parent.$("#searchForm").submit();
+                            swal.close();
+                            //当你在iframe页面关闭自身时
+                            var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                            parent.layer.close(index); //再执行关闭
+                        } else {
+                            parent.window.showError("删除失败");
                         }
                     });
                 });
@@ -128,9 +106,6 @@
         });
     </script>
 }
-
-
-
 
 
 

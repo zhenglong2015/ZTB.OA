@@ -8,7 +8,7 @@
 
 
 <div style="margin-top:10px; margin-bottom:10px">
-    <input type="button" value="添加行" id="createBtn" class="btn btn-primary" />
+    <input type="button" value="添加" id="createBtn" class="btn btn-primary" />
     <div class="form-inline" style="float:right">
         @using (Ajax.BeginForm("Index", "RoleInfo", new AjaxOptions()
         {
@@ -17,9 +17,7 @@
             OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
         }, new { id = "searchForm" }))
         {
-
-            <input type="text" class="form-control" name="name" placeholder="用户名">
-            <input type="text" class="form-control" name="pwd" placeholder="密码">
+            <input type="text" class="form-control" name="roleName" placeholder="角色名">
             <button type="submit" class="btn btn-info">搜索</button>
         }
     </div>
@@ -32,6 +30,14 @@
 
 @section Scripts {
     <script>
+
+        function showSuccess(obj) {
+            toastr.success(obj);
+        }
+        function showError(obj) {
+            toastr.error(obj);
+        }
+
         function PagedOnComplete() {
             //编辑
             $("a[name='modify']").click(function () {
@@ -59,28 +65,13 @@
                     cancelButtonText: "取消",
                     closeOnConfirm: false,
                 }, function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: '@Url.Action("Delete")',
-                        data: { id: id },
-                        success: function (data) {
-                            if (data == "ok") {
-                                swal({
-                                    title: "提示",
-                                    text: "删除成功",
-                                    type: "success",
-                                    showCancelButton: false,
-                                    confirmButtonColor: "#AEDEF4",
-                                    confirmButtonText: "确定",
-                                    timer: 2000,
-                                    closeOnConfirm: false,
-                                }, function () {
-                                    $("#searchForm").submit();
-                                    swal.close();
-                                });
-                            } else {
-                                swal("Deleted!", "No", "error");
-                            }
+                    $.post('@Url.Action("Delete")', { id: id }, function (data) {
+                        if (data == "ok") {
+                            showSuccess("删除成功");
+                            $("#searchForm").submit();
+                            swal.close();
+                        } else {
+                            showError("删除失败");
                         }
                     });
                 });

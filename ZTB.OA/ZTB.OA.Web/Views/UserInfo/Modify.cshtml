@@ -1,106 +1,63 @@
 ﻿@model ZTB.OA.Model.UserInfo
-
 @{
-    ViewBag.Title = "Modify";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Ajax.BeginForm(new AjaxOptions() { HttpMethod="Post", OnSuccess="modifySuccess" }))
+@using (Ajax.BeginForm(new AjaxOptions() { HttpMethod = "Post", OnSuccess = "modifySuccess" }))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UName, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        用户名：
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UName, new { htmlAttributes = new { @class = "form-control" } })
+
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Pwd, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pwd, "", new { @class = "text-danger" })
-            </div>
+    </div>
+    <div class="form-group">
+        密码：
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Pwd, "", new { @class = "text-danger" })
         </div>
+    </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DelFag, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DelFag, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DelFag, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShowName, htmlAttributes: new { @class = "control-label col-md-2" })
+            显示名：
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ShowName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ShowName, "", new { @class = "text-danger" })
             </div>
         </div>
 
+          <div class="form-group" hidden="hidden">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DelFag, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })
+            备注：
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.ModifiedOn, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ModifiedOn, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ModifiedOn, "", new { @class = "text-danger" })
-            </div>
+            <input type="submit" value="保存" class="btn btn-info btn-block" />
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SubTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SubTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SubTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
 }
-
 @section Scripts {
     <script>
         function modifySuccess(data) {
             if (data == "ok") {
-                swal({
-                    title: "提示",
-                    text: "修改成功",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonColor: "#AEDEF4",
-                    confirmButtonText: "确定",
-                    timer: 2000,
-                    closeOnConfirm: false,
-                }, function () {
-                    parent.$("#searchForm").submit();
-                    swal.close();
-                    //当你在iframe页面关闭自身时
-                    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-                    parent.layer.close(index); //再执行关闭
-                });
+                parent.window.showSuccess("修改成功");
+                parent.$("#searchForm").submit();
+                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                parent.layer.close(index); //再执行关闭
+
             } else {
-                swal("修改失败!")
+                parent.window.showError("修改失败");
             }
         };
 
     </script>
 }
-

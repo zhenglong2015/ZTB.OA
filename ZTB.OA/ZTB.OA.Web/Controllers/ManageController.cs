@@ -79,7 +79,6 @@ namespace ZTB.OA.Web.Controllers
             originalImage.Dispose();
             selectbitmap.Dispose();
             selectgraphic.Dispose();
-            //todo:将上述资源释放
             return Content(url);
         }
 
