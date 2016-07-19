@@ -14,11 +14,9 @@ E:\WeiXinApp\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.pdb
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.Resources.Code.resources
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.csproj.GenerateResource.Cache
-E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\log4.config
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\ZhiHeng.Tickets.Wx.App.dll.config
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\ZhiHeng.Tickets.Wx.App.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\ZhiHeng.Tickets.Wx.App.pdb
-E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\log4net.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.dll
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.pdb
 E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\ZTB.OA.Common.dll
@@ -71,3 +69,6 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tic
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.csproj.GenerateResource.Cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\obj\Debug\ZhiHeng.Tickets.Wx.App.pdb
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\NLog.config
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\NLog.dll
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.App\bin\Debug\NLog.xml

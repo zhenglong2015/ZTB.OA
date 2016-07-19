@@ -42,13 +42,13 @@
       <HintPath>..\packages\NPOI.1.2.4\lib\net40\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Memcached.ClientLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=42c0400964dcc297, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Memcached.ClientLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.5\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.1.2.4\lib\net40\NPOI.dll</HintPath>
@@ -84,10 +84,10 @@
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="ListExtensions.cs" />
     <Compile Include="Logs\ILogManger.cs" />
-    <Compile Include="Logs\Log4NetWrite.cs" />
     <Compile Include="Logs\LoggingFactory.cs" />
     <Compile Include="Logs\LogHelper.cs" />
     <Compile Include="Logs\LogReadService.cs" />
+    <Compile Include="Logs\NLogHelper.cs" />
     <Compile Include="MailHelper.cs" />
     <Compile Include="PagerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,12 +97,14 @@
   <ItemGroup>
     <Content Include="Lib\Commons.dll" />
     <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
-    <Content Include="Lib\log4net.dll" />
     <Content Include="Lib\Memcached.ClientLibrary.dll" />
-    <Content Include="log4.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Logs\App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

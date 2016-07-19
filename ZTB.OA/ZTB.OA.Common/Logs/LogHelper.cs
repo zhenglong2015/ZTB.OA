@@ -11,46 +11,47 @@ namespace ZTB.OA.Common.Logs
 {
     public class LogHelper
     {
-        public static Queue<ExceptionClass> ExceptionStringQueue = new Queue<ExceptionClass>();
-        public static IList<ILogManger> logWriteList = new List<ILogManger>();
-
+      //  private static Queue<ExceptionClass> ExceptionStringQueue = new Queue<ExceptionClass>();
+        private static IList<ILogManger> logWriteList = new List<ILogManger>();
         static LogHelper()
         {
-            //logWriteList.Add(new TextWrite());
-            //logWriteList.Add(new SqlServerWrite());
-            logWriteList.Add(LoggingFactory.GetDefaultLogger());
+        //    //logWriteList.Add(new TextWrite());
+        //    //logWriteList.Add(new SqlServerWrite());
+           logWriteList.Add(LoggingFactory.GetDefaultLogger());
 
-            ThreadPool.QueueUserWorkItem(o =>
-            {
-                lock (ExceptionStringQueue)
-                {
-                    if (ExceptionStringQueue.Count > 0)
-                    {
-                        //从队列中读取日志信息
-                        ExceptionClass exc = ExceptionStringQueue.Dequeue();
-                        foreach (var item in logWriteList)
-                        {
-                            if (exc.Type == ExceptionType.Error)
-                                item.Error(exc.Message);
-                            else
-                                item.Info(exc.Message);
-                        }
-                    }
-                    else
-                    {
-                        Thread.Sleep(500);
-                    }
-                }
-            });
+        //    ThreadPool.QueueUserWorkItem(o =>
+        //    {
+        //        lock (ExceptionStringQueue)
+        //        {
+        //            if (ExceptionStringQueue.Count > 0)
+        //            {
+        //                //从队列中读取日志信息
+        //                ExceptionClass exc = ExceptionStringQueue.Dequeue();
+        //                foreach (var item in logWriteList)
+        //                {
+        //                    if (exc.Type == ExceptionType.Error)
+        //                        item.Error(exc.Message);
+        //                    else
+        //                        item.Info(exc.Message);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                Thread.Sleep(500);
+        //            }
+        //        }
+        //    });
         }
         public static void WriteErrorLog(string exceptionText)
         {
-            ExceptionStringQueue.Enqueue(new ExceptionClass() { Type = ExceptionType.Error, Message = exceptionText });
+            // ExceptionStringQueue.Enqueue(new ExceptionClass() { Type = ExceptionType.Error, Message = exceptionText });
+            logWriteList.ToList().ForEach(m => { m.Error(exceptionText); });
         }
 
         public static void WriteInfoLog(string exceptionText)
         {
-            ExceptionStringQueue.Enqueue(new ExceptionClass() { Type = ExceptionType.Info, Message = exceptionText });
+            //ExceptionStringQueue.Enqueue(new ExceptionClass() { Type = ExceptionType.Info, Message = exceptionText });
+            logWriteList.ToList().ForEach(m => { m.Info(exceptionText); });
         }
 
         /// <summary>

@@ -175,7 +175,6 @@
     <Compile Include="Areas\WeiXin\WeiXinAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -189,6 +188,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="500.html" />
     <Content Include="Config\common.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -339,8 +340,6 @@
     <Content Include="Views\Manage\UseProfile.cshtml" />
     <Content Include="Views\Manage\Contacts.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Error\Error404.cshtml" />
-    <Content Include="Views\Error\Error500.cshtml" />
     <Content Include="Views\UserInfo\Create.cshtml" />
     <Content Include="Views\UserInfo\Modify.cshtml" />
     <Content Include="Views\UserInfo\List.cshtml" />

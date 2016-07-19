@@ -2,13 +2,13 @@
 <objects xmlns="http://www.springframework.net">
 
   <!--注入memcache-->
-  <object name="CacheWriter" type="ZTB.OA.Common.Caches.MemCache, ZTB.OA.Common" singleton="false" >
-  </object>
+  <!--<object name="CacheWriter" type="ZTB.OA.Common.Caches.MemCache, ZTB.OA.Common" singleton="false" >
+  </object>-->
 
 
   <!--注入HttpRuntime-->
-  <!--<object name="CacheWriter" type="ZTB.OA.Common.Caches.HttpRuntimeCache, ZTB.OA.Common" singleton="false" >
-  </object>-->
+  <object name="CacheWriter" type="ZTB.OA.Common.Caches.HttpRuntimeCache, ZTB.OA.Common" singleton="false" >
+  </object>
 
   <object name="CacheHelper" type="ZTB.OA.Common.Caches.CacheHelper, ZTB.OA.Common" singleton="false" >
        <property name="CacheWriter" ref="CacheWriter"/>

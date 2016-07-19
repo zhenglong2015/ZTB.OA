@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTB.OA.Model", "ZTB.OA.Model\ZTB.OA.Model.csproj", "{D2ECDB25-B287-45AF-90A0-F4A81CDD7A86}"
 EndProject
@@ -54,6 +54,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiWithOath", "WebApiWithOath\WebApiWithOath.csproj", "{C1386B89-72C1-4EB5-ADA1-A96CE57CFE21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHeng.Tickets.Wx.Sy.Repository", "ZhiHeng.Tickets.Wx.Sy.Repository\ZhiHeng.Tickets.Wx.Sy.Repository.csproj", "{3058B9F3-798A-45C3-A858-937FB2939D5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{72C33A85-CE96-4217-9ECB-85121D7EBD83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +209,14 @@ Global
 		{3058B9F3-798A-45C3-A858-937FB2939D5A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3058B9F3-798A-45C3-A858-937FB2939D5A}.Release|x86.ActiveCfg = Release|Any CPU
 		{3058B9F3-798A-45C3-A858-937FB2939D5A}.Release|x86.Build.0 = Release|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Debug|x86.Build.0 = Debug|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Release|x86.ActiveCfg = Release|Any CPU
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,5 +240,6 @@ Global
 		{3EA0D0E7-7E16-4AEE-B5CD-3B25AD6D78E3} = {6E285EE8-8033-4570-B011-CF988E7C1456}
 		{C1386B89-72C1-4EB5-ADA1-A96CE57CFE21} = {15CDD005-09F9-4932-A4CC-F19714E89FD3}
 		{3058B9F3-798A-45C3-A858-937FB2939D5A} = {15CDD005-09F9-4932-A4CC-F19714E89FD3}
+		{72C33A85-CE96-4217-9ECB-85121D7EBD83} = {67B3A07C-C067-4385-8C3A-F716EE1EE12F}
 	EndGlobalSection
 EndGlobal

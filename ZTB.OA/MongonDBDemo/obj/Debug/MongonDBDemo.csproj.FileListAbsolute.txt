@@ -7,7 +7,6 @@ E:\测试\OA\ZTB.OA\MongonDBDemo\bin\Debug\MongoDB.Bson.pdb
 E:\测试\OA\ZTB.OA\MongonDBDemo\bin\Debug\MongoDB.Bson.xml
 E:\测试\OA\ZTB.OA\MongonDBDemo\bin\Debug\MongoDB.Driver.pdb
 E:\测试\OA\ZTB.OA\MongonDBDemo\bin\Debug\MongoDB.Driver.xml
-E:\测试\OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.exe
 E:\测试\OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.pdb
 E:\学习测试项目\ZTB.OA\ZTB.OA\MongonDBDemo\bin\Debug\MongonDBDemo.exe.config

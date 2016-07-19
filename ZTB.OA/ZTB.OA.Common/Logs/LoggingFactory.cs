@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using log4net.Core;
+
 
 namespace ZTB.OA.Common.Logs
 {
@@ -18,7 +18,7 @@ namespace ZTB.OA.Common.Logs
     { 
         public static ILogManger GetDefaultLogger()
         {
-            return new Log4NetWrite();
+            return new NLogHelper();
         }
     }
 }
