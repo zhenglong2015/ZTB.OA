@@ -55,7 +55,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiWithOath", "WebApiWit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHeng.Tickets.Wx.Sy.Repository", "ZhiHeng.Tickets.Wx.Sy.Repository\ZhiHeng.Tickets.Wx.Sy.Repository.csproj", "{3058B9F3-798A-45C3-A858-937FB2939D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{72C33A85-CE96-4217-9ECB-85121D7EBD83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLogDemo", "ConsoleApplication1\NLogDemo.csproj", "{72C33A85-CE96-4217-9ECB-85121D7EBD83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
