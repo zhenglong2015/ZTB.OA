@@ -2,21 +2,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--[if lt IE 8]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
     @RenderSection("css", required: false)
     @Styles.Render("~/Content/css")
-  
 </head>
 <body style="padding:10px;margin:10px;">
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-      <script>
+    <script>
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -32,6 +30,20 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         }
+        defaults = {
+            color: '#64bd63'
+, secondaryColor: '#dfdfdf'
+, jackColor: '#fff'
+, jackSecondaryColor: null
+, className: 'switchery'
+, disabled: false
+, disabledOpacity: 0.5
+, speed: '0.1s'
+, size: 'small'
+        }
+
+        var elem = document.querySelector('.js-switch');
+        var init = new Switchery(elem);
     </script>
 </body>
 </html>

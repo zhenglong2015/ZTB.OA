@@ -34,7 +34,7 @@
     <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
     <Property Name="SubTime" Type="DateTime" Precision="3" />
     <Property Name="ActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IsMenu" Type="Boolean" />
+    <Property Name="IsMenu" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="RoleInfo" Relationship="DataModel.ActionInfoRoleInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
     <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="DataModel.ActionInfoR_UserInfo_ActionInfo" FromRole="ActionInfo" ToRole="R_UserInfo_ActionInfo" />
   </EntityType>

@@ -17,10 +17,6 @@ namespace ZTB.OA.Web.Controllers
         // GET: Account
         public ActionResult Login()
         {
-            for (int i = 0; i < 100000; i++)
-            {
-                Common.Logs.LogHelper.WriteErrorLog(new Exception("atest").Message);
-            }
             return View();
         }
 

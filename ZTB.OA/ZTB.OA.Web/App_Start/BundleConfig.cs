@@ -23,7 +23,8 @@ namespace ZTB.OA.Web
                         "~/Scripts/jquery.form.min.js",
                         "~/Content/cropper/cropper.min.js",
                         "~/Scripts/bootstrap-paginator.js",
-                        "~/Scripts/toastr.min.js"
+                        "~/Scripts/toastr.min.js",
+                        "~/Content/switchery/switchery.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -44,7 +45,8 @@ namespace ZTB.OA.Web
                       "~/Content/iconfont.css",
                       "~/Content/imgareaselect/css/imgareaselect-default.css",
                       "~/Content/cropper/cropper.min.css",
-                      "~/Content/toastr.min.css"
+                      "~/Content/toastr.min.css",
+                      "~/Content/switchery/switchery.min.css"
                       ));
         }
     }

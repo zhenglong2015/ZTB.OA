@@ -267,6 +267,10 @@
     <Content Include="Content\patterns\shattered.png" />
     <Content Include="Content\style.min.css" />
     <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\switchery\switchery.css" />
+    <Content Include="Content\switchery\switchery.js" />
+    <Content Include="Content\switchery\switchery.min.css" />
+    <Content Include="Content\switchery\switchery.min.js" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />

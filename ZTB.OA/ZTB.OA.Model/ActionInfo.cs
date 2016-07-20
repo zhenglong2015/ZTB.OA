@@ -46,7 +46,7 @@ using System;
 
     public string ActionName { get; set; }
 
-    public Nullable<bool> IsMenu { get; set; }
+    public bool IsMenu { get; set; }
 
 
 

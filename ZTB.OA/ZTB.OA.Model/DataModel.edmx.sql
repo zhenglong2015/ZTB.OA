@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/18/2016 17:19:48
+-- Date Created: 07/20/2016 17:25:39
 -- Generated from EDMX file: E:\测试\OA\ZTB.OA\ZTB.OA.Model\DataModel.edmx
 -- --------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE [dbo].[ActionInfo] (
     [ModifiedOn] datetime  NULL,
     [SubTime] datetime  NULL,
     [ActionName] nvarchar(50)  NULL,
-    [IsMenu] bit  NULL
+    [IsMenu] bit  NOT NULL
 );
 GO
 

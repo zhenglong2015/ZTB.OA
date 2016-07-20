@@ -21,12 +21,12 @@ namespace ZTB.OA.Web.Models
             if (httpException != null && (httpException.GetHttpCode() == 400 || httpException.GetHttpCode() == 404))
             {
                 filterContext.HttpContext.Response.StatusCode = 404;
-                filterContext.HttpContext.Response.Redirect("404.html");
+                filterContext.HttpContext.Response.Redirect("/404.html");
             }
             else
             {
                 filterContext.HttpContext.Response.StatusCode = 500;
-                filterContext.HttpContext.Response.Redirect("500.html");
+                filterContext.HttpContext.Response.Redirect("/500.html");
             }
             //自己处理异常信息
             Common.Logs.LogHelper.WriteErrorLog(filterContext.Exception.ToString());

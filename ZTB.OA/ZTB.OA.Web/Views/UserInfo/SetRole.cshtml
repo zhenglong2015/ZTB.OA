@@ -16,25 +16,26 @@
     int i = 0;
     foreach (var role in roles)
     {
+
         string str = "ckb_" + role.Id;
-        if (i % 3 == 0)
+        if (i % 5 == 0)
         {
             <hr />
         }
         if (exitRoles.Contains(role.Id))
         {
-            <input type="checkbox" name="@str" id="@str" checked="checked" />
+            <input type="checkbox" name="@str" id="@str" checked="checked" class="switchery-small " />
         }
         else
         {
-            <input type="checkbox" name="@str" id="@str" />
+            <input type="checkbox"  name="@str" id="@str" class="switchery-small " />
         }
         <label for="@str">@role.RoleName</label>
+        <span class="col-md-2"></span>
         i++;
-
-
     }
-    <input type="submit" value="提交" class="btn btn-primary">
+    <hr />
+    <input type="submit" value="提交" class="btn btn-primary btn-block">
 }
 
 @section Scripts{
@@ -43,7 +44,7 @@
             if (data == 'ok') {
                 parent.window.showSuccess("修改角色成功！");
                 parent.$("#searchForm").submit();
-               //当你在iframe页面关闭自身时
+                //当你在iframe页面关闭自身时
                 var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
                 parent.layer.close(index); //再执行关闭
             } else {

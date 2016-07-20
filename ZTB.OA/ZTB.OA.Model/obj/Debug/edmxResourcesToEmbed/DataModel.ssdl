@@ -44,7 +44,7 @@
     <Property Name="ModifiedOn" Type="datetime" Nullable="true" />
     <Property Name="SubTime" Type="datetime" Nullable="true" />
     <Property Name="ActionName" Type="nvarchar" Nullable="true" MaxLength="50" />
-    <Property Name="IsMenu" Type="bit" Nullable="true" />
+    <Property Name="IsMenu" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="R_UserInfo_ActionInfo">
     <Key>
