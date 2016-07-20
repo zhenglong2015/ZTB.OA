@@ -1,0 +1,52 @@
+﻿@model  IEnumerable<ZTB.OA.Common.Logs.LogFile>
+@using PagedList
+@using PagedList.Mvc
+<div>
+    <table class="table table-bordered table-striped" style="text-align:center">
+        <tr>
+            <th style="text-align:center">
+                文件名称
+            </th>
+            <th style="text-align:center">
+                文件大小
+            </th>
+            <th style="text-align:center">
+                最后修改时间
+            </th>
+            <th style="text-align:center">操作</th>
+        </tr>
+        @if (Model != null)
+        {
+            foreach (var file in Model)
+            {
+                <tr>
+                    <td>
+                        @file.fileName
+                    </td>
+                    <td>
+                        @file.fileSize
+                    </td>
+                    <td>
+                        @file.lastWriteTime
+                    </td>
+                    <td>
+                        <a name="checkLogs" data-path="@file.fullName" class="btn btn-xs btn-info">查看日志</a>
+                        <a name="deleteLog" data-path="@file.fullName" class="btn btn-xs btn-danger">删除</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <div style="text-align:right">
+        @if (Model != null)
+        {
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+             PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+             {
+                 HttpMethod = "GET",
+                 UpdateTargetId = "table",
+                 OnComplete = "PagedOnComplete"
+             }))
+        }
+    </div>
+</div>

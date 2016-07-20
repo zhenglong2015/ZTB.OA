@@ -56,26 +56,21 @@ namespace ZTB.OA.Common.Logs
         }
 
 
-        public static dynamic ReadContent(string path)
+        public static async Task<dynamic> ReadContent(string path)
         {
             dynamic dy = new { Success = false, Message = "文件不存在" };
 
             path = HttpUtility.UrlDecode(path);
+            string content = string.Empty;
             if (File.Exists(path))
             {
-                StringBuilder sb = new StringBuilder();
                 using (StreamReader sr = new StreamReader(path, Encoding.Default))
                 {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        sb.Append(line.ToString() + "\r\n");
-                    }
+                    content = await sr.ReadToEndAsync();
                 }
-
-                dy = new { Success = true, Message = "读取成功！", Content = sb.ToString() };
+                dy = new { Success = true, Message = "读取成功！", Content = content };
             }
-            return  dy;
+            return dy;
         }
 
         public static dynamic Delete(string path)
@@ -96,7 +91,7 @@ namespace ZTB.OA.Common.Logs
                 }
             }
 
-            return  dy;
+            return dy;
         }
 
     }
