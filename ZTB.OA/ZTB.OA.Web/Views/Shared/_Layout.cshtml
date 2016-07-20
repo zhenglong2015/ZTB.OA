@@ -15,6 +15,8 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script>
+
+        //toastr 提示框
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -30,6 +32,10 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         }
+
+        /*IOS开关
+        */
+
         defaults = {
             color: '#64bd63'
 , secondaryColor: '#dfdfdf'
@@ -41,7 +47,6 @@
 , speed: '0.1s'
 , size: 'small'
         }
-
         var elem = document.querySelector('.js-switch');
         var init = new Switchery(elem);
     </script>
