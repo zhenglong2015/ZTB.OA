@@ -38,7 +38,7 @@ namespace ZTB.OA.Web.Controllers
 
             //取出直接允许的权限
             var allAllowAction = (from ura in user.R_UserInfo_ActionInfo
-                                  where ura.HasPermission == true
+                                  where ura.HasPermission
                                   select ura.ActionInfoId).ToList();
 
             //合并权限
@@ -46,7 +46,7 @@ namespace ZTB.OA.Web.Controllers
             //去重
             allUserActionIds.Distinct();
 
-            var actionList = ActionInfoService.GetEntities(a => allUserActionIds.Contains(a.Id) && a.IsMenu == true).ToList();
+            var actionList = ActionInfoService.GetEntities(a => allUserActionIds.Contains(a.Id) && a.IsMenu).ToList();
 
             return Content("ok");
 

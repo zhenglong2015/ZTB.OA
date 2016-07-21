@@ -50,14 +50,7 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Modify(RoleInfo role)
         {
-            if (RoleInfoService.Update(role))
-            {
-                return Content("ok");
-            }
-            else
-            {
-                return Content("no");
-            }
+            return RoleInfoService.Update(role) ? Content("ok") : Content("no");
         }
 
 
@@ -65,12 +58,7 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult Delete(int id)
         {
             var user = RoleInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            if (RoleInfoService.Delete(user))
-            {
-                return Content("ok");
-            }
-            else
-                return Content("no");
+            return RoleInfoService.Delete(user) ? Content("ok") : Content("no");
         }
     }
 }

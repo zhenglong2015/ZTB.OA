@@ -16,7 +16,7 @@ namespace ZTB.OA.Web.Controllers
         // GET: Logs
         public ActionResult Index(int? pageNumber)
         {
-            string absoluteLogDirPath = Server.MapPath(ConfigurationManager.AppSettings["logDirPath"].ToString());
+            string absoluteLogDirPath = Server.MapPath(ConfigurationManager.AppSettings["logDirPath"]);
             if (System.IO.Directory.Exists(absoluteLogDirPath))
             {
                 var response = LogReadService.GetDirFiles(absoluteLogDirPath, "*.*");

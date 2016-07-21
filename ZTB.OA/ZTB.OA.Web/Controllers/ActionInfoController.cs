@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using WebGrease.Css.Extensions;
 using ZTB.OA.IBLL;
 using ZTB.OA.Model;
 
@@ -48,26 +49,14 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Modify(ActionInfo actionInfo)
         {
-            if (ActionInfoService.Update(actionInfo))
-            {
-                return Content("ok");
-            }
-            else
-            {
-                return Content("no");
-            }
+            return ActionInfoService.Update(actionInfo) ? Content("ok") : Content("no");
         }
 
         [HttpPost]
         public ActionResult Delete(int id)
         {
             var user = ActionInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            if (ActionInfoService.Delete(user))
-            {
-                return Content("ok");
-            }
-            else
-                return Content("no");
+            return ActionInfoService.Delete(user) ? Content("ok") : Content("no");
         }
 
         public ActionResult SetRole(int id)
@@ -82,14 +71,14 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult SetRolePost(int uId)
         {
             List<int> setRoleList = new List<int>();
-            foreach (var key in Request.Form.AllKeys)
+
+            Request.Form.AllKeys.ForEach(k =>
             {
-                if (key.StartsWith("ckb"))
+                if (k.StartsWith("ckb"))
                 {
-                    int role = int.Parse(key.Replace("ckb_", ""));
-                    setRoleList.Add(role);
+                    setRoleList.Add(int.Parse(k.Replace("ckb_", "")));
                 }
-            }
+            });
             ActionInfoService.SetRoles(uId, setRoleList);
             return Content("ok");
         }

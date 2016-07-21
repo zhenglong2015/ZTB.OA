@@ -70,7 +70,7 @@ background-position: center;background-repeat: no-repeat; ">
                 var old = $("#Vcode").attr('src');
                 $('#Vcode').attr('src', old + "?/r=" + Math.random());
             } else if (data == "用户名或密码错误！") {
-                swal(data)
+                swal(data);
             }
         }
         //记载随机背景图

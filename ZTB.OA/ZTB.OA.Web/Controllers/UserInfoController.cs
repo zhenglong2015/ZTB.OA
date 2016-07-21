@@ -55,14 +55,7 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Modify(UserInfo user)
         {
-            if (UserInfoService.Update(user))
-            {
-                return Content("ok");
-            }
-            else
-            {
-                return Content("no");
-            }
+            return UserInfoService.Update(user) ? Content("ok") : Content("no");
         }
 
 

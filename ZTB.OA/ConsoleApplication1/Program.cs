@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Program
+    internal class Program
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
-        static void Main(string[] args)
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private static void Main(string[] args)
         {
-            logger.Info("分享快乐");
+            Logger.Info("分享快乐");
             Console.ReadKey();
         }
     }
