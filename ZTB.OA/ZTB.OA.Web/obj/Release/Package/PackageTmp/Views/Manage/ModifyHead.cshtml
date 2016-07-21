@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <form>
+            <div class="col-md-6">
+                <div class="image-crop">
+                    <img id="ferret" src="~/Content/img/head.jpg" class="img-thumbnail" style="float: left; margin-right: 10px; width: 400px; height: 400px" />
+                    <input type="hidden" name="x1" value="" />
+                    <input type="hidden" name="y1" value="" />
+                    <input type="hidden" name="x2" value="" />
+                    <input type="hidden" name="y2" value="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div id="img">
+                    </div>
+                    <input id="loadFile" type="file" class="btn btn-primary" name="name" onchange="readURL(this);" />
+                    <input type="submit" name="submit" class="btn btn-info" value="保存" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        //绘制小图
+        function preview(img, selection) {
+            var scaleX = 100 / (selection.width || 1);
+            var scaleY = 100 / (selection.height || 1);
+
+            $('#ferret + div > img').css({
+                width: Math.round(scaleX * 400) + 'px',
+                height: Math.round(scaleY * 300) + 'px',
+                marginLeft: '-' + Math.round(scaleX * selection.x1) + 'px',
+                marginTop: '-' + Math.round(scaleY * selection.y1) + 'px'
+            });
+        }
+
+        $(document).ready(function () {
+            $(":submit").click(function () {
+                $("form").ajaxSubmit({
+                    url: "@Url.Action("ProModifyHead")",
+                    type: "Post",
+                    success: function (data) {
+                        var html = '<img id="showImg" src="' + data + '" class="img-circle" style="height:80px; width:80px;" />';
+                        $("#img").html(html);
+                        swal({
+                            title: "提示",
+                            text: "保存成功",
+                            type: "success",
+                            showCancelButton: false,
+                            confirmButtonColor: "#AEDEF4",
+                            confirmButtonText: "确定",
+                            timer: 2000,
+                            closeOnConfirm: false,
+                        });
+                    }
+                });
+                return false;
+            });
+
+            ////添加小图
+            //$('<div><img id="ferret1"  src="" style="position: relative;" class="img-thumbnail" /><div>').css({
+            //    float: 'left',
+            //    position: 'relative',
+            //    overflow: 'hidden',
+            //    width: '100px',
+            //    height: '100px'
+            //}).insertAfter($('#ferret'));
+
+            //主图编辑
+            $('#ferret').imgAreaSelect({
+                x1: 120, y1: 90, x2: 280, y2: 210, aspectRatio: '4:3', onSelectChange: preview, onSelectEnd: function (img, selection) {
+                    $('input[name="x1"]').val(selection.x1);
+                    $('input[name="y1"]').val(selection.y1);
+                    $('input[name="x2"]').val(selection.x2);
+                    $('input[name="y2"]').val(selection.y2);
+                }
+            });
+
+
+        });
+        //本地预览
+        function readURL(input) {
+            var strSrc = $("#loadFile").val();
+
+            //验证上传文件格式是否正确
+            var pos = strSrc.lastIndexOf(".");
+            var lastname = strSrc.substring(pos, strSrc.length);
+            if (lastname.toLowerCase() != ".jpg") {
+                alert("您上传的文件类型为" + lastname + "，图片必须为 JPG 类型");
+                return false;
+            }
+
+            ////验证上传文件是否超出了大小
+            //if (input.files[0].size / 1024 > 150) {
+            //    alert("您上传的文件大小超出了150K限制！");
+            //    return false;
+            //}
+
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#ferret').attr('src', e.target.result);
+                    $('#ferret1').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+}
+

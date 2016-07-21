@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object type="ZTB.OA.Web.Controllers.UserInfoController, ZTB.OA.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
+    <property name="RoleInfoService" ref="RoleInfoService"/>
+    <property name="ActionInfoService" ref="ActionInfoService"/>
+    <property name="R_UserInfo_ActionInfoService" ref="R_UserInfo_ActionInfoService"/>
+  </object>
+
+  <object type="ZTB.OA.Web.Controllers.AccountController, ZTB.OA.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
+  </object>
+
+  <object type="ZTB.OA.Web.Controllers.HomeController, ZTB.OA.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
+    <property name="ActionInfoService" ref="ActionInfoService"/>
+  </object>
+
+  <object type="ZTB.OA.Web.Controllers.ActionInfoController, ZTB.OA.Web" singleton="false" >
+    <property name="ActionInfoService" ref="ActionInfoService"/>
+    <property name="RoleInfoService" ref="RoleInfoService"/>
+  </object>
+
+
+  <object type="ZTB.OA.Web.Controllers.RoleInfoController, ZTB.OA.Web" singleton="false" >
+    <property name="RoleInfoService" ref="RoleInfoService"/>
+  </object>
+
+  <object type="ZTB.OA.Web.Controllers.ManageController, ZTB.OA.Web" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService"/>
+  </object>
+
+</objects>

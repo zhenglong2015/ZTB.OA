@@ -118,5 +118,12 @@ namespace ZTB.OA.Web.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateInput((false))]
+        public ActionResult TestEdit(FormCollection fc)
+        {
+            var content = fc["edite"];
+            return Content(content);
+        }
     }
 }

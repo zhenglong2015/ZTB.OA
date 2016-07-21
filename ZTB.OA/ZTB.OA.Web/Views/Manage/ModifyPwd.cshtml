@@ -3,10 +3,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="middle-box text-center loginscreen  animated fadeInDown" style="margin-top:100px">
-    @using (Ajax.BeginForm(new AjaxOptions() { HttpMethod = "Post", OnSuccess = "modifySuccess" }))
-    {
+@section css
+{
+    <link href="~/Content/kindeditor/themes/default/default.css" rel="stylesheet" />
+}
+@using (Ajax.BeginForm(new AjaxOptions() { HttpMethod = "Post", OnSuccess = "modifySuccess" }))
+{<div class="middle-box text-center loginscreen  animated fadeInDown" style="margin-top: 100px">
         <div class="form-group">
             <input type="password" autofocus class="form-control" placeholder="旧密码" name="oldPwd" required="">
         </div>
@@ -17,41 +19,82 @@
             <input type="password" class="form-control" placeholder="确认密码" required="" name="confirmPwd">
         </div>
         <button type="submit" class="btn btn-primary block full-width m-b">确认修改</button>
-    }
-</div>
+    </div>
+}
+
+@using (Ajax.BeginForm("TestEdit", new AjaxOptions() { HttpMethod = "Post", OnSuccess = "editSuccess" }))
+{
+    <textarea name="edite" style="height: 350px; width: 100%"></textarea>
+    <input type="submit" value="提交">
+}
+
 @section Scripts {
+    <script src="~/Content/kindeditor/kindeditor-all-min.js"></script>
+    <script src="~/Content/kindeditor/lang/zh-CN.js"></script>
     <script>
-        $(document).ready(function () {
-            $(":submit").click(function () {
-                var newPwd = $.trim($("input[name='newPwd']").val());
-                var confirmPwd = $.trim($("input[name='confirmPwd']").val());
-                if (newPwd != "" && newPwd != confirmPwd) {
-                    swal("两次输入密码不一致!")
-                    return false;
+
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="edite"]',
+            {
+                resizeType: 1, //2或1或0，2时可以拖动改变宽度和高度，1时只能改变高度，0时不能拖动。
+                allowPreviewEmoticons: false, //true时鼠标放在表情上可以预览表情。
+                allowImageUpload: false, //true时显示图片上传按钮。
+                //配置编辑器的工具栏，其中”/”表示换行，”|”表示分隔符。
+                items: [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'emoticons', 'link'
+                ],
+                //关键代码，当失去焦点时执行 this.sync();
+                afterBlur: function() { editor.sync(); },
+                cssPath: '/Content/kindeditor/plugins/code/prettify.css', //指定编辑器iframe document的CSS文件，用于设置可视化区域的样式。
+                fileManagerJson: '/Content/kindeditor/asp.net/file_manager_json.ashx', //浏览远程图片的服务器端程序。
+                uploadJson: '/Content/kindeditor/asp.net/upload_json.ashx', //指定上传文件的服务器端程序。
+                afterUpload: function(url) {//上传文件后执行的回调函数。
+                    alert(url);
                 }
             });
         });
 
+        function editSuccess(data) {
+            alert(data);
+            editor.html(data + "1");
+        }
 
-        function modifySuccess(data) {
-            if (data == "ok") {
-                swal({
-                    title: "提示",
-                    text: "修改成功",
-                    type: "success",
-                    showCancelButton: false,
-                    confirmButtonColor: "#AEDEF4",
-                    confirmButtonText: "确定",
-                    timer: 1000,
-                    closeOnConfirm: false,
-                }, function () {
-                    window.top.location.href = "/Account/Login"
-                });
-            } else {
-                swal(data)
-            }
-        };
+        $(document)
+            .ready(function() {
 
+                $(":submit")
+                    .click(function() {
+                        var newPwd = $.trim($("input[name='newPwd']").val());
+                        var confirmPwd = $.trim($("input[name='confirmPwd']").val());
+                        if (newPwd != "" && newPwd != confirmPwd) {
+                            swal("两次输入密码不一致!");
+                            return false;
+                        }
+                    });
+
+                function modifySuccess(data) {
+                    if (data == "ok") {
+                        swal({
+                                title: "提示",
+                                text: "修改成功",
+                                type: "success",
+                                showCancelButton: false,
+                                confirmButtonColor: "#AEDEF4",
+                                confirmButtonText: "确定",
+                                timer: 1000,
+                                closeOnConfirm: false,
+                            },
+                            function() {
+                                window.top.location.href = "/Account/Login";
+                            });
+                    } else {
+                        swal(data);
+                    }
+                };
+            });
     </script>
 }
 

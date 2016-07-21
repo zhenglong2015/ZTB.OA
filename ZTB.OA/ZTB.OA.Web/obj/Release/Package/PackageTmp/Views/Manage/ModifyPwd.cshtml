@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="middle-box text-center loginscreen  animated fadeInDown" style="margin-top:100px">
+    @using (Ajax.BeginForm(new AjaxOptions() { HttpMethod = "Post", OnSuccess = "modifySuccess" }))
+    {
+        <div class="form-group">
+            <input type="password" autofocus class="form-control" placeholder="旧密码" name="oldPwd" required="">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="新密码" required="" name="newPwd">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="确认密码" required="" name="confirmPwd">
+        </div>
+        <button type="submit" class="btn btn-primary block full-width m-b">确认修改</button>
+    }
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $(":submit").click(function () {
+                var newPwd = $.trim($("input[name='newPwd']").val());
+                var confirmPwd = $.trim($("input[name='confirmPwd']").val());
+                if (newPwd != "" && newPwd != confirmPwd) {
+                    swal("两次输入密码不一致!")
+                    return false;
+                }
+            });
+        });
+
+
+        function modifySuccess(data) {
+            if (data == "ok") {
+                swal({
+                    title: "提示",
+                    text: "修改成功",
+                    type: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "#AEDEF4",
+                    confirmButtonText: "确定",
+                    timer: 1000,
+                    closeOnConfirm: false,
+                }, function () {
+                    window.top.location.href = "/Account/Login"
+                });
+            } else {
+                swal(data)
+            }
+        };
+
+    </script>
+}
+
+

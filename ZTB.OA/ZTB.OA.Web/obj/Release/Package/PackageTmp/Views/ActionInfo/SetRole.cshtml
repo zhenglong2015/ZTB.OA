@@ -1,0 +1,54 @@
+﻿@model ZTB.OA.Model.ActionInfo
+@using ZTB.OA.Model
+@{
+    ViewBag.Title = "SetRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Ajax.BeginForm("SetRolePost", "ActionInfo", new AjaxOptions() { OnSuccess = "setRole", HttpMethod = "Post" }))
+{
+
+    <h2>给 @Model.ActionName 设置权限角色</h2>
+    <input type="hidden" name="uId" value="@Model.Id" />
+
+    List<RoleInfo> roles = ViewBag.AllRoles as List<RoleInfo>;
+    List<int> exitRoles = ViewBag.ExitRoles as List<int>;
+
+    int i = 0;
+    foreach (var role in roles)
+    {
+        string str = "ckb_" + role.Id;
+        if (i % 5 == 0)
+        {
+            <hr />
+        }
+        if (exitRoles.Contains(role.Id))
+        {
+            <input type="checkbox" name="@str" id="@str" checked="checked" class="switchery-small "/>
+        }
+        else
+        {
+            <input type="checkbox" name="@str" id="@str" class="switchery-small "/>
+        }
+        <label for="@str">@role.RoleName</label>
+        <span class="col-md-2" ></span>
+        i++;
+    }
+    <hr>
+    <input type="submit" value="提交" class="btn btn-primary btn-block">
+}
+
+@section Scripts{
+    <script>
+        function setRole(data) {
+            if (data == 'ok') {
+                parent.window.showSuccess("设置成功");
+                parent.$("#searchForm").submit();
+                //当你在iframe页面关闭自身时
+                var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                parent.layer.close(index); //再执行关闭
+            } else {
+                parent.window.showError("设置失败");
+            }
+        }
+    </script>
+}

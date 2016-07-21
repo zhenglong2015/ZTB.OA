@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="margin-top:10px; margin-bottom:10px;">
+    <div class="form-inline" style="float:right">
+        @using (Ajax.BeginForm("Index", "Logs", new AjaxOptions()
+        {
+            HttpMethod = "Get",
+            UpdateTargetId = "table",
+            OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
+        }, new { id = "searchForm" }))
+        {
+            <button type="submit" hidden="hidden"></button>
+        }
+    </div>
+</div>
+
+<div id="table">
+    @Html.Partial("DataTablePartial")
+</div>
+@section Scripts {
+    <script>
+        function PagedOnComplete() {
+            $("a[name='checkLogs']").click(function () {
+                var path = $(this).attr('data-path');
+                $.get("@Url.Action("GetContent")", { path: path }, function (obj) {
+                    if (obj.Success) {
+                        var url = "/Scripts/worker.js"
+                        var worker = new Worker(url);
+                        worker.postMessage(obj);
+                        worker.onmessage = function (evt) {
+                            var index = layer.open({
+                                type: 1,
+                                title: "日志信息",
+                                closeBtn: 1,
+                                shade: 0.3,
+                                area: ['80%', '90%'],
+                                content: evt.data
+                            });
+                            layer.style(index, {
+                                pading: '20px',
+                                margin: '20px',
+                                'background-color': 'black',
+                                color: 'White'
+                            });
+                            worker.terminate();
+                        }
+
+                    } else {
+                        alert(obj.message);
+                    }
+                });
+            });
+            //删除
+            $("a[name='deleteLog']").click(function () {
+                var path = $(this).attr('data-path');
+                swal({
+                    title: "提示",
+                    text: "确定删除么?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false,
+                }, function () {
+                    $.getJSON("@Url.Action("Remove")", { path: path, rd: Math.random() }, function (data) {
+                        if (data.Success) {
+                            $("#searchForm").submit();
+                            toastr.success("删除成功");
+                            swal.close();
+                        } else {
+                            toastr.error("删除失败");
+                        }
+                    });
+                });
+            });
+        }
+
+        $(document).ready(function () {
+            PagedOnComplete();
+        })
+    </script>
+}
+

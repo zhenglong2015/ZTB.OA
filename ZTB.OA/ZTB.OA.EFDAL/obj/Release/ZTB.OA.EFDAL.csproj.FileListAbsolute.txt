@@ -1,0 +1,17 @@
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\App.config
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.EFDAL.dll.config
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.EFDAL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.EFDAL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\EntityFramework.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\EntityFramework.SqlServer.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.IDAL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.Model.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.IDAL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\ZTB.OA.Model.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\EntityFramework.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\EntityFramework.SqlServer.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\obj\Release\ZTB.OA.EFDAL.csprojResolveAssemblyReference.cache
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\obj\Release\ZTB.OA.EFDAL.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.EFDAL\obj\Release\ZTB.OA.EFDAL.pdb

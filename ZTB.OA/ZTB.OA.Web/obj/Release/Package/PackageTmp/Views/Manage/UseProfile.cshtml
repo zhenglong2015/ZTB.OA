@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+        <div>
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>个人资料</h5>
+                </div>
+                <div>
+                    <div class="ibox-content no-padding" style="text-align:center">
+                        <img alt="image" style="margin:0 auto" class="img-responsive" src="~/Content/img/profile_big.jpg">
+                        <h4><strong>zhenglong</strong></h4>
+                        <p><i class="fa fa-map-marker"></i> 北京市丰台区阳光大厦316室</p>
+                        <h5>
+                            关于我
+                        </h5>
+                        <p>
+                            会点前端技术，div+css啊，jQuery之类的，会点后端C#,会点SqlServer,NoSql,不是很精；热爱生活，热爱互联网，热爱新技术
+                        </p>
+                    </div>
+                    <div class="ibox-content profile-content">
+                        <div id="sponsorDiv" style="text-align: center" hidden>
+                            <img src="~/Content/img/o_qq.png" alt="qq群">
+                            <img src="~/Content/img/o_wecat.png" alt="微信">
+                            <img src="~/Content/img/o_bao.png" alt="支付宝">
+                        </div>
+                        <div class="user-button">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=853222835&amp;site=qq&amp;menu=yes" target="_blank">
+                                        <div>
+                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-coffee"></i> 发消息</button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button id="sponsor" type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-coffee"></i> 赞助</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#sponsor").click(function () {
+                $("#sponsorDiv").toggle();
+            });
+        });
+    </script>
+}
+

@@ -20,6 +20,9 @@
 <div id="table">
     @Html.Partial("DataTablePartial")
 </div>
+
+<div id="content" style="padding: 10px; margin: 10px; background-color: black;color: white" hidden="hidden"></div>
+
 @section Scripts {
     <script>
         function PagedOnComplete() {
@@ -27,29 +30,23 @@
                 var path = $(this).attr('data-path');
                 $.get("@Url.Action("GetContent")", { path: path }, function (obj) {
                     if (obj.Success) {
-                        var url = "/Scripts/worker.js"
+                        var url = "/Scripts/worker.js";
                         var worker = new Worker(url);
                         worker.postMessage(obj);
                         worker.onmessage = function (evt) {
-                            var index = layer.open({
+                            $("#content").html(evt.data);
+                            layer.open({
                                 type: 1,
                                 title: "日志信息",
                                 closeBtn: 1,
                                 shade: 0.3,
                                 area: ['80%', '90%'],
-                                content: evt.data
-                            });
-                            layer.style(index, {
-                                pading: '20px',
-                                margin: '20px',
-                                'background-color': 'black',
-                                color: 'White'
+                                content: $('#content')
                             });
                             worker.terminate();
                         }
-
                     } else {
-                        alert(obj.message);
+                        toastr.error(obj.message);
                     }
                 });
             });

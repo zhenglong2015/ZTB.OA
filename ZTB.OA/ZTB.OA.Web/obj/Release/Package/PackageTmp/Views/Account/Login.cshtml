@@ -1,0 +1,107 @@
+﻿
+@{
+    <title>智恒后台管理系统登录</title>
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+    </script>
+</head>
+<body id="body" class="gray-bg" style="background-size: cover;background-attachment: fixed;
+background-position: center;background-repeat: no-repeat; ">
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <h1 class="logo-name">ZH</h1>
+        </div>
+        <div>
+            <div style="color: orange; font-weight:bold">
+                <h2>智恒后台管理系统</h2>
+            </div>
+            @using (Ajax.BeginForm("Login", new AjaxOptions()
+            {
+                HttpMethod = "Post",
+                OnSuccess = "login"
+            }))
+            {
+                <div class="form-group">
+                    <input type="text" class="form-control" name="userName" autofocus placeholder="用户名" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="pwd" placeholder="密码" required>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" name="vcode" maxlength="4" placeholder="验证码" required>
+                        </div>
+                        <div class="col-xs-6">
+                            <img id="Vcode" class="img-responsive" title="看不清？点击更换" alt="code" src="@Url.Action("CreateValidateCode")">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div id="fengChe">
+        <img id="fengCheImg" src="@Url.Content("~/Content/img/fengche.png")" style="width: 35px; height: 35px; position: fixed; right: 18px; bottom: 10px; z-index: 10;
+                                                                                                                                                                            -moz-transition: -moz-transform 1s; -webkit-transition: -webkit-transform 1s; -o-transition: -o-transform 1s" />
+        <img src="@Url.Content("~/Content/img/wind.png")" style="width: 50px; height: 50px; position: fixed; right: 10px; bottom: -10px" />
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+        function login(data) {
+            if (data == "Ok") {
+                window.location.href = "/Home/Index";
+            } else if (data == "验证码有误！") {
+                swal(data)
+                var old = $("#Vcode").attr('src');
+                $('#Vcode').attr('src', old + "?/r=" + Math.random());
+            } else if (data == "用户名或密码错误！") {
+                swal(data)
+            }
+        }
+        //记载随机背景图
+        $(window).load(function () {
+            var imgNum = $.cookie("imgNum");//取出上次保存的背景图的ID
+            if (imgNum == "" || imgNum == null) {
+                imgNum = Math.floor(1 + Math.random() * (4000));
+                $.cookie("imgNum", imgNum, { expires: 1 });
+            }
+            var url = 'http://img.infinitynewtab.com/wallpaper/' + imgNum + '.jpg';
+            $("#body").css('background-image', 'url(' + url + ')');
+        });
+
+        $(document).ready(function () {
+            var clickNum = 0;
+            //更换验证码
+            $('#Vcode').click(function () {
+                var old = $(this).attr('src');
+                $(this).attr('src', old + "?/r=" + Math.random());
+            });
+            //点击风车旋转并更换背景图片
+            $("#fengCheImg").click(function () {
+                clickNum = clickNum + 1;
+                $(this).css('transform', 'rotate(' + 360 * clickNum + 'deg)').css('-moz-transform', 'rotate(' + 360 * clickNum + 'deg)')
+                    .css('-webkit-transform', 'rotate(' + 360 * clickNum + 'deg)').css('-o-transform', 'rotate(' + 360 * clickNum + 'deg)');
+                var imgNum = Math.floor(1 + Math.random() * (4000));
+                var url = 'http://img.infinitynewtab.com/wallpaper/' + imgNum + '.jpg';
+                $("#body").css('background-image', 'url(' + url + ')');
+                $.cookie("imgNum", imgNum, { expires: 1 });
+            });
+        });
+    </script>
+</body>
+</html>

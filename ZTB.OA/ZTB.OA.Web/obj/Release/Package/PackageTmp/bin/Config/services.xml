@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+   
+  <object name="UserInfoService" type="ZTB.OA.BLL.UserInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="UserInfoDal"/>    
+  </object>
+  
+
+  <object name="ActionInfoService" type="ZTB.OA.BLL.ActionInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="ActionInfoDal"/>
+  </object>
+
+  <object name="RoleInfoService" type="ZTB.OA.BLL.RoleInfoService, ZTB.OA.BLL" singleton="false" >
+    <property name="DbSession" ref="DbSession"/>
+    <property name="CurrentDal" ref="RoleInfoDal"/>
+  </object>
+
+<object name="R_UserInfo_ActionInfoService" type="ZTB.OA.BLL.R_UserInfo_ActionInfoService, ZTB.OA.BLL" singleton="false" >
+  <property name="DbSession" ref="DbSession"/>
+  <property name="CurrentDal" ref="R_UserInfo_ActionInfoDal"/>
+</object>
+
+
+
+
+</objects>

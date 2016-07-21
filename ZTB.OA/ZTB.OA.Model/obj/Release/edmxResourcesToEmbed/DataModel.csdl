@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActionInfo" EntityType="DataModel.ActionInfo" />
+    <EntitySet Name="R_UserInfo_ActionInfo" EntityType="DataModel.R_UserInfo_ActionInfo" />
+    <EntitySet Name="RoleInfo" EntityType="DataModel.RoleInfo" />
+    <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
+    <AssociationSet Name="UserInfoRoleInfo" Association="DataModel.UserInfoRoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="ActionInfoRoleInfo" Association="DataModel.ActionInfoRoleInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="ActionInfoR_UserInfo_ActionInfo" Association="DataModel.ActionInfoR_UserInfo_ActionInfo">
+      <End Role="ActionInfo" EntitySet="ActionInfo" />
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UserInfoR_UserInfo_ActionInfo" Association="DataModel.UserInfoR_UserInfo_ActionInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="R_UserInfo_ActionInfo" EntitySet="R_UserInfo_ActionInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ActionInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Url" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="HttpMethod" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="DelFag" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="SubTime" Type="DateTime" Precision="3" />
+    <Property Name="ActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsMenu" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="RoleInfo" Relationship="DataModel.ActionInfoRoleInfo" FromRole="ActionInfo" ToRole="RoleInfo" />
+    <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="DataModel.ActionInfoR_UserInfo_ActionInfo" FromRole="ActionInfo" ToRole="R_UserInfo_ActionInfo" />
+  </EntityType>
+  <EntityType Name="R_UserInfo_ActionInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HasPermission" Type="Boolean" Nullable="false" />
+    <Property Name="UserInfoId" Type="Int32" />
+    <Property Name="ActionInfoId" Type="Int32" Nullable="false" />
+    <Property Name="DelFag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="ActionInfo" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoR_UserInfo_ActionInfo" FromRole="R_UserInfo_ActionInfo" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="RoleInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DelFag" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="SubTime" Type="DateTime" Precision="3" />
+    <Property Name="RoleName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoRoleInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Pwd" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DelFag" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="SubTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RoleInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="UserInfo" ToRole="RoleInfo" />
+    <NavigationProperty Name="R_UserInfo_ActionInfo" Relationship="DataModel.UserInfoR_UserInfo_ActionInfo" FromRole="UserInfo" ToRole="R_UserInfo_ActionInfo" />
+  </EntityType>
+  <Association Name="UserInfoRoleInfo">
+    <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+  </Association>
+  <Association Name="ActionInfoRoleInfo">
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="*" />
+    <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+  </Association>
+  <Association Name="ActionInfoR_UserInfo_ActionInfo">
+    <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
+    <End Type="DataModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
+  </Association>
+  <Association Name="UserInfoR_UserInfo_ActionInfo">
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="DataModel.R_UserInfo_ActionInfo" Role="R_UserInfo_ActionInfo" Multiplicity="*" />
+  </Association>
+</Schema>
