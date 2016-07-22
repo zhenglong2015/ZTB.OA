@@ -37,15 +37,10 @@
         $(document).ready(function () {
             $('form').validate({
                 rules: {
-                    Name: "required",
-                    Pwd: {
-                        required: true,
-                    },
+                    Name: { required: true },
+                    Pwd: { required: true },
                     messages: {
-                        Name: "请输入用户名",
-                        Pwd: {
-                            required: "请输入密码"
-                        }
+                        Name: "请输入用户名", Pwd: "请输入密码"
                     }
                 }
             });

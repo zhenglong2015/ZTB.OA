@@ -35,6 +35,17 @@
 }
 @section Scripts {
     <script>
+         $(document).ready(function () {
+            $('form').validate({
+                rules: {
+                    Name: { required: true },
+                    Pwd: { required: true },
+                    messages: {
+                        Name: "请输入用户名", Pwd: "请输入密码"
+                    }
+                }
+            });
+        });
         function modifySuccess(data) {
             if (data == "ok") {
                 parent.window.showSuccess("修改成功");

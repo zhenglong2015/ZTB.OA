@@ -32,6 +32,17 @@
 
 @section Scripts {
     <script>
+
+         $(document).ready(function () {
+            $('form').validate({
+                rules: {
+                    RoleName: { required: true },
+                    messages: {
+                        Name: "请输入角色名"
+                    }
+                }
+            });
+        });
         function modifySuccess(data) {
             if (data == "ok") {
                 parent.window.showSuccess("修改成功");
