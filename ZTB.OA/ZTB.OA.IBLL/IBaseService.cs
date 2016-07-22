@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZTB.OA.IBLL
 {
-   public interface IBaseService<TEntity> where TEntity : class ,new ()
+    public interface IBaseService<TEntity> where TEntity : class, new()
     {
         #region 查询
         IQueryable<TEntity> GetEntities(Expression<Func<TEntity, bool>> whereLamba);
@@ -21,6 +21,7 @@ namespace ZTB.OA.IBLL
         bool Update(TEntity entity);
 
         bool Delete(TEntity entity);
+        bool DeleteByLogical(int id);
 
         int DeleteListByLogical(List<int> ids);
     }

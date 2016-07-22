@@ -40,7 +40,7 @@ namespace ZTB.OA.Web.Controllers
                 return Content("验证码有误！");
             }
             Session["Vcode"] = null;
-            var user = UserInfoService.GetEntities(u => u.UName == userName && u.Pwd == pwd).FirstOrDefault();
+            var user = UserInfoService.GetEntities(u => u.Name == userName && u.Pwd == pwd && !u.DelFag).FirstOrDefault();
             if (user == null)
                 return Content("用户名或密码错误！");
             else

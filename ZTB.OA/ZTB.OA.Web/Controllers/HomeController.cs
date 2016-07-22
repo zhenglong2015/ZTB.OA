@@ -30,14 +30,14 @@ namespace ZTB.OA.Web.Controllers
             var allAcions = from r in allRoles from a in r.ActionInfo select a.Id;
 
             //拒绝的权限
-            var allDenyAction = (from ura in user.R_UserInfo_ActionInfo
+            var allDenyAction = (from ura in user.RUserActionInfo
                                  where ura.HasPermission == false
                                  select ura.ActionInfoId).ToList();
             //去除拒绝的权限
             var allUserActionIds = (from a in allAcions where !allDenyAction.Contains(a) select a).ToList();
 
             //取出直接允许的权限
-            var allAllowAction = (from ura in user.R_UserInfo_ActionInfo
+            var allAllowAction = (from ura in user.RUserActionInfo
                                   where ura.HasPermission
                                   select ura.ActionInfoId).ToList();
 

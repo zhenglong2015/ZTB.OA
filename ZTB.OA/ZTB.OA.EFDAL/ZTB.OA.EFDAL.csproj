@@ -65,7 +65,7 @@
     <Compile Include="RoleInfoDal.cs">
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
-    <Compile Include="R_UserInfo_ActionInfoDal.cs">
+    <Compile Include="RUserActionInfoDal.cs">
       <DependentUpon>Dal.tt</DependentUpon>
     </Compile>
     <Compile Include="UserInfoDal.cs">

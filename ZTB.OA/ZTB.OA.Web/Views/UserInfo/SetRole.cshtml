@@ -7,7 +7,7 @@
 @using (Ajax.BeginForm("SetRolePost", "UserInfo", new AjaxOptions() { OnSuccess = "setRole", HttpMethod = "Post" }))
 {
 
-    <h2>给 @Model.UName 设置用户角色</h2>
+    <h2>给 @Model.Name 设置用户角色</h2>
     <input type="hidden" name="uId" value="@Model.Id" />
 
     List<RoleInfo> roles = ViewBag.AllRoles as List<RoleInfo>;

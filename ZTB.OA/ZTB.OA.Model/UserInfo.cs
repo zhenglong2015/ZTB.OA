@@ -23,28 +23,28 @@ using System;
     public UserInfo()
     {
 
+        this.Pwd = "";
+
+        this.DelFag = false;
+
         this.RoleInfo = new HashSet<RoleInfo>();
 
-        this.R_UserInfo_ActionInfo = new HashSet<R_UserInfo_ActionInfo>();
+        this.RUserActionInfo = new HashSet<RUserActionInfo>();
 
     }
 
 
     public int Id { get; set; }
 
-    public string UName { get; set; }
+    public string Name { get; set; }
 
     public string Pwd { get; set; }
 
-    public string DelFag { get; set; }
-
-    public string ShowName { get; set; }
+    public bool DelFag { get; set; }
 
     public string Remark { get; set; }
 
-    public Nullable<System.DateTime> ModifiedOn { get; set; }
-
-    public Nullable<System.DateTime> SubTime { get; set; }
+    public Nullable<System.DateTime> ModifyOn { get; set; }
 
 
 
@@ -54,7 +54,7 @@ using System;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
+    public virtual ICollection<RUserActionInfo> RUserActionInfo { get; set; }
 
 }
 

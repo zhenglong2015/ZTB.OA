@@ -16,8 +16,17 @@ using System;
     using System.Collections.Generic;
     
 [Serializable]
-    public partial class R_UserInfo_ActionInfo
+    public partial class RUserActionInfo
 {
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public RUserActionInfo()
+    {
+
+        this.DelFag = false;
+
+    }
+
 
     public int Id { get; set; }
 
@@ -27,13 +36,15 @@ using System;
 
     public int ActionInfoId { get; set; }
 
-    public string DelFag { get; set; }
+    public Nullable<bool> DelFag { get; set; }
+
+    public Nullable<System.DateTime> ModifyOn { get; set; }
 
 
-
-    public virtual ActionInfo ActionInfo { get; set; }
 
     public virtual UserInfo UserInfo { get; set; }
+
+    public virtual ActionInfo ActionInfo { get; set; }
 
 }
 

@@ -13,3 +13,4 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\bin\Debug\AutoMapper.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.exe
 E:\学习测试项目\ZTB.OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.pdb
+E:\测试\OA\ZTB.OA\AutoMapperDemo\obj\Debug\AutoMapperDemo.csprojResolveAssemblyReference.cache

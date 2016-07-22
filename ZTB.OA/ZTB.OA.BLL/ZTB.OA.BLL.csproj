@@ -49,7 +49,7 @@
     <Compile Include="RoleInfoService.cs">
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
-    <Compile Include="R_UserInfo_ActionInfoService.cs">
+    <Compile Include="RUserActionInfoService.cs">
       <DependentUpon>Sevice.tt</DependentUpon>
     </Compile>
     <Compile Include="Service\ActionInfoService.cs" />

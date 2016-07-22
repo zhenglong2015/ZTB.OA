@@ -7,6 +7,7 @@ using ZTB.OA.IBLL;
 using PagedList;
 using ZTB.OA.Model;
 using System.Linq.Expressions;
+using PagedList.Mvc;
 
 namespace ZTB.OA.Web.Controllers
 {
@@ -34,10 +35,7 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult Create(RoleInfo role)
         {
 
-            role.ModifiedOn = DateTime.Now;
-            role.SubTime = DateTime.Now;
-            role.DelFag = "1";
-
+            role.ModifyOn = DateTime.Now;
             RoleInfoService.Add(role);
             return Content("ok");
         }
@@ -57,8 +55,7 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var user = RoleInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            return RoleInfoService.Delete(user) ? Content("ok") : Content("no");
+            return RoleInfoService.DeleteByLogical(id) ? Content("ok") : Content("no");
         }
     }
 }

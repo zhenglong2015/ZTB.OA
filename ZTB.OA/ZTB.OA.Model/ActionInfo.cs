@@ -23,9 +23,11 @@ using System;
     public ActionInfo()
     {
 
+        this.DelFag = false;
+
         this.RoleInfo = new HashSet<RoleInfo>();
 
-        this.R_UserInfo_ActionInfo = new HashSet<R_UserInfo_ActionInfo>();
+        this.RUserActionInfo = new HashSet<RUserActionInfo>();
 
     }
 
@@ -36,17 +38,15 @@ using System;
 
     public string HttpMethod { get; set; }
 
-    public string DelFag { get; set; }
+    public bool DelFag { get; set; }
 
     public string Remark { get; set; }
-
-    public Nullable<System.DateTime> ModifiedOn { get; set; }
-
-    public Nullable<System.DateTime> SubTime { get; set; }
 
     public string ActionName { get; set; }
 
     public bool IsMenu { get; set; }
+
+    public Nullable<System.DateTime> ModifyOn { get; set; }
 
 
 
@@ -56,7 +56,7 @@ using System;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
+    public virtual ICollection<RUserActionInfo> RUserActionInfo { get; set; }
 
 }
 

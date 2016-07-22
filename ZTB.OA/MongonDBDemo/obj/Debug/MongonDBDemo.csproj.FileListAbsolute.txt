@@ -21,3 +21,4 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\MongonDBDemo\bin\Debug\MongoDB.Driver.xml
 E:\学习测试项目\ZTB.OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.exe
 E:\学习测试项目\ZTB.OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.pdb
+E:\测试\OA\ZTB.OA\MongonDBDemo\obj\Debug\MongonDBDemo.csprojResolveAssemblyReference.cache

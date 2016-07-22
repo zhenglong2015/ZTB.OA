@@ -23,6 +23,8 @@ using System;
     public RoleInfo()
     {
 
+        this.DelFag = false;
+
         this.UserInfo = new HashSet<UserInfo>();
 
         this.ActionInfo = new HashSet<ActionInfo>();
@@ -32,15 +34,13 @@ using System;
 
     public int Id { get; set; }
 
-    public string DelFag { get; set; }
+    public bool DelFag { get; set; }
 
     public string Remark { get; set; }
 
-    public Nullable<System.DateTime> ModifiedOn { get; set; }
-
-    public Nullable<System.DateTime> SubTime { get; set; }
-
     public string RoleName { get; set; }
+
+    public Nullable<System.DateTime> ModifyOn { get; set; }
 
 
 

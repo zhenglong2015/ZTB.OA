@@ -4,17 +4,17 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div style="margin-top:10px; margin-bottom:10px;">
+<div style="margin-top: 10px; margin-bottom: 10px;">
     <input type="button" value="添加" id="createBtn" class="btn btn-primary" />
     <div class="form-inline" style="float:right">
         @using (Ajax.BeginForm("List", "UserInfo", new AjaxOptions()
         {
             HttpMethod = "Get",
             UpdateTargetId = "table",
-            OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
-        }, new { id = "searchForm" }))
+            OnComplete = "PagedOnComplete" //防止ajax刷新后不能绑定事件
+        }, new { id = "searchForm", style = "width: 350px" }))
         {
-            <input type="text" class="form-control" name="name" placeholder="用户名">
+            <input type="text" class="form-control" style="width: 280px" name="name" placeholder="用户名">
             <button type="submit" class="btn btn-info">搜索</button>
         }
     </div>
@@ -30,98 +30,103 @@
         function showSuccess(obj) {
             toastr.success(obj);
         }
-        function showError(obj)
-        {
+
+        function showError(obj) {
             toastr.error(obj);
-         }
+        }
 
 
         function PagedOnComplete() {
             //设置角色
-            $("a[name='setRole']").click(function () {
-                var id = $(this).attr('data-id');
-                layer.open({
-                    type: 2,
-                    title: '用户角色设置',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['60%', '90%'],
-                    zIndex :100,
-                    content: '@Url.Action("SetRole")' + '/' + id
-                });
-            });
-
-            //设置特殊权限
-            $("a[name='setAction']").click(function () {
-                var id = $(this).attr('data-id');
-                layer.open({
-                    type: 2,
-                    title: '用户特殊权限设置',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['60%', '90%'],
-                    zIndex :100,
-                    content: '@Url.Action("SetAction")' + '/' + id
-                });
-            });
-            //编辑
-            $("a[name='modify']").click(function () {
-                var id = $(this).attr('data-id');
-                layer.open({
-                    type: 2,
-                    title: '用户修改',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['60%', '90%'],
-                    zIndex :100,
-                    content: '@Url.Action("Modify")' + '/' + id
-                });
-            });
-
-            //删除
-            $("a[name='delete']").click(function () {
-                var id = $(this).attr('data-id');
-                swal({
-                    title: "提示",
-                    text: "确定删除么?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "确定",
-                    cancelButtonText: "取消",
-                    closeOnConfirm: false,
-                }, function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: '@Url.Action("Delete")',
-                        data: { id: id },
-                        success: function (data) {
-                            if (data == "ok") {
-                                toastr.success("删除成功");
-                                $("#searchForm").submit();
-                                swal.close();
-                            } else {
-                                toastr.error("删除失败");
-                            }
-                        }
+            $("a[name='setRole']")
+                .click(function () {
+                    var id = $(this).attr('data-id');
+                    layer.open({
+                        type: 2,
+                        title: '用户角色设置',
+                        shadeClose: true,
+                        shade: 0.8,
+                        area: ['60%', '90%'],
+                        zIndex: 100,
+                        content: '@Url.Action("SetRole")' + '/' + id
                     });
                 });
-            });
+
+            //设置特殊权限
+            $("a[name='setAction']")
+                .click(function () {
+                    var id = $(this).attr('data-id');
+                    layer.open({
+                        type: 2,
+                        title: '用户特殊权限设置',
+                        shadeClose: true,
+                        shade: 0.8,
+                        area: ['60%', '90%'],
+                        zIndex: 100,
+                        content: '@Url.Action("SetAction")' + '/' + id
+                    });
+                });
+            //编辑
+            $("a[name='modify']")
+                .click(function () {
+                    var id = $(this).attr('data-id');
+                    layer.open({
+                        type: 2,
+                        title: '用户修改',
+                        shadeClose: true,
+                        shade: 0.8,
+                        area: ['60%', '90%'],
+                        zIndex: 100,
+                        content: '@Url.Action("Modify")' + '/' + id
+                    });
+                });
+
+            //删除
+            $("a[name='delete']")
+                .click(function () {
+                    var id = $(this).attr('data-id');
+                    swal({
+                        title: "提示",
+                        text: "确定删除么?",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "确定",
+                        cancelButtonText: "取消",
+                        closeOnConfirm: false
+                    },
+                        function () {
+                            $.post('@Url.Action("Delete")',
+                                { id: id },
+                                function (data) {
+                                    var temp = data.split(':');
+                                    if (temp[0] == "ok") {
+                                        toastr.success(temp[1]);
+                                        $("#searchForm").submit();
+                                        swal.close();
+                                    } else {
+                                        toastr.error(temp[1]);
+                                    }
+                                });
+                        });
+                });
         }
 
-        $(document).ready(function () {
-            $("#createBtn").click(function () {
-                layer.open({
-                    type: 2,
-                    title: '用户添加',
-                    shadeClose: true,
-                    shade: 0.8,
-                    area: ['60%', '90%'],
-                    zIndex :100,
-                    content: '@Url.Action("Create")'
-                });
+        $(document)
+            .ready(function () {
+                $("#createBtn")
+                    .click(function () {
+                        layer.open({
+                            type: 2,
+                            title: '用户添加',
+                            shadeClose: true,
+                            shade: 0.8,
+                            area: ['60%', '90%'],
+                            zIndex: 100,
+                            content: '@Url.Action("Create")'
+                        });
+                    });
+                PagedOnComplete();
             });
-            PagedOnComplete();
-        });
     </script>
 }

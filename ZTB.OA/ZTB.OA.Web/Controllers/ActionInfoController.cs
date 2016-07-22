@@ -34,9 +34,7 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Create(ActionInfo actionInfo)
         {
-            actionInfo.ModifiedOn = DateTime.Now;
-            actionInfo.SubTime = DateTime.Now;
-            actionInfo.DelFag = "0";
+            actionInfo.ModifyOn = DateTime.Now;
             ActionInfoService.Add(actionInfo);
             return Content("ok");
         }
@@ -55,8 +53,7 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var user = ActionInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            return ActionInfoService.Delete(user) ? Content("ok") : Content("no");
+            return ActionInfoService.DeleteByLogical(id) ? Content("ok") : Content("no");
         }
 
         public ActionResult SetRole(int id)

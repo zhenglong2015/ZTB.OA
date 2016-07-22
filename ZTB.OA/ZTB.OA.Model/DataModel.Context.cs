@@ -34,7 +34,7 @@ public partial class DataModelContainer : DbContext
 
     public virtual DbSet<ActionInfo> ActionInfo { get; set; }
 
-    public virtual DbSet<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
+    public virtual DbSet<RUserActionInfo> RUserActionInfo { get; set; }
 
     public virtual DbSet<RoleInfo> RoleInfo { get; set; }
 

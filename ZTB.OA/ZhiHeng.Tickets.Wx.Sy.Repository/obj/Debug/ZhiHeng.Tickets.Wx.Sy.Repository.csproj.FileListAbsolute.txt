@@ -19,3 +19,4 @@ E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\S
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.csprojResolveAssemblyReference.cache
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.dll
 E:\学习测试项目\ZTB.OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.csprojResolveAssemblyReference.cache

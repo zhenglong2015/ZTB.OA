@@ -49,7 +49,7 @@
     <Compile Include="IRoleInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
-    <Compile Include="IR_UserInfo_ActionInfoService.cs">
+    <Compile Include="IRUserActionInfoService.cs">
       <DependentUpon>ISevice.tt</DependentUpon>
     </Compile>
     <Compile Include="IService\IActionInfoService.cs" />

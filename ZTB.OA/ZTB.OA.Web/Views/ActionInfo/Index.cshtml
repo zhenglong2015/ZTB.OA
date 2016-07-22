@@ -15,9 +15,9 @@
             HttpMethod = "Get",
             UpdateTargetId = "table",
             OnComplete = "PagedOnComplete"//防止ajax刷新后不能绑定事件
-        }, new { id = "searchForm" }))
+        }, new { id = "searchForm", style="width:350px" }))
         {
-            <input type="text" class="form-control" name="name" placeholder="权限名称">
+            <input type="text" class="form-control" name="name" style="width: 280px" placeholder="权限名称">
             <button type="submit" class="btn btn-info">搜索</button>
         }
     </div>
@@ -93,7 +93,7 @@
             $("#createBtn").click(function () {
                 layer.open({
                     type: 2,
-                    title: '用户添加',
+                    title: '权限添加',
                     shadeClose: true,
                     shade: 0.8,
                     area: ['60%', '90%'],

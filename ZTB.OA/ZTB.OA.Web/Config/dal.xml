@@ -15,7 +15,7 @@
 
   <object name="RoleInfoDal" type="ZTB.OA.EFDAL.RoleInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
-  <object name="R_UserInfo_ActionInfoDal" type="ZTB.OA.EFDAL.R_UserInfo_ActionInfoDal,ZTB.OA.EFDAL" singleton="false" >
+  <object name="RUserActionInfoDal" type="ZTB.OA.EFDAL.RUserActionInfoDal,ZTB.OA.EFDAL" singleton="false" >
   </object>
 
 </objects>

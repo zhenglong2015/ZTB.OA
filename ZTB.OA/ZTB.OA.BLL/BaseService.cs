@@ -57,6 +57,12 @@ namespace ZTB.OA.BLL
             return DbSession.SaveChanges() > 0;
         }
 
+        public bool DeleteByLogical(int id)
+        {
+            CurrentDal.DeleteByLogical(id);
+            return DbSession.SaveChanges() > 0;
+        }
+
         /// <summary>
         /// 批量删除
         /// </summary>

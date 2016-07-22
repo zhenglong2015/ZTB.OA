@@ -14,8 +14,6 @@ namespace ZTB.OA.EFDAL
     /// </summary>
     public class BaseDal<T> where T : class, new()
     {
-        //DataModelContainer db = new DataModelContainer();
-
         public DbContext Db
         {
             get { return DbContextFactory.GetCurrentDbContext(); }
@@ -30,34 +28,33 @@ namespace ZTB.OA.EFDAL
             Expression<Func<T, S>> orderLambda, bool isAsc)
         {
             total = Db.Set<T>().Where(whereLambda).Count();
-            if (isAsc)
-                return Db.Set<T>().Where(whereLambda).OrderBy(orderLambda)
-                    .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
-            else
-                return Db.Set<T>().Where(whereLambda).OrderByDescending(orderLambda)
-                .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
 
+            return isAsc ? Db.Set<T>().Where(whereLambda).OrderBy(orderLambda)
+                    .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable() :
+                     Db.Set<T>().Where(whereLambda).OrderByDescending(orderLambda)
+                .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
         }
         #endregion
 
         public T Add(T entity)
         {
+            Db.Entry(entity).Property("ModifyOn").CurrentValue =Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             Db.Set<T>().Add(entity);
-            // Db.SaveChanges();
             return entity;
         }
 
         public bool Update(T entity)
         {
+           // entity = Db.Set<T>().Find(Db.Entry(entity).Property("Id").CurrentValue);
+            Db.Entry(entity).Property("ModifyOn").CurrentValue = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            //Db.Entry(entity).Property("ModifyOn").IsModified = true;
             Db.Entry(entity).State = EntityState.Modified;
-            //return Db.SaveChanges() > 0;
             return true;
         }
 
         public bool Delete(T entity)
         {
             Db.Entry(entity).State = EntityState.Deleted;
-            // return Db.SaveChanges() > 0;
             return true;
         }
 
@@ -67,16 +64,23 @@ namespace ZTB.OA.EFDAL
             Db.Set<T>().Remove(entity);
             return true;
         }
-
-        public int DeleteListByLogical(List<int> ids)
+        public bool DeleteByLogical(int id)
         {
-            foreach (var  id in ids)
+            var entity = Db.Set<T>().Find(id);
+            Db.Entry(entity).Property("DelFag").CurrentValue = true;
+            Db.Entry(entity).Property("DelFag").IsModified = true;
+            return true;
+        }
+
+        public bool DeleteListByLogical(List<int> ids)
+        {
+            foreach (var id in ids)
             {
                 var entity = Db.Set<T>().Find(id);
-                Db.Entry(entity).Property("DelFlag").CurrentValue = "1";
-                Db.Entry(entity).Property("DelFlag").IsModified = true;
+                Db.Entry(entity).Property("DelFag").CurrentValue = true;
+                Db.Entry(entity).Property("DelFag").IsModified = true;
             }
-            return ids.Count;
+            return true;
         }
     }
 }

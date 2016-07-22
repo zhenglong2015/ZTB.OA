@@ -8,6 +8,7 @@ using ZTB.OA.Model;
 using PagedList;
 using ZTB.OA.Model.Param;
 using System.Configuration;
+using PagedList.Mvc;
 
 namespace ZTB.OA.Web.Controllers
 {
@@ -18,7 +19,7 @@ namespace ZTB.OA.Web.Controllers
         public IRoleInfoService RoleInfoService { get; set; }
         public IActionInfoService ActionInfoService { get; set; }
 
-        public IR_UserInfo_ActionInfoService R_UserInfo_ActionInfoService { get; set; }
+        public IRUserActionInfoService RUserActionInfoService { get; set; }
 
         public ActionResult List(int? page, string name, string pwd)
         {
@@ -38,13 +39,8 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Create(UserInfo user)
         {
-            user.ModifiedOn = DateTime.Now;
-            user.DelFag = "1";
-            user.ShowName = "测试";
-            user.SubTime = DateTime.Now;
-
-            UserInfoService.Add(user);
-            return Content("ok");
+            var res = UserInfoService.AddUser(user);
+            return res.IsSuccess ? Content("ok:" + res.Message) : Content("no:" + res.Message);
         }
 
         public ActionResult Modify(int id)
@@ -62,13 +58,8 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            var user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            if (UserInfoService.Delete(user))
-            {
-                return Content("ok");
-            }
-            else
-                return Content("no");
+            if (UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault().Name == "admin") return Content("no:此管理员不能删除");
+            return UserInfoService.DeleteByLogical(id) ? Content("ok:删除成功") : Content("no:删除失败");
         }
 
         public ActionResult SetRole(int id)
@@ -105,30 +96,30 @@ namespace ZTB.OA.Web.Controllers
         [HttpPost]
         public ActionResult DeleteAction(int uId, int actinId)
         {
-            var rua = R_UserInfo_ActionInfoService.GetEntities(r => r.ActionInfoId == actinId && r.UserInfoId == uId).FirstOrDefault();
+            var rua = RUserActionInfoService.GetEntities(r => r.ActionInfoId == actinId && r.UserInfoId == uId).FirstOrDefault();
             if (rua != null)
             {
-                R_UserInfo_ActionInfoService.Delete(rua);
+                rua.DelFag = false;
+                RUserActionInfoService.Update(rua);
             }
             return Content("ok");
         }
         [HttpPost]
         public ActionResult SetActionPost(int uId, int id, int val)
         {
-            var rua = R_UserInfo_ActionInfoService.GetEntities(r => r.ActionInfoId == id && r.UserInfoId == uId).FirstOrDefault();
+            var rua = RUserActionInfoService.GetEntities(r => r.ActionInfoId == id && r.UserInfoId == uId).FirstOrDefault();
             if (rua != null)
             {
                 rua.HasPermission = val == 1;
-                R_UserInfo_ActionInfoService.Update(rua);
+                RUserActionInfoService.Update(rua);
             }
             else
             {
-                R_UserInfo_ActionInfo ruai = new R_UserInfo_ActionInfo();
+                RUserActionInfo ruai = new RUserActionInfo();
                 ruai.ActionInfoId = id;
                 ruai.UserInfoId = uId;
                 ruai.HasPermission = val == 1;
-                ruai.DelFag = "0";
-                R_UserInfo_ActionInfoService.Add(ruai);
+                RUserActionInfoService.Add(ruai);
             }
             return Content("ok");
         }

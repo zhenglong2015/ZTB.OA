@@ -68,7 +68,7 @@
     <Compile Include="IRoleInfoDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
-    <Compile Include="IR_UserInfo_ActionInfoDal.cs">
+    <Compile Include="IRUserActionInfoDal.cs">
       <DependentUpon>IDal.tt</DependentUpon>
     </Compile>
     <Compile Include="IUserInfoDal.cs">
