@@ -200,6 +200,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="401.html" />
     <Content Include="404.html" />
     <Content Include="500.html" />
     <Content Include="Config\common.xml">
@@ -217,6 +218,7 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\cropper\cropper.css" />
     <Content Include="Content\cropper\cropper.js" />
     <Content Include="Content\cropper\cropper.min.css" />
@@ -271,7 +273,6 @@
     <Content Include="Content\img\wenku_logo.png" />
     <Content Include="Content\img\wind.png" />
     <Content Include="Content\animate.min.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\iconfont.css" />
     <Content Include="Content\iconfont.svg" />
@@ -875,6 +876,9 @@
     <Content Include="Content\kindeditor\lib\firebug-lite\plugin\proxy\proxy.php" />
     <Content Include="Content\kindeditor\asp.net\file_manager_json.ashx" />
     <Content Include="Content\kindeditor\asp.net\upload_json.ashx" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
@@ -952,9 +956,6 @@
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

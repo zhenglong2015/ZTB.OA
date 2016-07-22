@@ -15,7 +15,7 @@ namespace ZTB.OA.Common.Caches
     /// </summary>
     public class CacheHelper
     {
-        public static ICache CacheWriter { get; set; }
+        private static ICache CacheWriter { get; set; }
 
         static CacheHelper()
         {

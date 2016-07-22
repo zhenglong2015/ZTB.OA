@@ -24,7 +24,8 @@ namespace ZTB.OA.Web
                         "~/Content/cropper/cropper.min.js",
                         "~/Scripts/bootstrap-paginator.js",
                         "~/Scripts/toastr.min.js",
-                        "~/Content/switchery/switchery.min.js"
+                        "~/Content/switchery/switchery.min.js",
+                        "~/Scripts/jquery.validate.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

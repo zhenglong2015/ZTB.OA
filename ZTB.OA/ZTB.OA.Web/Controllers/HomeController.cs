@@ -26,6 +26,7 @@ namespace ZTB.OA.Web.Controllers
         {
             var id = base.UserInfo.Id;
             var user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
+
             var allRoles = user.RoleInfo;
             var allAcions = from r in allRoles from a in r.ActionInfo select a.Id;
 

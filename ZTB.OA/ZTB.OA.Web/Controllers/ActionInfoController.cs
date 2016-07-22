@@ -17,7 +17,7 @@ namespace ZTB.OA.Web.Controllers
         public IRoleInfoService RoleInfoService { get; set; }
         public ActionResult Index(int? page, string name)
         {
-            var actions = ActionInfoService.GetEntities(a => true);
+            var actions = ActionInfoService.GetEntities(a =>!a.DelFag);
             if (!string.IsNullOrEmpty(name))
             {
                 actions = actions.Where(a => a.ActionName.Contains(name));

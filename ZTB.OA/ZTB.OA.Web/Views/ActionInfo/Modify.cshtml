@@ -7,52 +7,53 @@
 
 @using (Ajax.BeginForm(new AjaxOptions() { HttpMethod = "Post", OnSuccess = "modifySuccess" }))
 {
-    <div class="form-horizontal">
 
-
-        <div class="form-group">
-            权限名称：
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ActionName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ActionName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            是否为菜单：
-            @Html.CheckBoxFor(model => model.IsMenu, new { @class = "js-switch" })
-            @Html.ValidationMessageFor(model => model.IsMenu, "", new { @class = "text-danger" })
+    <div class="form-group">
+        权限名称：
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ActionName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ActionName, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        URL：
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
-        </div>
+        是否为菜单：
+        @Html.CheckBoxFor(model => model.IsMenu, new { @class = "js-switch" })
+        @Html.ValidationMessageFor(model => model.IsMenu, "", new { @class = "text-danger" })
     </div>
 
+
+        <div class="form-group">
+            URL：
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    List<SelectListItem> list = new List<SelectListItem> {
+                new SelectListItem { Text = "请选择", Value = " "},
+                new SelectListItem { Text = "GET", Value = "GET" }, new SelectListItem { Text = "POST", Value = "POST" },
+         new SelectListItem { Text = "PUT", Value = "PUT" } , new SelectListItem { Text = "PUSH", Value = "PUSH" }   };
     <div class="form-group">
         请求方法：
         <div class="col-md-10">
-            @Html.EditorFor(model => model.HttpMethod, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.HttpMethod, list, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.HttpMethod, "", new { @class = "text-danger" })
         </div>
     </div>
 
-        <div class="form-group">
-            备注：
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        备注：
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
         </div>
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="submit" value="确定" class="btn  btn-primary btn-block" />
-            </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="保 存" class="btn btn-info btn-block" />
         </div>
+    </div>
 }
 @section Scripts {
     <script>
