@@ -63,13 +63,13 @@ namespace ZTB.OA.Web.Controllers
 
                 if (actionInfo == null)
                 {
-                    filterContext.HttpContext.Response.Redirect("/401.html"); 
+                    filterContext.HttpContext.Response.Redirect("/401.html");
                     return;
                 }
                 var rUas = rUserActionInfoService.GetEntities(u => u.UserInfoId == UserInfo.Id);
                 if (rUas == null)
                 {
-                    filterContext.HttpContext.Response.Redirect("/401.html"); 
+                    filterContext.HttpContext.Response.Redirect("/401.html");
                     return;
                 }
                 var item = (from a in rUas where a.ActionInfoId == actionInfo.Id select a).FirstOrDefault();

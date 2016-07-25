@@ -51,12 +51,10 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HasPermission" Type="bit" Nullable="false" />
-    <Property Name="UserInfoId" Type="int" Nullable="true" />
-    <Property Name="ActionInfoId" Type="int" Nullable="false" />
     <Property Name="DelFag" Type="bit" Nullable="true" DefaultValue="false" />
     <Property Name="ModifyOn" Type="datetime" Nullable="true" />
-    <Property Name="UserInfo_Id" Type="int" Nullable="false" />
-    <Property Name="ActionInfo_Id" Type="int" Nullable="false" />
+    <Property Name="UserInfoId" Type="int" Nullable="false" />
+    <Property Name="ActionInfoId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RoleInfo">
     <Key>
@@ -103,7 +101,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="RUserActionInfo">
-        <PropertyRef Name="UserInfo_Id" />
+        <PropertyRef Name="UserInfoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -115,7 +113,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="RUserActionInfo">
-        <PropertyRef Name="ActionInfo_Id" />
+        <PropertyRef Name="ActionInfoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

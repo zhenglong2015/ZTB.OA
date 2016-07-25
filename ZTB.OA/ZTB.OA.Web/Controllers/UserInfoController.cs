@@ -65,7 +65,7 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult SetRole(int id)
         {
             var user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            ViewBag.AllRoles = RoleInfoService.GetEntities(r => true).ToList();
+            ViewBag.AllRoles = RoleInfoService.GetEntities(r => !r.DelFag).ToList();
             ViewBag.ExitRoles = user.RoleInfo.Select(u => u.Id).ToList();
             return View(user);
         }
@@ -90,7 +90,7 @@ namespace ZTB.OA.Web.Controllers
         {
 
             ViewBag.user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            var action = ActionInfoService.GetEntities(a => true).OrderBy(a => a.Id).ToList();
+            var action = ActionInfoService.GetEntities(a => !a.DelFag).OrderBy(a => a.Id).ToList();
             return View(action);
         }
         [HttpPost]
@@ -99,7 +99,7 @@ namespace ZTB.OA.Web.Controllers
             var rua = RUserActionInfoService.GetEntities(r => r.ActionInfoId == actinId && r.UserInfoId == uId).FirstOrDefault();
             if (rua != null)
             {
-                rua.DelFag = false;
+                rua.DelFag = true;
                 RUserActionInfoService.Update(rua);
             }
             return Content("ok");
@@ -110,6 +110,7 @@ namespace ZTB.OA.Web.Controllers
             var rua = RUserActionInfoService.GetEntities(r => r.ActionInfoId == id && r.UserInfoId == uId).FirstOrDefault();
             if (rua != null)
             {
+                rua.DelFag = false;
                 rua.HasPermission = val == 1;
                 RUserActionInfoService.Update(rua);
             }

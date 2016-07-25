@@ -32,13 +32,13 @@ using System;
 
     public bool HasPermission { get; set; }
 
-    public Nullable<int> UserInfoId { get; set; }
-
-    public int ActionInfoId { get; set; }
-
     public Nullable<bool> DelFag { get; set; }
 
     public Nullable<System.DateTime> ModifyOn { get; set; }
+
+    public int UserInfoId { get; set; }
+
+    public int ActionInfoId { get; set; }
 
 
 

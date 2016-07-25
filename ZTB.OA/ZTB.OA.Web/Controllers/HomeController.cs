@@ -14,7 +14,13 @@ namespace ZTB.OA.Web.Controllers
         public IActionInfoService ActionInfoService { get; set; }
         public ActionResult Index()
         {
-            //LoadMenu();
+
+            if (base.UserInfo.Name != "admin")
+            {
+                ViewBag.uName = base.UserInfo.Name;
+                ViewBag.roleName = base.UserInfo.RoleInfo.FirstOrDefault().RoleName;
+                //LoadMenu();
+            }
             return View();
         }
 
@@ -24,6 +30,7 @@ namespace ZTB.OA.Web.Controllers
         /// <returns></returns>
         public ActionResult LoadMenu()
         {
+            if (base.UserInfo == null) return null;
             var id = base.UserInfo.Id;
             var user = UserInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
 

@@ -59,7 +59,7 @@ namespace ZTB.OA.Web.Controllers
         public ActionResult SetRole(int id)
         {
             var action = ActionInfoService.GetEntities(u => u.Id == id).FirstOrDefault();
-            ViewBag.AllRoles = RoleInfoService.GetEntities(r => true).ToList();
+            ViewBag.AllRoles = RoleInfoService.GetEntities(r =>!r.DelFag).ToList();
             ViewBag.ExitRoles = action.RoleInfo.Select(u => u.Id).ToList();
             return View(action);
         }

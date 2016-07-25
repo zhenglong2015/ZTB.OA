@@ -20,10 +20,10 @@
         <MappingFragment StoreEntitySet="RUserActionInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="HasPermission" ColumnName="HasPermission" />
-          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
-          <ScalarProperty Name="ActionInfoId" ColumnName="ActionInfoId" />
           <ScalarProperty Name="DelFag" ColumnName="DelFag" />
           <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
+          <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
+          <ScalarProperty Name="ActionInfoId" ColumnName="ActionInfoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,22 +64,6 @@
       </EndProperty>
       <EndProperty Name="RoleInfo">
         <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UserInfoRUserActionInfo" TypeName="DataModel.UserInfoRUserActionInfo" StoreEntitySet="RUserActionInfo">
-      <EndProperty Name="UserInfo">
-        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
-      </EndProperty>
-      <EndProperty Name="RUserActionInfo">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ActionInfoRUserActionInfo" TypeName="DataModel.ActionInfoRUserActionInfo" StoreEntitySet="RUserActionInfo">
-      <EndProperty Name="ActionInfo">
-        <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
-      </EndProperty>
-      <EndProperty Name="RUserActionInfo">
-        <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

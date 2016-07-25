@@ -43,12 +43,12 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HasPermission" Type="Boolean" Nullable="false" />
-    <Property Name="UserInfoId" Type="Int32" />
-    <Property Name="ActionInfoId" Type="Int32" Nullable="false" />
     <Property Name="DelFag" Type="Boolean" DefaultValue="false" />
-    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRUserActionInfo" FromRole="RUserActionInfo" ToRole="UserInfo" />
-    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoRUserActionInfo" FromRole="RUserActionInfo" ToRole="ActionInfo" />
     <Property Name="ModifyOn" Type="DateTime" Nullable="true" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRUserActionInfo" FromRole="RUserActionInfo" ToRole="UserInfo" />
+    <Property Name="UserInfoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ActionInfo" Relationship="DataModel.ActionInfoRUserActionInfo" FromRole="RUserActionInfo" ToRole="ActionInfo" />
+    <Property Name="ActionInfoId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="RoleInfo">
     <Key>
@@ -86,9 +86,25 @@
   <Association Name="UserInfoRUserActionInfo">
     <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="1" />
     <End Type="DataModel.RUserActionInfo" Role="RUserActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RUserActionInfo">
+        <PropertyRef Name="UserInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
   <Association Name="ActionInfoRUserActionInfo">
     <End Type="DataModel.ActionInfo" Role="ActionInfo" Multiplicity="1" />
     <End Type="DataModel.RUserActionInfo" Role="RUserActionInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RUserActionInfo">
+        <PropertyRef Name="ActionInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

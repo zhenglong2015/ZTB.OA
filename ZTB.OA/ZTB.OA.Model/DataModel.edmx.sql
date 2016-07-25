@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/22/2016 09:16:33
+-- Date Created: 07/25/2016 10:45:47
 -- Generated from EDMX file: E:\测试\OA\ZTB.OA\ZTB.OA.Model\DataModel.edmx
 -- --------------------------------------------------
 
@@ -29,12 +29,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ActionInfoRoleInfo_RoleInfo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ActionInfoRoleInfo] DROP CONSTRAINT [FK_ActionInfoRoleInfo_RoleInfo];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UserInfoRUserActionInfo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RUserInfoActionInfo] DROP CONSTRAINT [FK_UserInfoRUserActionInfo];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ActionInfoRUserActionInfo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RUserInfoActionInfo] DROP CONSTRAINT [FK_ActionInfoRUserActionInfo];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -43,8 +37,8 @@ GO
 IF OBJECT_ID(N'[dbo].[ActionInfo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ActionInfo];
 GO
-IF OBJECT_ID(N'[dbo].[RUserInfoActionInfo]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[RUserInfoActionInfo];
+IF OBJECT_ID(N'[dbo].[RUserActionInfo]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[RUserActionInfo];
 GO
 IF OBJECT_ID(N'[dbo].[RoleInfo]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RoleInfo];
@@ -80,12 +74,10 @@ GO
 CREATE TABLE [dbo].[RUserActionInfo] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [HasPermission] bit  NOT NULL,
-    [UserInfoId] int  NULL,
-    [ActionInfoId] int  NOT NULL,
     [DelFag] bit  NULL,
     [ModifyOn] datetime  NULL,
-    [UserInfo_Id] int  NOT NULL,
-    [ActionInfo_Id] int  NOT NULL
+    [UserInfoId] int  NOT NULL,
+    [ActionInfoId] int  NOT NULL
 );
 GO
 
@@ -216,10 +208,10 @@ ON [dbo].[ActionInfoRoleInfo]
     ([RoleInfo_Id]);
 GO
 
--- Creating foreign key on [UserInfo_Id] in table 'RUserActionInfo'
+-- Creating foreign key on [UserInfoId] in table 'RUserActionInfo'
 ALTER TABLE [dbo].[RUserActionInfo]
 ADD CONSTRAINT [FK_UserInfoRUserActionInfo]
-    FOREIGN KEY ([UserInfo_Id])
+    FOREIGN KEY ([UserInfoId])
     REFERENCES [dbo].[UserInfo]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -228,13 +220,13 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_UserInfoRUserActionInfo'
 CREATE INDEX [IX_FK_UserInfoRUserActionInfo]
 ON [dbo].[RUserActionInfo]
-    ([UserInfo_Id]);
+    ([UserInfoId]);
 GO
 
--- Creating foreign key on [ActionInfo_Id] in table 'RUserActionInfo'
+-- Creating foreign key on [ActionInfoId] in table 'RUserActionInfo'
 ALTER TABLE [dbo].[RUserActionInfo]
 ADD CONSTRAINT [FK_ActionInfoRUserActionInfo]
-    FOREIGN KEY ([ActionInfo_Id])
+    FOREIGN KEY ([ActionInfoId])
     REFERENCES [dbo].[ActionInfo]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -243,7 +235,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_ActionInfoRUserActionInfo'
 CREATE INDEX [IX_FK_ActionInfoRUserActionInfo]
 ON [dbo].[RUserActionInfo]
-    ([ActionInfo_Id]);
+    ([ActionInfoId]);
 GO
 
 -- --------------------------------------------------
