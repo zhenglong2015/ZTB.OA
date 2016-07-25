@@ -1,8 +1,0 @@
-E:\测试\OA\ZTB.OA\ConsoleApplication1\bin\Debug\NLog.config
-E:\测试\OA\ZTB.OA\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
-E:\测试\OA\ZTB.OA\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-E:\测试\OA\ZTB.OA\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-E:\测试\OA\ZTB.OA\ConsoleApplication1\bin\Debug\NLog.dll
-E:\测试\OA\ZTB.OA\ConsoleApplication1\bin\Debug\NLog.xml
-E:\测试\OA\ZTB.OA\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-E:\测试\OA\ZTB.OA\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

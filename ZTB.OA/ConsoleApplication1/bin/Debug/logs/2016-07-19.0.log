@@ -1,9 +1,0 @@
-2016-07-19 14:47:17.5504 ERROR  it is a error  AppDomain.ExecuteAssembly => AppDomain._nExecuteAssembly => Program.Main
-2016-07-19 14:48:41.8929 ERROR  System.Exception: Exception of type 'System.Exception' was thrown.  AppDomain.ExecuteAssembly => AppDomain._nExecuteAssembly => Program.Main
-2016-07-19 14:50:02.7450 ERROR   
- System.Exception: Exception of type 'System.Exception' was thrown.  
-   
- AppDomain.ExecuteAssembly => AppDomain._nExecuteAssembly => Program.Main
-2016-07-19 14:50:48.3203 ERROR   System.Exception: Exception of type 'System.Exception' was thrown.  
-   
- Program.Main
