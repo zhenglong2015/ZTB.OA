@@ -24,7 +24,6 @@ using ZTB.OA.IDAL;
 
  public partial class StaticFactory
 {   
-//TODO 此处需要增加缓存
 	static  string assemblyName = System.Configuration.ConfigurationManager.AppSettings["DalAssemblyName"];
 		
 	public static IActionInfoDal GetActionInfoDal()
