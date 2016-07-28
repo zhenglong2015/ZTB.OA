@@ -47,6 +47,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTB.OA.EFDAL;
 using ZTB.OA.IDAL;
+using Common.Caches;
 <#
 if (container.FunctionImports.Any())
 {
@@ -59,7 +60,7 @@ using System.Linq;
 
  public partial class StaticFactory
 {   
-//TODO 此处需要增加缓存
+    
 	static  string assemblyName = System.Configuration.ConfigurationManager.AppSettings["DalAssemblyName"];
 <#
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
@@ -67,7 +68,13 @@ using System.Linq;
 #>		
 	public static I<#=entitySet#>Dal Get<#=entitySet#>Dal()
     {          
-        return Assembly.Load(assemblyName).CreateInstance(assemblyName + ".<#=entitySet#>Dal") as I<#=entitySet#>Dal;
+	     var tempDal = CacheHelper.GetCache(assemblyName + ".<#=entitySet#>Dal");
+     if (tempDal == null)
+	 {
+         tempDal = Assembly.Load(assemblyName).CreateInstance(assemblyName + ".<#=entitySet#>Dal");
+	     CacheHelper.InsertCache(assemblyName + ".<#=entitySet#>Dal",tempDal);
+	 }
+     return tempDal as I<#=entitySet#>Dal;
     }
 <#
     }

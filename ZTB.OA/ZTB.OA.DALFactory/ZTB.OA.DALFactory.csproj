@@ -45,6 +45,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZTB.OA.Common\ZTB.OA.Common.csproj">
+      <Project>{3b3b9951-a239-4779-be60-6022ae6fb10e}</Project>
+      <Name>ZTB.OA.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZTB.OA.EFDAL\ZTB.OA.EFDAL.csproj">
       <Project>{34de48bf-b3ee-46a0-afdf-75deabb4ac18}</Project>
       <Name>ZTB.OA.EFDAL</Name>

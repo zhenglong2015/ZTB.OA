@@ -55,3 +55,16 @@ E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.BLL\obj\Debug\ZTB.OA.BLL.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\NLog.config
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.Common.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\NPOI.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ThoughtWorks.QRCode.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\NLog.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\Spring.Core.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\Memcached.ClientLibrary.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\Ionic.Zip.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\ZTB.OA.Common.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\NLog.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\Spring.Core.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.BLL\bin\Debug\Spring.Core.xml
