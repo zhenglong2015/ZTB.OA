@@ -21,7 +21,9 @@ namespace ZTB.OA.EFDAL
         #region 查询
         public IQueryable<T> GetEntities(Expression<Func<T, bool>> whereLamba)
         {
-            return Db.Set<T>().Where(whereLamba).AsQueryable();
+            //AsNoTracking
+            //用于取消实体跟踪
+            return Db.Set<T>().Where(whereLamba).AsNoTracking().AsQueryable();
         }
 
         public IQueryable<T> GetPageEntities<S>(int pageSize, int pageIndex, out int total, Expression<Func<T, bool>> whereLambda,
@@ -30,9 +32,9 @@ namespace ZTB.OA.EFDAL
             total = Db.Set<T>().Where(whereLambda).Count();
 
             return isAsc ? Db.Set<T>().Where(whereLambda).OrderBy(orderLambda)
-                    .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable() :
+                    .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsNoTracking().AsQueryable() :
                      Db.Set<T>().Where(whereLambda).OrderByDescending(orderLambda)
-                .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsQueryable();
+                .Skip(pageSize * (pageIndex - 1)).Take(pageSize).AsNoTracking().AsQueryable();
         }
         #endregion
 
