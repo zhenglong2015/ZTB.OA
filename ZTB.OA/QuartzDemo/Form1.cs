@@ -31,6 +31,9 @@ namespace QuartzDemo
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*scheduler
+                关闭之后，无法在重新statrt
+                只能重新实例化 */
             scheduler.Shutdown();
         }
 
