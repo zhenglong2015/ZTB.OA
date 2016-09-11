@@ -4,9 +4,9 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ZhiHeng.Tickets.Wx.App.Entity;
-using ZhiHeng.Tickets.Wx.App.Entity.MsgEntity;
-using ZhiHeng.Tickets.Wx.App.Service;
+using WeChatApi.Entity.MsgEntity;
+using WeChatApi.Service;
+using WeChatApi.Entity;
 
 namespace ZTB.OA.Web.Areas.WeiXin.Controllers
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZhiHeng.Tickets.Wx.Sy.Repository.Models
+namespace WebApiCall.Models
 {
     public class OrderWaper
     {

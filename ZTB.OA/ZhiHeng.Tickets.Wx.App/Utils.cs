@@ -11,14 +11,14 @@ using System.Web;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using ZhiHeng.Tickets.Wx.App.Common;
-using ZhiHeng.Tickets.Wx.App.Entity.MsgEntity;
-using ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity;
-using ZhiHeng.Tickets.Wx.App.Entity.SendEntity;
+using WeChatApi.Common;
+using WeChatApi.Entity.MsgEntity;
+using WeChatApi.Entity.ReceiveEntity;
+using WeChatApi.Entity.SendEntity;
 using System.Security.Cryptography;
 using System.Web.Security;
 
-namespace ZhiHeng.Tickets.Wx.App
+namespace WeChatApi
 {
     public class Utils
     {

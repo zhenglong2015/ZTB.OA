@@ -3,9 +3,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Net;
-using ZhiHeng.Tickets.Wx.Sy.Repository.Models;
+using WebApiCall.Models;
 
-namespace ZhiHeng.Tickets.Wx.Sy.Repository
+namespace WebApiCall
 {
     public class WebAPI
     {

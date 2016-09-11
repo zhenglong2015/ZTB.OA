@@ -6,7 +6,7 @@
 @{
 
     UserInfo user = ViewBag.user as UserInfo;
-    <h2>给 @user.UName 设置权限角色</h2>
+    <h2>给 @user.Name 设置权限角色</h2>
     <input type="hidden" name="uId" value="@user.Id" />
 
     <table class="table table-bordered table-striped" style="text-align:center">
@@ -19,9 +19,6 @@
             </th>
             <th style="text-align:center">
                 URL
-            </th>
-            <th style="text-align:center">
-                是否删除
             </th>
             <th style="text-align:center">
                 备注
@@ -40,9 +37,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Url)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DelFag)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Remark)

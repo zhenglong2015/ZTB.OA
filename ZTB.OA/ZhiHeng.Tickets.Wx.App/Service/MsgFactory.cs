@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ZhiHeng.Tickets.Wx.App.Entity.MsgEntity;
+using WeChatApi.Entity.MsgEntity;
 using System.Xml.Linq;
 
-namespace ZhiHeng.Tickets.Wx.App.Service
+namespace WeChatApi.Service
 {
     public class MsgFactory
     {

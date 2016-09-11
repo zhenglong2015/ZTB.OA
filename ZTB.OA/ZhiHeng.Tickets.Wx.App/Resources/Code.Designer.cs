@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZhiHeng.Tickets.Wx.App.Resources {
+namespace WeChatApi.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ZhiHeng.Tickets.Wx.App.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ZhiHeng.Tickets.Wx.App.Resources.Code", typeof(Code).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WeChatApi.Resources.Code", typeof(Code).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

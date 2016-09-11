@@ -1,7 +1,7 @@
 ﻿
-using ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity;
+using WeChatApi.Entity.ReceiveEntity;
 using System.Configuration;
-namespace ZhiHeng.Tickets.Wx.App.Service
+namespace WeChatApi.Service
 {
     public class OAuthService
     {

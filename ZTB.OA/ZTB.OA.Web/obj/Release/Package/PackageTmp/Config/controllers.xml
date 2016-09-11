@@ -5,7 +5,7 @@
     <property name="UserInfoService" ref="UserInfoService"/>
     <property name="RoleInfoService" ref="RoleInfoService"/>
     <property name="ActionInfoService" ref="ActionInfoService"/>
-    <property name="R_UserInfo_ActionInfoService" ref="R_UserInfo_ActionInfoService"/>
+    <property name="RUserActionInfoService" ref="RUserActionInfoService"/>
   </object>
 
   <object type="ZTB.OA.Web.Controllers.AccountController, ZTB.OA.Web" singleton="false" >

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.MsgEntity
+namespace WeChatApi.Entity.MsgEntity
 {
     /// <summary>
     /// 微信接入参数

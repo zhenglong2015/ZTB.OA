@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.SendEntity
+namespace WeChatApi.Entity.SendEntity
 {  /// <summary>
     /// 客服音乐消息实体
     /// </summary>

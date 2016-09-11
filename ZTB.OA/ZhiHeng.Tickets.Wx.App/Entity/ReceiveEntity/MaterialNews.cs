@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ZhiHeng.Tickets.Wx.App.Entity.SendEntity;
+using WeChatApi.Entity.SendEntity;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity
+namespace WeChatApi.Entity.ReceiveEntity
 {
     /// <summary>
     /// 获取永久素材时，当请求的素材为图文消息时，返回的实体

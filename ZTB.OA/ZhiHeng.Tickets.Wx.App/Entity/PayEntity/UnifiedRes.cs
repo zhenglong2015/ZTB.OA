@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.PayEntity
+namespace WeChatApi.Entity.PayEntity
 {
     /// <summary>
     /// 调用统一支付接口后，返回的实体

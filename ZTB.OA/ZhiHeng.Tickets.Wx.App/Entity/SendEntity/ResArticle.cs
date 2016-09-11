@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.SendEntity
+namespace WeChatApi.Entity.SendEntity
 {
     public class ResArticle
     {

@@ -15,7 +15,7 @@ using System.Security.Cryptography;
 //-40008 ： 解密后得到的buffer非法
 //-40009 :  base64加密异常
 //-40010 :  base64解密异常
-namespace ZhiHeng.Tickets.Wx.App.Common
+namespace WeChatApi.Common
 {
     public class WXBizMsgCrypt
     {

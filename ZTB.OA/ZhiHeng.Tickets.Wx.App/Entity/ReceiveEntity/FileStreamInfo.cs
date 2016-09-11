@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity
+namespace WeChatApi.Entity.ReceiveEntity
 {
     /// <summary>
     /// 文件流信息

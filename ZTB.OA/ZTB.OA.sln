@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTB.OA.Web", "ZTB.OA.Web\ZT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongonDBDemo", "MongonDBDemo\MongonDBDemo.csproj", "{E4A9C32F-2977-4B2B-8410-78EC510CB588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHeng.Tickets.Wx.App", "ZhiHeng.Tickets.Wx.App\ZhiHeng.Tickets.Wx.App.csproj", "{3EA0D0E7-7E16-4AEE-B5CD-3B25AD6D78E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChatApi", "ZhiHeng.Tickets.Wx.App\WeChatApi.csproj", "{3EA0D0E7-7E16-4AEE-B5CD-3B25AD6D78E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WeiXin", "WeiXin", "{6E285EE8-8033-4570-B011-CF988E7C1456}"
 EndProject
@@ -47,7 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ext", "Ext", "{15CDD005-09F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiWithOath", "WebApiWithOath\WebApiWithOath.csproj", "{C1386B89-72C1-4EB5-ADA1-A96CE57CFE21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHeng.Tickets.Wx.Sy.Repository", "ZhiHeng.Tickets.Wx.Sy.Repository\ZhiHeng.Tickets.Wx.Sy.Repository.csproj", "{3058B9F3-798A-45C3-A858-937FB2939D5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCall", "ZhiHeng.Tickets.Wx.Sy.Repository\WebApiCall.csproj", "{3058B9F3-798A-45C3-A858-937FB2939D5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzDemo", "QuartzDemo\QuartzDemo.csproj", "{D6F55B0A-0F2A-47AF-9A78-C447F5DEE58E}"
 EndProject

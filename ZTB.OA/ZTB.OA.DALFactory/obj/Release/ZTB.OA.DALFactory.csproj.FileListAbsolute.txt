@@ -17,3 +17,16 @@ E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\zh-Hans\EntityFramework.SqlSer
 E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\obj\Release\ZTB.OA.DALFactory.csprojResolveAssemblyReference.cache
 E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\obj\Release\ZTB.OA.DALFactory.dll
 E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\obj\Release\ZTB.OA.DALFactory.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\NLog.config
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\ZTB.OA.Common.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\NPOI.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\ThoughtWorks.QRCode.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\NLog.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\Memcached.ClientLibrary.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\Spring.Core.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\Ionic.Zip.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\ZTB.OA.Common.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\NLog.xml
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\Spring.Core.pdb
+E:\测试\OA\ZTB.OA\ZTB.OA.DALFactory\bin\Release\Spring.Core.xml

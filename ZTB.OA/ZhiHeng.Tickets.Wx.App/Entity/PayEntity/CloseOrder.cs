@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.PayEntity
+namespace WeChatApi.Entity.PayEntity
 {
     /// <summary>
     /// 关闭订单请求实体

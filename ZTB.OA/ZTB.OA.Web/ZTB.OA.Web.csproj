@@ -183,6 +183,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\WeiXin\Controllers\BaseController.cs" />
     <Compile Include="Areas\WeiXin\Controllers\HomeController.cs" />
     <Compile Include="Areas\WeiXin\WeiXinAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -197,6 +198,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MyExceptionFilterAttrbut.cs" />
+    <Compile Include="Models\WebWxConfigHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -879,6 +881,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
@@ -960,9 +963,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZhiHeng.Tickets.Wx.App\ZhiHeng.Tickets.Wx.App.csproj">
+    <ProjectReference Include="..\ZhiHeng.Tickets.Wx.App\WeChatApi.csproj">
       <Project>{3EA0D0E7-7E16-4AEE-B5CD-3B25AD6D78E3}</Project>
-      <Name>ZhiHeng.Tickets.Wx.App</Name>
+      <Name>WeChatApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZTB.OA.BLL\ZTB.OA.BLL.csproj">
       <Project>{b770efc7-06a4-4b52-b416-49fdb7dc5bf7}</Project>

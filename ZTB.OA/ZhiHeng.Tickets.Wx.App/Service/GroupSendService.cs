@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ZhiHeng.Tickets.Wx.App.Entity.SendEntity;
-using ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity;
+using WeChatApi.Entity.SendEntity;
+using WeChatApi.Entity.ReceiveEntity;
 
-namespace ZhiHeng.Tickets.Wx.App.Service
+namespace WeChatApi.Service
 {
     //群发服务
     public class GroupSendService

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ZhiHeng.Tickets.Wx.App.Resources;
+using WeChatApi.Resources;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity
+namespace WeChatApi.Entity.ReceiveEntity
 {
     /// <summary>
     /// 错误信息

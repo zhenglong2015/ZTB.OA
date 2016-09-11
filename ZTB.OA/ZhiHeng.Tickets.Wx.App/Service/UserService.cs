@@ -1,6 +1,6 @@
-﻿using ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity;
+﻿using WeChatApi.Entity.ReceiveEntity;
 
-namespace ZhiHeng.Tickets.Wx.App.Service
+namespace WeChatApi.Service
 {
     /// <summary>
     /// 用户信息

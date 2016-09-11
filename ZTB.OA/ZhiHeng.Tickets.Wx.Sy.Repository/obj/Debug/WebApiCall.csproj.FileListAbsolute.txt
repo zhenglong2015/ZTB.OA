@@ -1,0 +1,8 @@
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.dll
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.pdb
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.Formatting.dll
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\System.Net.Http.Formatting.xml
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\WebApiCall.csprojResolveAssemblyReference.cache
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.dll
+E:\测试\OA\ZTB.OA\ZhiHeng.Tickets.Wx.Sy.Repository\obj\Debug\ZhiHeng.Tickets.Wx.Sy.Repository.pdb

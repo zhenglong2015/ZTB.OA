@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.Sy.Repository.Models
+namespace WebApiCall.Models
 {
     public class AccessToken
     {

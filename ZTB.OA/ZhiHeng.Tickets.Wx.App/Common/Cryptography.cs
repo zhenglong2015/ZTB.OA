@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Net;
 
-namespace ZhiHeng.Tickets.Wx.App.Common
+namespace WeChatApi.Common
 {
     public class Cryptography
     {

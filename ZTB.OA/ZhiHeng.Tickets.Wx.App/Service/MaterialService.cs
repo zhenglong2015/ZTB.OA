@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ZhiHeng.Tickets.Wx.App.Entity.MsgEntity;
-using ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity;
+using WeChatApi.Entity.MsgEntity;
+using WeChatApi.Entity.ReceiveEntity;
 using Newtonsoft.Json;
-using ZhiHeng.Tickets.Wx.App.Entity.SendEntity;
+using WeChatApi.Entity.SendEntity;
 using System.IO;
 using System.Net;
 
-namespace ZhiHeng.Tickets.Wx.App.Service
+namespace WeChatApi.Service
 {
     /// <summary>
     /// 素材管理类

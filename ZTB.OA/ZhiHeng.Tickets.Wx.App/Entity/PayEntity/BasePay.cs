@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.PayEntity
+namespace WeChatApi.Entity.PayEntity
 {
     /// <summary>
     /// 微信支付基类

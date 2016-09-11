@@ -9,21 +9,21 @@
           <ScalarProperty Name="HttpMethod" ColumnName="HttpMethod" />
           <ScalarProperty Name="DelFag" ColumnName="DelFag" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
           <ScalarProperty Name="ActionName" ColumnName="ActionName" />
           <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+          <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="R_UserInfo_ActionInfo">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.R_UserInfo_ActionInfo)">
-        <MappingFragment StoreEntitySet="R_UserInfo_ActionInfo">
+    <EntitySetMapping Name="RUserActionInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.RUserActionInfo)">
+        <MappingFragment StoreEntitySet="RUserActionInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="HasPermission" ColumnName="HasPermission" />
+          <ScalarProperty Name="DelFag" ColumnName="DelFag" />
+          <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
           <ScalarProperty Name="UserInfoId" ColumnName="UserInfoId" />
           <ScalarProperty Name="ActionInfoId" ColumnName="ActionInfoId" />
-          <ScalarProperty Name="DelFag" ColumnName="DelFag" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -33,9 +33,8 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="DelFag" ColumnName="DelFag" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -43,13 +42,11 @@
       <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserInfo)">
         <MappingFragment StoreEntitySet="UserInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Pwd" ColumnName="Pwd" />
           <ScalarProperty Name="DelFag" ColumnName="DelFag" />
-          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
-          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="ModifyOn" ColumnName="ModifyOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -67,22 +64,6 @@
       </EndProperty>
       <EndProperty Name="RoleInfo">
         <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ActionInfoR_UserInfo_ActionInfo" TypeName="DataModel.ActionInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
-      <EndProperty Name="ActionInfo">
-        <ScalarProperty Name="Id" ColumnName="ActionInfo_Id" />
-      </EndProperty>
-      <EndProperty Name="R_UserInfo_ActionInfo">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UserInfoR_UserInfo_ActionInfo" TypeName="DataModel.UserInfoR_UserInfo_ActionInfo" StoreEntitySet="R_UserInfo_ActionInfo">
-      <EndProperty Name="UserInfo">
-        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
-      </EndProperty>
-      <EndProperty Name="R_UserInfo_ActionInfo">
-        <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

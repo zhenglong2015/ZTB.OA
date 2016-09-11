@@ -1,12 +1,12 @@
-﻿using ZhiHeng.Tickets.Wx.App.Entity.MsgEntity;
+﻿using WeChatApi.Entity.MsgEntity;
 using System.Web;
-using ZhiHeng.Tickets.Wx.App.Service;
-using ZhiHeng.Tickets.Wx.App;
-using ZhiHeng.Tickets.Wx.App.Entity.ReceiveEntity;
+using WeChatApi.Service;
+using WeChatApi;
+using WeChatApi.Entity.ReceiveEntity;
 using System.Collections.Generic;
 
 
-namespace ZhiHeng.Tickets.Wx.App.Entity
+namespace WeChatApi.Entity
 {
     /// <summary>
     /// 消息回复处理类

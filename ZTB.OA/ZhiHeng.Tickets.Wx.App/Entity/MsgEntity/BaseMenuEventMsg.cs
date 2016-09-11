@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ZhiHeng.Tickets.Wx.App.Entity.MsgEntity
+namespace WeChatApi.Entity.MsgEntity
 {
     /// <summary>
     /// 菜单事件基础实体

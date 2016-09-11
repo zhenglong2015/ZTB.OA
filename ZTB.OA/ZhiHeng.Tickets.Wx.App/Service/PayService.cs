@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ZhiHeng.Tickets.Wx.App.Entity.PayEntity;
+using WeChatApi.Entity.PayEntity;
 using System.Web;
 
-namespace ZhiHeng.Tickets.Wx.App.Service
+namespace WeChatApi.Service
 {
     /// <summary>
     /// 微信支付相关的操作
@@ -71,6 +71,29 @@ namespace ZhiHeng.Tickets.Wx.App.Service
         {
             var url = "https://api.mch.weixin.qq.com/pay/closeorder";
             return PayRequest<CloseOrderRes>(closeOrder, url);
+        }
+
+        /// <summary>
+        ///  企业付款
+        /// </summary>
+        /// <param name="ePayment"></param>
+        /// <returns></returns>
+        public static EPaymentRes EnterprisePay(EPayment ePayment, string certpath, string certpwd)
+        {
+            var url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers";
+            return PayRequest<EPaymentRes>(ePayment, url, certpath, certpwd);
+        }
+        /// <summary>
+        /// 企业付款查询
+        /// </summary>
+        /// <param name="ePaymentQuery"></param>
+        /// <param name="certpath"></param>
+        /// <param name="certpwd"></param>
+        /// <returns></returns>
+        public static EPaymentQueryRes EnterprisePayQuery(EPaymentQuery ePaymentQuery, string certpath, string certpwd)
+        {
+            var url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo";
+            return PayRequest<EPaymentQueryRes>(ePaymentQuery, url, certpath, certpwd);
         }
         /// <summary>
         /// 获取通用回调
