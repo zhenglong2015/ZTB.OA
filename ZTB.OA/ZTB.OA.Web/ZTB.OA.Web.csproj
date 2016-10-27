@@ -963,7 +963,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZhiHeng.Tickets.Wx.App\WeChatApi.csproj">
+    <ProjectReference Include="..\WeChatApi\WeChatApi.csproj">
       <Project>{3EA0D0E7-7E16-4AEE-B5CD-3B25AD6D78E3}</Project>
       <Name>WeChatApi</Name>
     </ProjectReference>

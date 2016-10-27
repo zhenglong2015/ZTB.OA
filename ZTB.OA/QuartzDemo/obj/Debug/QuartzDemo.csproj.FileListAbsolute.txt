@@ -16,3 +16,4 @@ E:\测试\OA\ZTB.OA\QuartzDemo\obj\Debug\QuartzDemo.Form1.resources
 E:\测试\OA\ZTB.OA\QuartzDemo\obj\Debug\QuartzDemo.csproj.GenerateResource.Cache
 E:\测试\OA\ZTB.OA\QuartzDemo\obj\Debug\QuartzDemo.exe
 E:\测试\OA\ZTB.OA\QuartzDemo\obj\Debug\QuartzDemo.pdb
+E:\测试\OA\ZTB.OA\QuartzDemo\obj\Debug\QuartzDemo.csprojResolveAssemblyReference.cache

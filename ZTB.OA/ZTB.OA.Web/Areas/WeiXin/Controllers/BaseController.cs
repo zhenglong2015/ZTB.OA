@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WeChatApi;
 using WeChatApi.Entity.PayEntity;
 using WeChatApi.Entity.ReceiveEntity;
 using WeChatApi.Service;
-using ZTB.OA.Model;
 using ZTB.OA.Web.Models;
 
 namespace ZTB.OA.Web.Areas.WeiXin.Controllers
@@ -55,7 +51,7 @@ namespace ZTB.OA.Web.Areas.WeiXin.Controllers
             {
                 appid = WebWxConfigHelper.appid,
                 mch_id = WebWxConfigHelper.mch_id,
-                nonce_str = Utils.GetGuid(),
+                nonce_str = WeChatApi.Utils.GetGuid(),
                 out_trade_no = QueryString("out_trade_no")
             };
 
@@ -90,7 +86,7 @@ namespace ZTB.OA.Web.Areas.WeiXin.Controllers
             {
                 appid = WebWxConfigHelper.appid,
                 mch_id = WebWxConfigHelper.mch_id,
-                nonce_str = Utils.GetGuid(),
+                nonce_str = WeChatApi.Utils.GetGuid(),
                 body = QueryString("body"),
                 detail = QueryString("detail"),
                 out_trade_no = QueryString("out_trade_no"),
