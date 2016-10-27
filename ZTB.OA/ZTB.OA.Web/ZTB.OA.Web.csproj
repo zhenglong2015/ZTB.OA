@@ -953,6 +953,7 @@
     <Content Include="Views\RoleInfo\DataTablePartial.cshtml" />
     <Content Include="Views\ActionInfo\DataTablePartial.cshtml" />
     <Content Include="Views\Logs\DataTablePartial.cshtml" />
+    <Content Include="Views\Home\HomeIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\WeiXin\Models\" />

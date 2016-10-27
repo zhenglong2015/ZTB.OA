@@ -24,6 +24,12 @@ namespace ZTB.OA.Web.Controllers
             return View();
         }
 
+        public ActionResult HomeIndex()
+        {
+            return View();
+        }
+
+
         /// <summary>
         /// 获取用户的权限菜单
         /// </summary>
